@@ -388,6 +388,14 @@
             </div>
             
             <div class="filter-groups">
+                <div class="filter-group date-filters">
+                    <label>📅 日期</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn" data-filter="date" data-value="March 15">📅 3月15日</button>
+                        <button class="filter-btn" data-filter="date" data-value="March 16">📅 3月16日</button>
+                    </div>
+                </div>
+                
                 <div class="filter-group time-filters">
                     <label>⏰ 时间段</label>
                     <div class="filter-buttons">
@@ -423,18 +431,25 @@
                     <label>🌐 语言</label>
                     <div class="filter-buttons">
                         <button class="filter-btn" data-filter="language" data-value="English">English</button>
-                        <button class="filter-btn" data-filter="language" data-value="中文">中文</button>
+                        <button class="filter-btn" data-filter="language" data-value="Chinese">Chinese</button>
                     </div>
                 </div>
                 
                 <div class="filter-group topic-filters">
                     <label>🏷️ 主题分类</label>
                     <div class="filter-buttons">
+                        <button class="filter-btn" data-filter="topic" data-value="Keynote">Keynote</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Robotics">Robotics</button>
                         <button class="filter-btn" data-filter="topic" data-value="AI Agents">AI Agents</button>
                         <button class="filter-btn" data-filter="topic" data-value="LLM">LLM</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Robotics">机器人</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Computer Vision">计算机视觉</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Data Science">数据科学</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Computer Vision">Computer Vision</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Data Science">Data Science</button>
+                        <button class="filter-btn" data-filter="topic" data-value="MLOps">MLOps</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Developer Tools">Developer Tools</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Simulation">Simulation</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Enterprise AI">Enterprise AI</button>
+                        <button class="filter-btn" data-filter="topic" data-value="AI for Science">AI for Science</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Physical AI">Physical AI</button>
                     </div>
                 </div>
             </div>
@@ -583,7 +598,7 @@
                 time: "7:00 PM",
                 fullTime: "March 15, 2026 - 7:00 PM PDT",
                 speakers: "Yan Bai (NVIDIA), 巫锡斌 (字节跳动)",
-                language: "中文",
+                language: "Chinese",
                 format: "Virtual",
                 level: "Intermediate",
                 topic: "LLM",
@@ -667,7 +682,7 @@
                 time: "11:00 PM",
                 fullTime: "March 15, 2026 - 11:00 PM PDT",
                 speakers: "超凡王 (腾讯), 志宇李 (腾讯)",
-                language: "中文",
+                language: "Chinese",
                 format: "Virtual",
                 level: "Intermediate",
                 topic: "MLOps",
@@ -679,7 +694,7 @@
                 time: "11:00 PM",
                 fullTime: "March 15, 2026 - 11:00 PM PDT",
                 speakers: "Meiran Peng (NVIDIA), 李泞伶 (Dify), 卓羽 (枢途科技), 任冬淳 (汤元科技)",
-                language: "中文",
+                language: "Chinese",
                 format: "Virtual",
                 level: "Beginner",
                 topic: "AI Platforms",
@@ -1289,7 +1304,7 @@
                                 <div class="session-badges">
                                     <span class="badge badge-format-${session.format.toLowerCase().replace(' ', '-')}">${session.format}</span>
                                     <span class="badge badge-level-${session.level.toLowerCase()}">${session.level}</span>
-                                    ${session.language === '中文' ? '<span class="badge" style="background: #fce4ec; color: #c2185b;">中文</span>' : ''}
+                                    ${session.language === 'Chinese' ? '<span class="badge" style="background: #fce4ec; color: #c2185b;">Chinese</span>' : ''}
                                 </div>
                             </div>
                             <div class="session-id">${session.id}</div>
