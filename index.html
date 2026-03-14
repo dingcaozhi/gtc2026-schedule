@@ -399,7 +399,7 @@
                 <div class="filter-group highlights-filters">
                     <label>⭐ 精选</label>
                     <div class="filter-buttons">
-                        <button class="filter-btn" data-filter="highlights" data-value="true">⭐ Highlights (61)</button>
+                        <button class="filter-btn active" data-filter="highlights" data-value="true">⭐ Highlights (61)</button>
                     </div>
                 </div>
 
@@ -1303,7 +1303,7 @@
             level: [],
             language: [],
             topic: [],
-            highlights: []
+            highlights: ['true']  // Default to show only highlights
         };
 
         let searchQuery = '';
@@ -1373,11 +1373,24 @@
                 return true;
             });
 
+            // Check if any filter is active
+            const hasActiveFilter = Object.values(activeFilters).some(arr => arr.length > 0) || searchQuery;
+            
             // Calculate stats
             const inPersonCount = sessions.filter(s => s.format === 'In-Person').length;
             const virtualCount = sessions.filter(s => s.format === 'Virtual').length;
             document.getElementById('in-person-count').textContent = inPersonCount;
             document.getElementById('virtual-count').textContent = virtualCount;
+            
+            // Show empty if no filters active
+            if (!hasActiveFilter) {
+                container.innerHTML = '';
+                noResults.classList.add('show');
+                document.getElementById('total-count').textContent = '0';
+                document.querySelector('.no-results h3').textContent = '请选择筛选条件';
+                document.querySelector('.no-results p').textContent = '点击上方的筛选按钮来查看会议';
+                return;
+            }
             
             if (filteredSessions.length === 0) {
                 container.innerHTML = '';
@@ -1391,7 +1404,11 @@
                     <a href="session/${session.id}.html" class="session-card-link" style="text-decoration: none; color: inherit;">
                         <div class="session-card" data-time="${session.time}" data-format="${session.format}" data-level="${session.level}" data-topic="${session.topic}">
                             <div class="card-header">
-                                <span class="session-time">${session.time} PDT</span>
+                                ${(() => {
+                                    const dateMatch = session.fullTime.match(/March (\d+)/);
+                                    const dateStr = dateMatch ? `3月${dateMatch[1]}号 ` : '';
+                                    return `<span class="session-time">${dateStr}${session.time} PDT</span>`;
+                                })()}
                                 <div class="session-badges">
                                     <span class="badge badge-format-${session.format.toLowerCase().replace(' ', '-')}">${session.format}</span>
                                     <span class="badge badge-level-${session.level.toLowerCase()}">${session.level}</span>
