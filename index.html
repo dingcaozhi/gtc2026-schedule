@@ -457,6 +457,20 @@
                         <button class="filter-btn" data-filter="topic" data-value="Trustworthy AI / Cybersecurity">Trustworthy AI</button>
                         <button class="filter-btn" data-filter="topic" data-value="Edge Computing">Edge Computing</button>
                         <button class="filter-btn" data-filter="topic" data-value="Certification">Certification</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Infrastructure">Infrastructure</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Robotics">Robotics</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Agentic AI / Generative AI">Agentic AI</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Text Generation">Text Generation</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Code / Software Generation">Code Generation</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Simulation / Modeling / Design">Simulation</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Humanoid Robots">Humanoid Robots</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Robot Manipulation">Robot Manipulation</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Performance Optimization">Performance Optimization</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Computer Vision / Video Analytics">Computer Vision</button>
+                        <button class="filter-btn" data-filter="topic" data-value="AI Platforms">AI Platforms</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Industrial Digitalization / Digital Twin">Digital Twin</button>
+                        <button class="filter-btn" data-filter="topic" data-value="CAE">CAE</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Supercomputing">Supercomputing</button>
                     </div>
                 </div>
             </div>
@@ -2049,7 +2063,12 @@
 
                 // Date filter
                 if (activeFilters.date.length > 0) {
-                    const sessionDate = session.fullTime.includes('March 15') ? 'March 15' : 'March 16';
+                    let sessionDate = 'March 17';
+                    if (session.fullTime.includes('March 15')) {
+                        sessionDate = 'March 15';
+                    } else if (session.fullTime.includes('March 16')) {
+                        sessionDate = 'March 16';
+                    }
                     if (!activeFilters.date.includes(sessionDate)) {
                         return false;
                     }
