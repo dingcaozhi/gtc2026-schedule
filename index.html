@@ -1269,6 +1269,7 @@
         ];;
         
         let activeFilters = {
+            date: [],
             time: [],
             format: [],
             level: [],
@@ -1291,6 +1292,14 @@
                                       session.topic.toLowerCase().includes(searchLower) ||
                                       session.description.toLowerCase().includes(searchLower);
                     if (!matchSearch) return false;
+                }
+                
+                // Date filter
+                if (activeFilters.date.length > 0) {
+                    const sessionDate = session.fullTime.includes('March 15') ? 'March 15' : 'March 16';
+                    if (!activeFilters.date.includes(sessionDate)) {
+                        return false;
+                    }
                 }
                 
                 // Time filter
