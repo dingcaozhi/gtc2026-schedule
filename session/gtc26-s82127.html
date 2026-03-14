@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Brain for Your Robot: How to Create Autonomous Machines With AI - 视频分析 | GTC 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+        }
+        header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
+        .back-link {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        .back-link:hover { opacity: 1; }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .session-info h2 {
+            color: #1a1a2e;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .meta-item {
+            background: #f0f0f0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
+        .nvidia-link {
+            display: inline-block;
+            background: #76b900;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .nvidia-link:hover { background: #6aa800; }
+        
+        .video-status {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .status-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+        }
+        .status-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .status-desc {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .countdown {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        .countdown-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .countdown-time {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .analysis-placeholder {
+            text-align: center;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border: 2px dashed #ddd;
+        }
+        .placeholder-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .placeholder-text {
+            color: #888;
+            font-size: 1rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: rgba(255,255,255,0.7);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="../index.html" class="back-link">← 返回会议列表</a>
+            <h1>🎬 会议视频分析</h1>
+        </header>
+        
+        <div class="card">
+            <div class="session-info">
+                <h2>Building a Brain for Your Robot: How to Create Autonomous Machines With AI</h2>
+                <div class="meta">
+                    <span class="meta-item">📅 11:00 PM PDT</span>
+                    <span class="meta-item">👤 Katie (Wenyan) Lin</span>
+                    <span class="meta-item">🏷️ Robotics</span>
+                    <span class="meta-item">📊 Intermediate</span>
+                </div>
+                <a href="https://www.nvidia.com/gtc/session-catalog/sessions/gtc26-s82127/" target="_blank" class="nvidia-link">🔗 查看 NVIDIA 官方页面</a>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="video-status">
+                <div class="status-icon">🎥</div>
+                <h3 class="status-title">视频暂未上线</h3>
+                <p class="status-desc">
+                    GTC 2026 会议将于 <strong>2026年3月16-19日</strong> 举行，<br>
+                    会议结束后，视频回放将在 NVIDIA 官方 YouTube 频道上线。<br><br>
+                    <em>"好饭不怕晚，好戏在后头！" 🍿</em>
+                </p>
+                <div class="countdown">
+                    <div class="countdown-title">⏰ 距离会议开始还有</div>
+                    <div class="countdown-time" id="countdown">计算中...</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="analysis-placeholder">
+                <div class="placeholder-icon">📝</div>
+                <h3 style="color: #333; margin-bottom: 10px;">深度分析敬请期待</h3>
+                <p class="placeholder-text">
+                    视频上线后，我们将根据视频内容提供：<br><br>
+                    ✅ 视频概述与核心主题<br>
+                    ✅ 关键结论与技术要点<br>
+                    ✅ 详细内容时间戳<br>
+                    ✅ 针对华为专家的技术洞察<br>
+                    ✅ 技术发展趋势分析<br><br>
+                    <em>"让子弹飞一会儿..." 🚀</em>
+                </p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>数据来源: NVIDIA GTC 2026 | 视频分析将在会议后更新</p>
+        </footer>
+    </div>
+    
+    <script>
+        function updateCountdown() {
+            const conferenceDate = new Date('2026-03-16T09:00:00-07:00');
+            const now = new Date();
+            const diff = conferenceDate - now;
+            
+            if (diff <= 0) {
+                document.getElementById('countdown').textContent = '会议进行中！';
+                return;
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            document.getElementById('countdown').textContent = `${days}天 ${hours}小时 ${minutes}分钟`;
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+    </script>
+</body>
+</html>
