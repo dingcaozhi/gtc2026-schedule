@@ -760,26 +760,31 @@
                 document.getElementById('total-count').textContent = filteredSessions.length;
                 
                 container.innerHTML = filteredSessions.map(session => `
-                    <div class="session-card" data-time="${session.time}" data-format="${session.format}" data-level="${session.level}" data-topic="${session.topic}">
-                        <div class="card-header">
-                            <span class="session-time">${session.time} PDT</span>
-                            <div class="session-badges">
-                                <span class="badge badge-format-${session.format.toLowerCase().replace(' ', '-')}">${session.format}</span>
-                                <span class="badge badge-level-${session.level.toLowerCase()}">${session.level}</span>
-                                ${session.language === '中文' ? '<span class="badge" style="background: #fce4ec; color: #c2185b;">中文</span>' : ''}
+                    <a href="session/${session.id}.html" class="session-card-link" style="text-decoration: none; color: inherit;">
+                        <div class="session-card" data-time="${session.time}" data-format="${session.format}" data-level="${session.level}" data-topic="${session.topic}">
+                            <div class="card-header">
+                                <span class="session-time">${session.time} PDT</span>
+                                <div class="session-badges">
+                                    <span class="badge badge-format-${session.format.toLowerCase().replace(' ', '-')}">${session.format}</span>
+                                    <span class="badge badge-level-${session.level.toLowerCase()}">${session.level}</span>
+                                    ${session.language === '中文' ? '<span class="badge" style="background: #fce4ec; color: #c2185b;">中文</span>' : ''}
+                                </div>
+                            </div>
+                            <div class="session-id">${session.id}</div>
+                            <h3 class="session-title">${session.title}</h3>
+                            <span class="session-topic">${session.topic}</span>
+                            <div class="session-speakers">
+                                <strong>👤 演讲者:</strong> ${session.speakers}
+                            </div>
+                            <div class="session-language" style="color: #888; font-size: 0.85rem; margin-bottom: 8px;">
+                                🌐 ${session.language}
+                            </div>
+                            <div class="session-description">${session.description}</div>
+                            <div class="view-analysis" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; color: #667eea; font-weight: 600; font-size: 0.9rem;">
+                                🔍 查看视频分析 →
                             </div>
                         </div>
-                        <div class="session-id">${session.id}</div>
-                        <h3 class="session-title">${session.title}</h3>
-                        <span class="session-topic">${session.topic}</span>
-                        <div class="session-speakers">
-                            <strong>👤 演讲者:</strong> ${session.speakers}
-                        </div>
-                        <div class="session-language" style="color: #888; font-size: 0.85rem; margin-bottom: 8px;">
-                            🌐 ${session.language}
-                        </div>
-                        <div class="session-description">${session.description}</div>
-                    </div>
+                    </a>
                 `).join('');
             }
         }
