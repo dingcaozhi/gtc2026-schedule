@@ -429,7 +429,26 @@
                         <button class="filter-btn" data-filter="language" data-value="Chinese">Chinese</button>
                     </div>
                 </div>
-
+                
+                <div class="filter-group time-filters">
+                    <label>⏰ 时间段</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn" data-filter="time" data-value="8:30 AM">8:30 AM (3/15)</button>
+                        <button class="filter-btn" data-filter="time" data-value="7:00 PM">7:00 PM (3/15)</button>
+                        <button class="filter-btn" data-filter="time" data-value="8:00 PM">8:00 PM (3/15)</button>
+                        <button class="filter-btn" data-filter="time" data-value="11:00 PM">11:00 PM (3/15)</button>
+                        <button class="filter-btn" data-filter="time" data-value="12:00 AM">12:00 AM (3/16)</button>
+                        <button class="filter-btn" data-filter="time" data-value="1:00 AM">1:00 AM (3/16)</button>
+                        <button class="filter-btn" data-filter="time" data-value="8:00 AM">8:00 AM (3/16)</button>
+                        <button class="filter-btn" data-filter="time" data-value="11:00 AM">11:00 AM (3/16)</button>
+                        <button class="filter-btn" data-filter="time" data-value="1:40 PM">1:40 PM (3/16)</button>
+                        <button class="filter-btn" data-filter="time" data-value="2:00 PM">2:00 PM (3/16)</button>
+                        <button class="filter-btn" data-filter="time" data-value="2:20 PM">2:20 PM (3/16)</button>
+                        <button class="filter-btn" data-filter="time" data-value="2:40 PM">2:40 PM (3/16)</button>
+                        <button class="filter-btn" data-filter="time" data-value="3:00 PM">3:00 PM (3/16)</button>
+                    </div>
+                </div>
+                
                 <div class="filter-group topic-filters">
                     <label>🏷️ 主题分类</label>
                     <div class="filter-buttons">
@@ -449,25 +468,6 @@
                         <button class="filter-btn" data-filter="topic" data-value="Physical AI">Physical AI</button>
                         <button class="filter-btn" data-filter="topic" data-value="Edge Computing">Edge Computing</button>
                         <button class="filter-btn" data-filter="topic" data-value="Networking">Networking</button>
-                    </div>
-                </div>
-                
-                <div class="filter-group time-filters">
-                    <label>⏰ 时间段</label>
-                    <div class="filter-buttons">
-                        <button class="filter-btn" data-filter="time" data-value="8:30 AM">8:30 AM (3/15)</button>
-                        <button class="filter-btn" data-filter="time" data-value="7:00 PM">7:00 PM (3/15)</button>
-                        <button class="filter-btn" data-filter="time" data-value="8:00 PM">8:00 PM (3/15)</button>
-                        <button class="filter-btn" data-filter="time" data-value="11:00 PM">11:00 PM (3/15)</button>
-                        <button class="filter-btn" data-filter="time" data-value="12:00 AM">12:00 AM (3/16)</button>
-                        <button class="filter-btn" data-filter="time" data-value="1:00 AM">1:00 AM (3/16)</button>
-                        <button class="filter-btn" data-filter="time" data-value="8:00 AM">8:00 AM (3/16)</button>
-                        <button class="filter-btn" data-filter="time" data-value="11:00 AM">11:00 AM (3/16)</button>
-                        <button class="filter-btn" data-filter="time" data-value="1:40 PM">1:40 PM (3/16)</button>
-                        <button class="filter-btn" data-filter="time" data-value="2:00 PM">2:00 PM (3/16)</button>
-                        <button class="filter-btn" data-filter="time" data-value="2:20 PM">2:20 PM (3/16)</button>
-                        <button class="filter-btn" data-filter="time" data-value="2:40 PM">2:40 PM (3/16)</button>
-                        <button class="filter-btn" data-filter="time" data-value="3:00 PM">3:00 PM (3/16)</button>
                     </div>
                 </div>
             </div>
@@ -1400,14 +1400,22 @@
                             </div>
                             <div class="session-id">${session.id}</div>
                             <h3 class="session-title">${session.title}</h3>
-                            <span class="session-topic">${session.topic}</span>
+                            ${(() => {
+                                const topicParts = session.topic.split(' - ');
+                                const mainTopic = topicParts[0];
+                                const subTopic = topicParts[1] || '';
+                                return `<div class="session-topics" style="margin-bottom: 10px;">
+                                    <span class="session-main-topic" style="background: #667eea; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; margin-right: 6px;">${mainTopic}</span>
+                                    ${subTopic ? `<span class="session-sub-topic" style="background: #e0e0e0; color: #555; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem;">${subTopic}</span>` : ''}
+                                </div>`;
+                            })()}
                             <div class="session-speakers">
                                 <strong>👤 演讲者:</strong> ${session.speakers}
                             </div>
                             <div class="session-language" style="color: #888; font-size: 0.85rem; margin-bottom: 8px;">
                                 🌐 ${session.language}
                             </div>
-                            <div class="session-description">${session.description}</div>
+                            <!-- Description hidden but kept in data for future use -->
                             <div class="view-analysis" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; color: #667eea; font-weight: 600; font-size: 0.9rem;">
                                 🔍 查看视频分析 →
                             </div>
