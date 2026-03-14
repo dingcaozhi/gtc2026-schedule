@@ -364,7 +364,7 @@
             
             <div class="stats-bar">
                 <div class="stat-item">
-                    <div class="stat-number" id="total-count">18</div>
+                    <div class="stat-number" id="total-count">20</div>
                     <div class="stat-label">总会议数</div>
                 </div>
                 <div class="stat-item">
@@ -412,6 +412,14 @@
                         <button class="filter-btn beginner" data-filter="level" data-value="Beginner">初级</button>
                         <button class="filter-btn intermediate" data-filter="level" data-value="Intermediate">中级</button>
                         <button class="filter-btn advanced" data-filter="level" data-value="Advanced">高级</button>
+                    </div>
+                </div>
+                
+                <div class="filter-group language-filters">
+                    <label>🌐 语言</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn" data-filter="language" data-value="English">English</button>
+                        <button class="filter-btn" data-filter="language" data-value="中文">中文</button>
                     </div>
                 </div>
                 
@@ -566,6 +574,18 @@
                 description: "Learn to build a scalable video search platform using NVIDIA AI Blueprints. Covers multimodal embedding models, vector databases, and VSS."
             },
             {
+                id: "gtc26-s81829",
+                title: "基于 verl 进行大模型强化学习的最佳实践",
+                time: "7:00 PM",
+                fullTime: "March 15, 2026 - 7:00 PM PDT",
+                speakers: "Yan Bai (NVIDIA), 巫锡斌 (字节跳动)",
+                language: "中文",
+                format: "Virtual",
+                level: "Intermediate",
+                topic: "LLM",
+                description: "verl 是目前最受欢迎的大模型强化学习框架。深入探讨 verl 的架构设计，介绍提升推理和训练性能的工作，以及端到端 Agentic RL 训练。支持 FSDP 和 Megatron Core 后端，提供 GRPO/PPO/DAPO/GSPO 等丰富算法。"
+            },
+            {
                 id: "gtc26-s81969",
                 title: "Revolutionizing Drug Discovery With AI-Powered Virtual Screening",
                 time: "7:00 PM",
@@ -638,6 +658,30 @@
                 description: "Learn how to accelerate video analytics using NVIDIA AI Blueprints. Covers real-time video processing and object detection."
             },
             {
+                id: "gtc26-s82283",
+                title: "面向大规模 Agent RL 的高并发沙箱系统构建与实践",
+                time: "11:00 PM",
+                fullTime: "March 15, 2026 - 11:00 PM PDT",
+                speakers: "超凡王 (腾讯), 志宇李 (腾讯)",
+                language: "中文",
+                format: "Virtual",
+                level: "Intermediate",
+                topic: "MLOps",
+                description: "分享支撑大规模 AgentRL 的基础设施设计与工程实践。重点介绍如何将环境启动延迟从分钟级压缩到毫秒级，支撑数十万级并发 Agent 沙箱环境运行，以及基于 NVIDIA Dynamo 的模型部署。"
+            },
+            {
+                id: "gtc26-s81974",
+                title: "基于 NVIDIA 全栈技术打造代理式 AI 与物理 AI 的未来基石",
+                time: "11:00 PM",
+                fullTime: "March 15, 2026 - 11:00 PM PDT",
+                speakers: "Meiran Peng (NVIDIA), 李泞伶 (Dify), 卓羽 (枢途科技), 任冬淳 (汤元科技)",
+                language: "中文",
+                format: "Virtual",
+                level: "Beginner",
+                topic: "AI Platforms",
+                description: "系统讲解如何借助 NVIDIA 完整技术栈设计、训练与部署新一代代理式 AI 与物理 AI 应用。包括 NeMo Agent Toolkit、Cosmos 世界模型、Isaac GR00T 基础模型等平台能力。"
+            },
+            {
                 id: "gtc26-s82127",
                 title: "Building a Brain for Your Robot: How to Create Autonomous Machines With AI",
                 time: "11:00 PM",
@@ -655,6 +699,7 @@
             time: [],
             format: [],
             level: [],
+            language: [],
             topic: []
         };
         
@@ -690,6 +735,11 @@
                     return false;
                 }
                 
+                // Language filter
+                if (activeFilters.language.length > 0 && !activeFilters.language.includes(session.language)) {
+                    return false;
+                }
+                
                 // Topic filter
                 if (activeFilters.topic.length > 0) {
                     const matchTopic = activeFilters.topic.some(topic => 
@@ -716,6 +766,7 @@
                             <div class="session-badges">
                                 <span class="badge badge-format-${session.format.toLowerCase().replace(' ', '-')}">${session.format}</span>
                                 <span class="badge badge-level-${session.level.toLowerCase()}">${session.level}</span>
+                                ${session.language === '中文' ? '<span class="badge" style="background: #fce4ec; color: #c2185b;">中文</span>' : ''}
                             </div>
                         </div>
                         <div class="session-id">${session.id}</div>
@@ -723,6 +774,9 @@
                         <span class="session-topic">${session.topic}</span>
                         <div class="session-speakers">
                             <strong>👤 演讲者:</strong> ${session.speakers}
+                        </div>
+                        <div class="session-language" style="color: #888; font-size: 0.85rem; margin-bottom: 8px;">
+                            🌐 ${session.language}
                         </div>
                         <div class="session-description">${session.description}</div>
                     </div>
