@@ -904,7 +904,7 @@
                 format: "In-Person",
                 level: "Intermediate",
                 topic: "AI Agents",
-                description: "As data volumes increase, the primary bottleneck for high-performance AI agents will shift from the model to the data. This increases the importance of the underlying data engine's ability to process massive enterprise datasets in real time. This scaling problem is further amplified by the desire to make the latest transactional business data seamlessly available to agentic processing. Join the experts from EDB for a technical deep dive into how to overcome these scaling and transactional integration hurdles using the world's most popular open-source database. We will showcase the architecture behind GPU acceleration in EDB Postgres AI, specifically how offloading complex analytical workloads to an NVIDIA RAPIDS Accelerator for Apache Spark eliminates traditional CPU bottlenecks. Through a review of TPC-DS benchmarks, we will demonstrate how to transform Postgres into a high-throughput engine capable of powering autonomous agentic analytics for real-time business decision-making. We will also showcase how EDB Postgres makes all transactional data available to GPU processing in real time through Apache Iceberg. This establishes a GPU-accelerated Hybrid Analytics and Transactional Processing (HTAP) stack, which at the same time avoids vendor lock-in by being fully compatible with the modern open analytics ecosystems. Note: All attendees will receive a complimentary copy of the new O'Reilly business guide, "Building a Data and AI Platform with PostgreSQL.\""
+                description: "As data volumes increase, the primary bottleneck for high-performance AI agents will shift from the model to the data. This increases the importance of the underlying data engine's ability to process massive enterprise datasets in real time. This scaling problem is further amplified by the desire to make the latest transactional business data seamlessly available to agentic processing. Join the experts from EDB for a technical deep dive into how to overcome these scaling and transactional integration hurdles using the world's most popular open-source database. We will showcase the architecture behind GPU acceleration in EDB Postgres AI, specifically how offloading complex analytical workloads to an NVIDIA RAPIDS Accelerator for Apache Spark eliminates traditional CPU bottlenecks. Through a review of TPC-DS benchmarks, we will demonstrate how to transform Postgres into a high-throughput engine capable of powering autonomous agentic analytics for real-time business decision-making. We will also showcase how EDB Postgres makes all transactional data available to GPU processing in real time through Apache Iceberg. This establishes a GPU-accelerated Hybrid Analytics and Transactional Processing (HTAP) stack, which at the same time avoids vendor lock-in by being fully compatible with the modern open analytics ecosystems. Note: All attendees will receive a complimentary copy of the new O'Reilly business guide, Building a Data and AI Platform with PostgreSQL."
             },
             {
                 id: "gtc26-ex82286",
@@ -928,7 +928,7 @@
                 format: "In-Person",
                 level: "Intermediate",
                 topic: "Simulation",
-                description: "Robotics and physical AI have reached their "ChatGPT" moment. The reliability for industrial use requires precision dexterity, beginning with precision simulation and high sim2real fidelity, where robots learn and reason in simulation before deployment. This session highlights the collaboration between Synopsys and Analog Devices (ADI) to augment the fidelity of simulation environments for dexterity in industrial robotics. The collaboration includes an industry-standard benchmark for tactile manipulation, led by ADI and enabled by Synopsys."
+                description: "Robotics and physical AI have reached their ChatGPT moment. The reliability for industrial use requires precision dexterity, beginning with precision simulation and high sim2real fidelity, where robots learn and reason in simulation before deployment. This session highlights the collaboration between Synopsys and Analog Devices (ADI) to augment the fidelity of simulation environments for dexterity in industrial robotics. The collaboration includes an industry-standard benchmark for tactile manipulation, led by ADI and enabled by Synopsys."
             },
             {
                 id: "gtc26-s81561",
@@ -1064,7 +1064,7 @@
             },
             {
                 id: "gtc26-s81846",
-                title: "洞察 2026 中国 AI 市场 — AI 智能体和物理 AI 浪潮下的创业风口 [S81846]",
+                title: "洞察 2026 中国 AI 市场 - AI 智能体和物理 AI 浪潮下的创业风口 [S81846]",
                 time: "1:00 AM",
                 fullTime: "March 16, 2026 - 1:00 a.m. - 2:00 a.m. PDT",
                 speakers: "Jack Pei | NVIDIA 初创加速计划经理 | NVIDIA, 张 煜 | 创始合伙人 | 清智资本, Haofei Liu | 创始合伙人 | 盛景嘉成创投, 吴 杰茜 | 创始人兼 CEO | 好耶科技",
@@ -1124,7 +1124,7 @@
             },
             {
                 id: "gtc26-s81984",
-                title: "基于 NVIDIA HPC 打造端到端生成式推荐 OneRec 训练：面向工业级推荐大模型的"超算引擎" [S81984]",
+                title: "基于 NVIDIA HPC 打造端到端生成式推荐 OneRec 训练：面向工业级推荐大模型的「超算引擎」 [S81984]",
                 time: "12:00 AM",
                 fullTime: "March 16, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
                 speakers: "Bin Chai | 软件开发工程师 | NVIDIA, 晋 欧阳 | AIPlatform 训练负责人 | 快手科技",
@@ -1240,7 +1240,7 @@
                 format: "In-Person",
                 level: "Beginner",
                 topic: "Data Science",
-                description: "AI is transforming the world's financial institutions from systems of record into systems of intelligence. In this session, we'll explore why banks, asset managers, and payments firms are building AI "factories" that transform transactional exhaust into high-value signals, powering everything from profitable trading and precision risk management to hyper-personalized customer experiences and proactive fraud detection. We'll discuss emerging patterns for domain-adapted models, AI agents embedded in core banking and payments workflows, and the governance required to scale safely in a highly regulated environment. You'll leave with a practical roadmap for partnering with NVIDIA's platforms and ecosystem to build AI-native financial services that learn continuously and compete on intelligence, not just balance sheet size."
+                description: "AI is transforming the world's financial institutions from systems of record into systems of intelligence. In this session, we'll explore why banks, asset managers, and payments firms are building AI \"factories\" that transform transactional exhaust into high-value signals, powering everything from profitable trading and precision risk management to hyper-personalized customer experiences and proactive fraud detection. We'll discuss emerging patterns for domain-adapted models, AI agents embedded in core banking and payments workflows, and the governance required to scale safely in a highly regulated environment. You'll leave with a practical roadmap for partnering with NVIDIA's platforms and ecosystem to build AI-native financial services that learn continuously and compete on intelligence, not just balance sheet size."
             },
             {
                 id: "gtc26-s82476",
@@ -1302,27 +1302,31 @@
                     }
                 }
 
-                // Time filter
-                if (activeFilters.time.length > 0 && !activeFilters.time.includes(session.time)) {
-                    return false;
+                // Time filter - OR logic within category
+                if (activeFilters.time.length > 0) {
+                    const timeMatch = activeFilters.time.some(time => session.time.includes(time));
+                    if (!timeMatch) return false;
                 }
-
-                // Format filter
-                if (activeFilters.format.length > 0 && !activeFilters.format.includes(session.format)) {
-                    return false;
+                
+                // Format filter - OR logic within category
+                if (activeFilters.format.length > 0) {
+                    const formatMatch = activeFilters.format.some(format => session.format === format);
+                    if (!formatMatch) return false;
                 }
-
-                // Level filter
-                if (activeFilters.level.length > 0 && !activeFilters.level.includes(session.level)) {
-                    return false;
+                
+                // Level filter - OR logic within category
+                if (activeFilters.level.length > 0) {
+                    const levelMatch = activeFilters.level.some(level => session.level === level);
+                    if (!levelMatch) return false;
                 }
-
-                // Language filter
-                if (activeFilters.language.length > 0 && !activeFilters.language.includes(session.language)) {
-                    return false;
+                
+                // Language filter - OR logic within category
+                if (activeFilters.language.length > 0) {
+                    const languageMatch = activeFilters.language.some(lang => session.language === lang);
+                    if (!languageMatch) return false;
                 }
-
-                // Topic filter
+                
+                // Topic filter - OR logic within category
                 if (activeFilters.topic.length > 0) {
                     const matchTopic = activeFilters.topic.some(topic =>
                         session.topic.toLowerCase().includes(topic.toLowerCase())
