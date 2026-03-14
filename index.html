@@ -368,11 +368,11 @@
                     <div class="stat-label">总会议数</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">9</div>
+                    <div class="stat-number" id="in-person-count">-</div>
                     <div class="stat-label">线下会议</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">9</div>
+                    <div class="stat-number" id="virtual-count">-</div>
                     <div class="stat-label">线上会议</div>
                 </div>
                 <div class="stat-item">
@@ -393,6 +393,13 @@
                     <div class="filter-buttons">
                         <button class="filter-btn" data-filter="date" data-value="March 15">📅 3月15日</button>
                         <button class="filter-btn" data-filter="date" data-value="March 16">📅 3月16日</button>
+                    </div>
+                </div>
+                
+                <div class="filter-group highlights-filters">
+                    <label>⭐ 精选</label>
+                    <div class="filter-buttons">
+                        <button class="filter-btn" data-filter="highlights" data-value="true">⭐ Highlights (61)</button>
                     </div>
                 </div>
 
@@ -482,6 +489,16 @@
     </div>
 
     <script>
+        // Featured/Highlights session IDs (61 sessions)
+        const highlightsSessionIds = [
+            "81475", "81490", "81491", "81492", "81493", "81528", "81537", "81569", "81573", "81584",
+            "81595", "81598", "81612", "81613", "81628", "81629", "81636", "81643", "81645", "81667",
+            "81671", "81684", "81690", "81695", "81711", "81713", "81715", "81724", "81748", "81755",
+            "81769", "81778", "81786", "81789", "81804", "81806", "81810", "81836", "81844", "81859",
+            "81862", "81874", "81911", "82001", "82017", "82132", "82146", "82147", "82167", "82238",
+            "82285", "82391", "82400", "82409", "82429", "82432", "82446", "82448", "82449", "82480", "82553"
+        ];
+        
         const sessions = [
             {
                 id: "gtc26-dliw82209",
@@ -1285,7 +1302,8 @@
             format: [],
             level: [],
             language: [],
-            topic: []
+            topic: [],
+            highlights: []
         };
 
         let searchQuery = '';
@@ -1344,10 +1362,23 @@
                     );
                     if (!matchTopic) return false;
                 }
+                
+                // Highlights filter
+                if (activeFilters.highlights.length > 0) {
+                    const sessionIdNum = session.id.replace('gtc26-s', '').replace(/[^0-9]/g, '');
+                    const isHighlight = highlightsSessionIds.includes(sessionIdNum);
+                    if (!isHighlight) return false;
+                }
 
                 return true;
             });
 
+            // Calculate stats
+            const inPersonCount = sessions.filter(s => s.format === 'In-Person').length;
+            const virtualCount = sessions.filter(s => s.format === 'Virtual').length;
+            document.getElementById('in-person-count').textContent = inPersonCount;
+            document.getElementById('virtual-count').textContent = virtualCount;
+            
             if (filteredSessions.length === 0) {
                 container.innerHTML = '';
                 noResults.classList.add('show');
