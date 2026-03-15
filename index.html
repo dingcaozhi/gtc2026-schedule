@@ -182,7 +182,7 @@
             border-color: #f44336;
         }
 
-        .场会议-grid {
+        .sessions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
             gap: 25px;
@@ -346,7 +346,7 @@
                 font-size: 1.8rem;
             }
 
-            .场会议-grid {
+            .sessions-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -401,7 +401,7 @@
                 <div class="filter-group highlights-filters">
                     <label>⭐ 精选</label>
                     <div class="filter-buttons">
-                        <button class="filter-btn active" data-filter="highlights" data-value="true">⭐ 精选 (61)</button>
+                        <button class="filter-btn active" data-filter="highlights" data-value="true">⭐ Highlights (61)</button>
                     </div>
                 </div>
 
@@ -410,18 +410,18 @@
                     <div class="filter-buttons">
                         <button class="filter-btn in-person" data-filter="format" data-value="线下">线下 线下</button>
                         <button class="filter-btn virtual" data-filter="format" data-value="线上">线上 线上</button>
-                        <button class="filter-btn" data-filter="format" data-value="混合">混合 混合</button>
+                        <button class="filter-btn" data-filter="format" data-value="Hybrid">混合 Hybrid</button>
                     </div>
                 </div>
 
                 <div class="filter-group level-filters">
                     <label>📊 难度级别</label>
                     <div class="filter-buttons">
-                        <button class="filter-btn beginner" data-filter="level" data-value="初级">初级</button>
-                        <button class="filter-btn intermediate" data-filter="level" data-value="中级">中级</button>
-                        <button class="filter-btn advanced" data-filter="level" data-value="高级">高级</button>
-                        <button class="filter-btn" data-filter="level" data-value="通用">通用</button>
-                        <button class="filter-btn" data-filter="level" data-value="商业/管理">商业/管理</button>
+                        <button class="filter-btn beginner" data-filter="level" data-value="Beginner">初级</button>
+                        <button class="filter-btn intermediate" data-filter="level" data-value="Intermediate">中级</button>
+                        <button class="filter-btn advanced" data-filter="level" data-value="Advanced">高级</button>
+                        <button class="filter-btn" data-filter="level" data-value="General Interest">通用</button>
+                        <button class="filter-btn" data-filter="level" data-value="Business / Executive">商业/管理</button>
                     </div>
                 </div>
 
@@ -434,49 +434,49 @@
                 </div>
             </div>
             
-            <!-- 主题分类 filters - separate row -->
+            <!-- Topic filters - separate row -->
             <div class="filter-groups" style="margin-top: 15px;">
                 <div class="filter-group topic-filters" style="flex: 1; min-width: 100%;">
                     <label>🏷️ 主题分类</label>
                     <div class="filter-buttons">
-                        <button class="filter-btn" data-filter="topic" data-value="Keynote" data-zh="主题演讲">主题演讲</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Robotics" data-zh="机器人">机器人</button>
-                        <button class="filter-btn" data-filter="topic" data-value="AI Agents" data-zh="AI 智能体">AI 智能体</button>
-                        <button class="filter-btn" data-filter="topic" data-value="AI Platforms" data-zh="AI 平台">AI 平台</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Recommenders / Personalization" data-zh="推荐 / 个性化">Recommenders</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Image / Video Detection & Recognition" data-zh="图像 / 视频检测与识别">Image/Video Recognition</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Security for AI" data-zh="AI 安全">AI 安全</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Keynote">主题演讲</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Robotics">机器人</button>
+                        <button class="filter-btn" data-filter="topic" data-value="AI Agents">AI 智能体</button>
+                        <button class="filter-btn" data-filter="topic" data-value="AI Platforms">AI 平台</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Recommenders / Personalization">Recommenders</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Image / Video Detection & Recognition">Image/Video Recognition</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Security for AI">AI 安全</button>
                         <button class="filter-btn" data-filter="topic" data-value="Computer Vision">Computer Vision</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Data Science" data-zh="数据科学">数据科学</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Data Science">数据科学</button>
                         <button class="filter-btn" data-filter="topic" data-value="Data Center">Data Center</button>
-                        <button class="filter-btn" data-filter="topic" data-value="MLOps" data-zh="MLOps">MLOps</button>
+                        <button class="filter-btn" data-filter="topic" data-value="MLOps">MLOps</button>
                         <button class="filter-btn" data-filter="topic" data-value="Developer Tools">Developer Tools</button>
                         <button class="filter-btn" data-filter="topic" data-value="Simulation">Simulation</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Enterprise AI" data-zh="企业 AI">企业 AI</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Agentic AI / Generative AI" data-zh="代理式 AI / 生成式 AI">Agentic AI</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Text Generation" data-zh="文本生成">文本生成</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Code / Software Generation" data-zh="代码 / 软件生成">Code Generation</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Edge Computing" data-zh="边缘计算">边缘计算</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Enterprise AI">企业 AI</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Agentic AI / Generative AI">Agentic AI</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Text Generation">文本生成</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Code / Software Generation">Code Generation</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Edge Computing">边缘计算</button>
                         <button class="filter-btn" data-filter="topic" data-value="Networking">Networking</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Large 语言 Models (LLMs)">LLMs</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Embedded Edge" data-zh="嵌入式边缘">嵌入式边缘</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Trustworthy AI / Cybersecurity" data-zh="可信 AI / 网络安全">Trustworthy AI</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Certification" data-zh="认证">认证</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Infrastructure" data-zh="基础设施">基础设施</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Simulation / Modeling / Design" data-zh="仿真 / 建模 / 设计">Simulation</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Humanoid Robots" data-zh="人形机器人">人形机器人</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Robot Manipulation" data-zh="机器人操作">机器人操作</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Performance Optimization" data-zh="性能优化">性能优化</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Computer Vision / Video Analytics" data-zh="计算机视觉 / 视频分析">Computer Vision</button>
-                        <button class="filter-btn" data-filter="topic" data-value="AI Platforms" data-zh="AI 平台">AI 平台</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Industrial Digitalization / Digital Twin" data-zh="工业数字化 / 数字孪生">Digital Twin</button>
-                        <button class="filter-btn" data-filter="topic" data-value="CAE" data-zh="计算机辅助工程">计算机辅助工程</button>
-                        <button class="filter-btn" data-filter="topic" data-value="Supercomputing" data-zh="超级计算">超级计算</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Large Language Models (LLMs)">LLMs</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Embedded Edge">嵌入式边缘</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Trustworthy AI / Cybersecurity">Trustworthy AI</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Certification">认证</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Infrastructure">基础设施</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Simulation / Modeling / Design">Simulation</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Humanoid Robots">人形机器人</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Robot Manipulation">机器人操作</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Performance Optimization">性能优化</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Computer Vision / Video Analytics">Computer Vision</button>
+                        <button class="filter-btn" data-filter="topic" data-value="AI Platforms">AI 平台</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Industrial Digitalization / Digital Twin">Digital Twin</button>
+                        <button class="filter-btn" data-filter="topic" data-value="CAE">计算机辅助工程</button>
+                        <button class="filter-btn" data-filter="topic" data-value="Supercomputing">超级计算</button>
                     </div>
                 </div>
             </div>
             
-            <!-- 时间段 filters - separate row, last -->
+            <!-- Time filters - separate row, last -->
             <div class="filter-groups" style="margin-top: 15px;">
                 <div class="filter-group time-filters" style="flex: 1; min-width: 100%;">
                     <label>⏰ 时间段</label>
@@ -521,7 +521,7 @@
             </div>
         </div>
 
-        <div class="场会议-grid" id="场会议-container">
+        <div class="sessions-grid" id="sessions-container">
             <!-- Sessions will be inserted here -->
         </div>
 
@@ -532,12 +532,12 @@
         </div>
 
         <footer>
-            <p>数据来源: NVIDIA GTC 2026 | 制作 with ❤️</p>
+            <p>数据来源: NVIDIA GTC 2026 | 制作 ❤️</p>
         </footer>
     </div>
 
     <script>
-        // Featured/精选 session IDs (61 场会议)
+        // Featured/Highlights session IDs (61 sessions)
         const highlightsSessionIds = [
             "81475", "81490", "81491", "81492", "81493", "81528", "81537", "81569", "81573", "81584",
             "81595", "81598", "81612", "81613", "81628", "81629", "81636", "81643", "81645", "81667",
@@ -547,16 +547,16 @@
             "82285", "82391", "82400", "82409", "82429", "82432", "82446", "82448", "82449", "82480", "82553"
         ];
         
-        const 场会议 = [
+        const sessions = [
             {
                 id: "gtc26-dliw82209",
                 title: "Accelerated Networking for AI Infrastructure",
                 time: "8:30 AM",
-                full时间段: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
+                fullTime: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
                 位演讲者s: "Nawar Nawar | | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Networking / Communications",
                 sub_topic: "AI Networking",
                 description: "Gain a holistic understanding of AI factory networking, exploring how key communication methods between GPUs, racks, and storage shape overall AI perf..."
@@ -565,24 +565,24 @@
                 id: "gtc26-dliw82267",
                 title: "Adding New Knowledge to LLMs",
                 time: "8:30 AM",
-                full时间段: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
+                fullTime: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
                 位演讲者s: "John Jahanipour | Developer Relations Manager | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "高级",
+                level: "Advanced",
                 topic: "Developer Tools & Techniques",
-                sub_topic: "Large 语言 Models (LLMs)",
+                sub_topic: "Large Language Models (LLMs)",
                 description: "This comprehensive workshop equips developers with hands-on skills to transform open-source LLMs into domain-specialized AI assets...."
             },
             {
                 id: "gtc26-dliw82269",
                 title: "Building AI Agents with Multimodal Models",
                 time: "8:30 AM",
-                full时间段: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
+                fullTime: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
                 位演讲者s: "Mark Moyou | Senior Developer Relations Manager | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "初级",
+                level: "Beginner",
                 topic: "Agentic AI / Generative AI",
                 sub_topic: "Text Generation",
                 description: "Learn to develop neural network based multimodal models that can understand many different data types...."
@@ -591,24 +591,24 @@
                 id: "gtc26-dliw82270",
                 title: "Building LLM Applications with Prompt Engineering",
                 time: "8:30 AM",
-                full时间段: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
+                fullTime: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
                 位演讲者s: "Matt Linder | Senior Developer Relations Manager | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "初级",
+                level: "Beginner",
                 topic: "Developer Tools & Techniques",
-                sub_topic: "Large 语言 Models (LLMs)",
+                sub_topic: "Large Language Models (LLMs)",
                 description: "Learn modern prompt engineering techniques for building LLM-based applications...."
             },
             {
                 id: "gtc26-dliw82268",
                 title: "Building Observable and Scalable Multi-Agent Workflows",
                 time: "8:30 AM",
-                full时间段: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
+                fullTime: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
                 位演讲者s: "Vineeth Kalluru Srinivas | Developer Relations Manager | NVIDIA, Viraj Modak | Developer Relations Manager | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Agentic AI / Generative AI",
                 sub_topic: "Text Generation",
                 description: "Learn to develop multi-agent workflows tailored for Asset Lifecycle Management use cases...."
@@ -617,11 +617,11 @@
                 id: "gtc26-dliw82274",
                 title: "Deploying and Optimizing AI Inference at Scale",
                 time: "8:30 AM",
-                full时间段: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
+                fullTime: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
                 位演讲者s: "Anshul Jindal | Developer Relations Manager | NVIDIA, Mohak Chadha | Developer Relations Manager | NVIDIA, Severine Habert | Senior Developer Relations Manager | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "高级",
+                level: "Advanced",
                 topic: "Data Center / Cloud",
                 sub_topic: "Infrastructure",
                 description: "Learn to deploy and optimize large-scale AI inference using vLLM and NVIDIA Dynamo...."
@@ -630,11 +630,11 @@
                 id: "gtc26-dliw82265",
                 title: "Fundamentals of GPU-Accelerated Workflows with CUDA Python",
                 time: "8:30 AM",
-                full时间段: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
+                fullTime: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
                 位演讲者s: "Bryce Lelbach | CUDA C++ Core Libraries Lead | NVIDIA, Katrina Riehl | Senior Developer Relations Manager | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "初级",
+                level: "Beginner",
                 topic: "Developer Tools & Techniques",
                 sub_topic: "Performance Optimization",
                 description: "Hands-on introduction to GPU-accelerated computing in Python...."
@@ -643,11 +643,11 @@
                 id: "gtc26-dliw82273",
                 title: "How to Simulate, Train, Validate, and Deploy an End-to-End Robotics Workflow",
                 time: "8:30 AM",
-                full时间段: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
+                fullTime: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
                 位演讲者s: "Maycon Carvalho | Developer Relations Manager | NVIDIA, Kartik Sachdev | Developer Relations Manager | NVIDIA, Lior Ben Horin | Developer Relations Manager | NVIDIA, Zhijin Li | Developer Relations Manager | NVIDIA, Jieming Cui | Developer Relations Manager | NVIDIA, Steven Palma | Developer Relations Manager | NVIDIA, Jade Choghari | Developer Relations Manager | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "高级",
+                level: "Advanced",
                 topic: "Robotics",
                 sub_topic: "Robot Manipulation",
                 description: "End-to-end robotic workflow from simulation-based training to real-world deployment...."
@@ -656,11 +656,11 @@
                 id: "gtc26-dliw82272",
                 title: "OpenUSD Crash Course: Build 3D Data Pipelines for Physical AI",
                 time: "8:30 AM",
-                full时间段: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
+                fullTime: "March 15, 2026 - 8:30 a.m. - 5:00 p.m. PDT",
                 位演讲者s: "Daniel Roizman | Developer Relations Manager | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Simulation / Modeling / Design",
                 sub_topic: "Industrial Digitalization / Digital Twin",
                 description: "Learn OpenUSD principles and Python scripting to build scalable 3D data pipelines...."
@@ -669,11 +669,11 @@
                 id: "gtc26-s81823",
                 title: "利用 NVIDIA Cosmos VSS 构建智慧交通（ITS）违章检测系统",
                 time: "7:00 PM",
-                full时间段: "March 15, 2026 - 7:00 p.m. - 7:50 p.m. PDT",
+                fullTime: "March 15, 2026 - 7:00 p.m. - 7:50 p.m. PDT",
                 位演讲者s: "Chunxiao Cui | Senior Solutions Architect | NVIDIA, Jianqiang Li | Senior Solutions Architect | NVIDIA",
                 language: "Chinese",
                 format: "线上",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Computer Vision / Video Analytics",
                 sub_topic: "Video Analytics",
                 description: "介绍如何利用 NVIDIA Cosmos VSS 构建智慧交通违章检测系统。..."
@@ -682,11 +682,11 @@
                 id: "gtc26-s81829",
                 title: "基于 verl 进行大模型强化学习的最佳实践",
                 time: "7:00 PM",
-                full时间段: "March 15, 2026 - 7:00 p.m. - 7:50 p.m. PDT",
+                fullTime: "March 15, 2026 - 7:00 p.m. - 7:50 p.m. PDT",
                 位演讲者s: "Yan Bai | Senior Developer Relations Manager | NVIDIA, 巫锡斌 | 字节跳动",
                 language: "Chinese",
                 format: "线上",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Data Science",
                 sub_topic: "Recommenders / Personalization",
                 description: "深入探讨 verl 的架构设计，介绍提升推理和训练性能的工作。..."
@@ -695,11 +695,11 @@
                 id: "gtc26-s81969",
                 title: "利用 PhysicsNeMo 加速机器人中的柔性触觉传感器仿真",
                 time: "7:00 PM",
-                full时间段: "March 15, 2026 - 7:00 p.m. - 7:50 p.m. PDT",
+                fullTime: "March 15, 2026 - 7:00 p.m. - 7:50 p.m. PDT",
                 位演讲者s: "Xuezhou Zhu | VP of Research | Sharpa",
                 language: "Chinese",
                 format: "线上",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Simulation / Modeling / Design",
                 sub_topic: "CAE",
                 description: "介绍如何利用触觉信息训练模型，使机械手能够根据接触状态自适应调整行为。..."
@@ -708,11 +708,11 @@
                 id: "gtc26-s82354",
                 title: "基于 NVIDIA AI Enterprise 全栈赋能：AI Factory 重塑智造新标杆",
                 time: "8:00 PM",
-                full时间段: "March 15, 2026 - 8:00 p.m. - 8:50 p.m. PDT",
+                fullTime: "March 15, 2026 - 8:00 p.m. - 8:50 p.m. PDT",
                 位演讲者s: "青 杨 | 人工智能科技研究院副院长 | 海南金盘智能科技股份有限公司, 龙 王 | CEO | 矩阵起源（深圳）信息科技有限公司",
                 language: "Chinese",
                 format: "线上",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Enterprise AI",
                 sub_topic: "AI Strategy",
                 description: "介绍如何利用 NVIDIA AI Enterprise 全栈赋能制造业数字化转型。..."
@@ -721,11 +721,11 @@
                 id: "gtc26-s81939",
                 title: "面向灵巧操作的高效强化学习框架",
                 time: "8:00 PM",
-                full时间段: "March 15, 2026 - 8:00 p.m. - 8:50 p.m. PDT",
+                fullTime: "March 15, 2026 - 8:00 p.m. - 8:50 p.m. PDT",
                 位演讲者s: "Amulya Malladi | Developer Relations Manager | NVIDIA, Somshubra Majumdar | Developer Relations Manager | NVIDIA",
                 language: "English",
                 format: "线上",
-                level: "初级",
+                level: "Beginner",
                 topic: "Robotics",
                 sub_topic: "Robot Manipulation",
                 description: "A hands-on workshop for beginners to build their first AI agent...."
@@ -734,11 +734,11 @@
                 id: "gtc26-s82284",
                 title: "ROLL：集成 NVIDIA Megatron、高效易用的大规模 LLM 强化学习框架",
                 time: "8:00 PM",
-                full时间段: "March 15, 2026 - 8:00 p.m. - 8:50 p.m. PDT",
+                fullTime: "March 15, 2026 - 8:00 p.m. - 8:50 p.m. PDT",
                 位演讲者s: "Michael Clifford | Developer Relations Manager | NVIDIA, Ryan Rhodes | Developer Relations Manager | NVIDIA, Surbhi Kanthed | Developer Relations Manager | NVIDIA",
                 language: "English",
                 format: "线上",
-                level: "中级",
+                level: "Intermediate",
                 topic: "AI Agents",
                 sub_topic: "Multi-Agent Systems",
                 description: "Learn to deploy AI agents on Kubernetes clusters for production environments...."
@@ -747,11 +747,11 @@
                 id: "gtc26-s81981",
                 title: "十载相伴，NVIDIA 赋能创业公司在 AI 时代加速前行",
                 time: "8:00 PM",
-                full时间段: "March 15, 2026 - 8:00 p.m. - 8:50 p.m. PDT",
+                fullTime: "March 15, 2026 - 8:00 p.m. - 8:50 p.m. PDT",
                 位演讲者s: "Dave DeMarle | Developer Relations Manager | NVIDIA, Bryn Keller | Developer Relations Manager | NVIDIA, Scott Wittenburg | Developer Relations Manager | NVIDIA",
                 language: "English",
                 format: "线上",
-                level: "中级",
+                level: "Intermediate",
                 topic: "AI Platforms",
                 sub_topic: "Startup Ecosystem",
                 description: "Learn to develop multimodal AI agents for content creation workflows...."
@@ -760,24 +760,24 @@
                 id: "gtc26-s81961",
                 title: "高速公路数字化转型——基于云边协同的 VLM 大模型行业长尾场景落地",
                 time: "11:00 PM",
-                full时间段: "March 15, 2026 - 11:00 p.m. - 11:50 p.m. PDT",
+                fullTime: "March 15, 2026 - 11:00 p.m. - 11:50 p.m. PDT",
                 位演讲者s: "Asier Arranz | Developer Relations Manager | NVIDIA, Carlos Alvarez | Developer Relations Manager | NVIDIA, Michael Sherman | Developer Relations Manager | NVIDIA",
                 language: "English",
                 format: "线上",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Computer Vision / Video Analytics",
                 sub_topic: "Image / Video Detection & Recognition",
-                description: "学习如何 to accelerate video analytics using NVIDIA AI Blueprints...."
+                description: "Learn how to accelerate video analytics using NVIDIA AI Blueprints...."
             },
             {
                 id: "gtc26-s82283",
                 title: "面向大规模 Agent RL 的高并发沙箱系统构建与实践",
                 time: "11:00 PM",
-                full时间段: "March 15, 2026 - 11:00 p.m. - 11:50 p.m. PDT",
+                fullTime: "March 15, 2026 - 11:00 p.m. - 11:50 p.m. PDT",
                 位演讲者s: "超凡王 | 腾讯, 志宇李 | 腾讯",
                 language: "Chinese",
                 format: "线上",
-                level: "中级",
+                level: "Intermediate",
                 topic: "MLOps",
                 sub_topic: "Infrastructure",
                 description: "分享支撑大规模 AgentRL 的基础设施设计与工程实践。..."
@@ -786,11 +786,11 @@
                 id: "gtc26-s81974",
                 title: "基于 NVIDIA 全栈技术打造代理式 AI 与物理 AI 的未来基石",
                 time: "11:00 PM",
-                full时间段: "March 15, 2026 - 11:00 p.m. - 11:50 p.m. PDT",
+                fullTime: "March 15, 2026 - 11:00 p.m. - 11:50 p.m. PDT",
                 位演讲者s: "Meiran Peng | NVIDIA, 李泞伶 | Dify, 卓羽 | 枢途科技, 任冬淳 | 汤元科技",
                 language: "Chinese",
                 format: "线上",
-                level: "初级",
+                level: "Beginner",
                 topic: "AI Platforms",
                 sub_topic: "Full Stack AI",
                 description: "系统讲解如何借助 NVIDIA 完整技术栈设计、训练与部署新一代代理式 AI 与物理 AI 应用。..."
@@ -799,24 +799,24 @@
                 id: "gtc26-s82127",
                 title: "工业级具身智能，正在从概念走向现实",
                 time: "11:00 PM",
-                full时间段: "March 15, 2026 - 11:00 p.m. - 11:50 p.m. PDT",
+                fullTime: "March 15, 2026 - 11:00 p.m. - 11:50 p.m. PDT",
                 位演讲者s: "Katie (Wenyan) Lin | Developer Relations Manager | NVIDIA",
                 language: "English",
                 format: "线上",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Robotics",
                 sub_topic: "Humanoid Robots",
-                description: "学习如何 to build AI-powered autonomous robots using NVIDIA Isaac...."
+                description: "Learn how to build AI-powered autonomous robots using NVIDIA Isaac...."
             },
             {
                 id: "gtc26-s81577",
                 title: "通过触觉 AI 解锁高自由度灵巧操作 [S81577]",
                 time: "12:00 AM",
-                full时间段: "March 16, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
+                fullTime: "March 16, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
                 位演讲者s: "Xuezhou Zhu | VP of Research | Sharpa",
                 language: "Chinese",
                 format: "线上",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Robotics",
                 sub_topic: "Robot Manipulation",
                 description: "With the emergence of High-DoF dexterous hands integrated with tactile sensing-such as SharpaWave-robotic dexterous manipulation and high-quality data collection have ushered in new development opportunities."
@@ -825,23 +825,23 @@
                 id: "gtc26-s81595",
                 title: "GTC 2026 Keynote [S81595]",
                 time: "11:00 AM",
-                full时间段: "March 16, 2026 - 11:00 a.m. - 1:00 p.m. PDT",
+                fullTime: "March 16, 2026 - 11:00 a.m. - 1:00 p.m. PDT",
                 位演讲者s: "Jensen Huang | Founder and CEO | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "通用",
+                level: "General Interest",
                 topic: "Keynote",
-                description: "在这个 keynote, NVIDIA founder and CEO Jensen Huang looks ahead to the future of accelerated computing and AI, and how they will shape the next era of computing across every industry."
+                description: "In this keynote, NVIDIA founder and CEO Jensen Huang looks ahead to the future of accelerated computing and AI, and how they will shape the next era of computing across every industry."
             },
             {
                 id: "gtc26-s81900",
                 title: "AI 重塑影视产业：打造基于 NVIDIA 全栈的 AI 算力池，生成式 AI工作流与 OpenUSD 资产平台 [S81900]",
                 time: "12:00 AM",
-                full时间段: "March 16, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
+                fullTime: "March 16, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
                 位演讲者s: "Bin Chai | 软件开发工程师 | NVIDIA, 晋 欧阳 | AIPlatform 训练负责人 | 快手科技",
                 language: "Chinese",
                 format: "线上",
-                level: "高级",
+                level: "Advanced",
                 topic: "Data Science",
                 sub_topic: "Recommenders / Personalization",
                 description: "我们基于 NVIDIA GPU，针对快手内部的生成式推荐模型 OneRec 做了较为深入的软硬结合优化，高效利用 TensorCore 算力、HBM、高速 RDMA 网络在单机算力/多机互联两个维度加速生成式推荐训练，助力 OneRec 在全场景的部署上线。"
@@ -852,271 +852,271 @@
                 id: "gtc26-cwes81440",
                 title: "Leverage Acceleration for AI and HPC in Algorithmic Trading [CWES81440]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:50 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:50 p.m. PDT",
                 位演讲者s: "Yuliana Zamora | Sr. Developer Relations Manager | NVIDIA, Pooja Aniker | Solutions Architect | NVIDIA, Mark Bennett | Sr. Solutions Architect | NVIDIA, Derek Beattie | Solutions Architect | NVIDIA, Siddharth Samsi | Sr. Solutions Architect | NVIDIA, Manasa Murthy | Digital Marketing Organization Manager | NVIDIA, Peihan Huo | Solution Architect | NVIDIA, Bogdan Vioreanu | Sr. Solutions Architect | NVIDIA, Roman Yokunda Enzmann | Solutions Architect | NVIDIA, Lavinia Ghita | Solutions Architect Manager | NVIDIA, Martin Marciniszyn Mehringer | Sr. AI Developer Technology Manager | NVIDIA, Yongming Shi | Solution Architect Manager | NVIDIA, Dhruv Desai | Sr. Solutions Architect | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Developer Tools",
                 sub_topic: "Performance Optimization",
-                description: "加入这个 interactive session with NVIDIA experts to discover how the convergence of artificial intelligence and high performance computing (HPC) is reshaping algorithmic trading. As trading strategies grow in complexity, the need for high-throughput processing and advanced modeling capabilities becomes critical. Speak with our experts about the latest methods to leverage acceleration for data-intensive tasks, from training sophisticated AI models to running massive-scale simulations. 重要提示： 与专家交流 场会议 are interactive 场会议 that give you a unique opportunity to meet, in either a group or one-on-one setting, with the minds behind NVIDIA's products and research to get your questions answered. Attendees can meet with experts on a first-come, first-served basis."
+                description: "Join this interactive session with NVIDIA experts to discover how the convergence of artificial intelligence and high performance computing (HPC) is reshaping algorithmic trading. As trading strategies grow in complexity, the need for high-throughput processing and advanced modeling capabilities becomes critical. Speak with our experts about the latest methods to leverage acceleration for data-intensive tasks, from training sophisticated AI models to running massive-scale simulations. Important: Connect With the Experts sessions are interactive sessions that give you a unique opportunity to meet, in either a group or one-on-one setting, with the minds behind NVIDIA's products and research to get your questions answered. Attendees can meet with experts on a first-come, first-served basis."
             },
             {
                 id: "gtc26-cwes81843",
                 title: "The Developer's Roadmap to Physical AI: Bridging Digital Models and Real-World Systems [CWES81843]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:50 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:50 p.m. PDT",
                 位演讲者s: "Stephanie Rubenstein | Sr. Product Marketing Manager | NVIDIA, Cobus Bothma | Sr. Product Manager | NVIDIA, Raymond Lo |  | NVIDIA, Johnny Nunez |  | NVIDIA, Ashley Goldstein | Lead Tech Marketing Engineer | NVIDIA, Brian Harrison | Sr. Director of Product Management Omniverse | NVIDIA, Oliver Seifert |  | NVIDIA, Chhavi Nijhawan | Sr. Product Marketing Manager - Cosmos Reason & Metropolis | NVIDIA, Mitesh Patel | Product Marketing Manager | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Computer Vision",
                 sub_topic: "Computational Imaging",
-                description: "The era of generative AI has mastered digital content, but the next frontier lies in the physical world. For developers comfortable with LLMs and retrieval-augmented generation (RAG), the leap into physical AI-robotics, autonomous systems, and edge computing-can feel like starting from zero. 本次会议 will bridge that gap. 我们将 deconstruct physical AI workflows, showing you how to translate digital reasoning into physical action. We'll explore how to move beyond text-based inputs to incorporate multi-modal sensing and spatial intelligence, turning static models into interactive, real-world agents. 重要提示： 与专家交流 场会议 are interactive 场会议 that give you a unique opportunity to meet, in either a group or one-on-one setting, with the minds behind NVIDIA's products and research to get your questions answered. Attendees can meet with experts on a first-come, first-served basis."
+                description: "The era of generative AI has mastered digital content, but the next frontier lies in the physical world. For developers comfortable with LLMs and retrieval-augmented generation (RAG), the leap into physical AI-robotics, autonomous systems, and edge computing-can feel like starting from zero. This session will bridge that gap. We will deconstruct physical AI workflows, showing you how to translate digital reasoning into physical action. We'll explore how to move beyond text-based inputs to incorporate multi-modal sensing and spatial intelligence, turning static models into interactive, real-world agents. Important: Connect With the Experts sessions are interactive sessions that give you a unique opportunity to meet, in either a group or one-on-one setting, with the minds behind NVIDIA's products and research to get your questions answered. Attendees can meet with experts on a first-come, first-served basis."
             },
             {
                 id: "gtc26-dlit81484",
                 title: "How to Run AI-Powered Computer-Aided Engineering Simulations [DLIT81484]",
                 time: "2:00 PM",
-                full时间段: "March 16, 2026 - 2:00 p.m. - 3:45 p.m. PDT",
+                fullTime: "March 16, 2026 - 2:00 p.m. - 3:45 p.m. PDT",
                 位演讲者s: "Mark Hobbs | Solutions Architect | NVIDIA, Pablo Hermoso-Moreno | Sr. Solutions Architect | NVIDIA, Ira Shokar | Solutions Architect | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Simulation",
                 sub_topic: "CAE",
-                description: "在这个 lab, we explore how to build AI surrogate models for crash simulations, one of the most computationally intensive tasks in computer aided-engineering (CAE). 学习如何 modern AI architectures can reproduce high-fidelity physics simulations at a fraction of the cost, enabling faster design exploration and decision-making. We'll walk through the full workflow for developing an AI surrogate for CAE applications, including data preparation and analysis, training and optimization, loading and running inference with pre-trained models, and evaluating model accuracy and uncertainty. We'll also discuss how AI-accelerated workflows are transforming CAE across various industries and areas of research, and how these tools can integrate seamlessly into existing engineering pipelines. 先决条件： Basic understanding of engineering or scientific modeling workflows and the associated technical terminology Basic programming knowledge in Python (data structures, functions, basic libraries) Understanding of deep learning concepts (neural networks, training, inference) Experience with PyTorch or similar ML frameworks Experience with Linux command line operations Basic understanding of data preprocessing techniques Basic knowledge of parallel computing concepts Understanding of model validation and verification methods"
+                description: "In this lab, we explore how to build AI surrogate models for crash simulations, one of the most computationally intensive tasks in computer aided-engineering (CAE). Learn how modern AI architectures can reproduce high-fidelity physics simulations at a fraction of the cost, enabling faster design exploration and decision-making. We'll walk through the full workflow for developing an AI surrogate for CAE applications, including data preparation and analysis, training and optimization, loading and running inference with pre-trained models, and evaluating model accuracy and uncertainty. We'll also discuss how AI-accelerated workflows are transforming CAE across various industries and areas of research, and how these tools can integrate seamlessly into existing engineering pipelines. Prerequisite(s): Basic understanding of engineering or scientific modeling workflows and the associated technical terminology Basic programming knowledge in Python (data structures, functions, basic libraries) Understanding of deep learning concepts (neural networks, training, inference) Experience with PyTorch or similar ML frameworks Experience with Linux command line operations Basic understanding of data preprocessing techniques Basic knowledge of parallel computing concepts Understanding of model validation and verification methods"
             },
             {
                 id: "gtc26-dlit81800",
                 title: "Assembling Industrial Digital Twins with OpenUSD and NVIDIA Omniverse Libraries [DLIT81800]",
                 time: "2:00 PM",
-                full时间段: "March 16, 2026 - 2:00 p.m. - 3:45 p.m. PDT",
+                fullTime: "March 16, 2026 - 2:00 p.m. - 3:45 p.m. PDT",
                 位演讲者s: "Jay Axe | Technical Product Manager | NVIDIA, Ernesto Pacheco | Senior Product Manager | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Simulation",
                 sub_topic: "Industrial Digitalization / Digital Twin",
-                description: "在这个 hands-on lab, participants will explore how to build industrial digital twins from manufacturing facilities to AI factories, using OpenUSD and NVIDIA Omniverse libraries, drawing on real-world collaboration with industry leaders. The session walks through an end-to-end workflow, from CAD models to full digital twin assembly, demonstrating how manufacturers are transforming design and production through simulation and interoperability. 先决条件： 中级 experience with 3D content concepts: meshes, materials, transforms, scene hierarchies, and USD fundamentals Familiarity with manufacturing workflows, factory layouts, or industrial automation processes Basic Python scripting experience for automation and integration tasks Knowledge of data integration concepts and structured data formats"
+                description: "In this hands-on lab, participants will explore how to build industrial digital twins from manufacturing facilities to AI factories, using OpenUSD and NVIDIA Omniverse libraries, drawing on real-world collaboration with industry leaders. The session walks through an end-to-end workflow, from CAD models to full digital twin assembly, demonstrating how manufacturers are transforming design and production through simulation and interoperability. Prerequisite(s): Intermediate experience with 3D content concepts: meshes, materials, transforms, scene hierarchies, and USD fundamentals Familiarity with manufacturing workflows, factory layouts, or industrial automation processes Basic Python scripting experience for automation and integration tasks Knowledge of data integration concepts and structured data formats"
             },
             {
                 id: "gtc26-dlit81879",
                 title: "Create Vision AI Applications With Generative AI Coding Agents [DLIT81879]",
                 time: "2:00 PM",
-                full时间段: "March 16, 2026 - 2:00 p.m. - 3:45 p.m. PDT",
+                fullTime: "March 16, 2026 - 2:00 p.m. - 3:45 p.m. PDT",
                 位演讲者s: "Carlos Garcia-Sierra | Product Manager - Metropolis AI Workflows | NVIDIA, Monika Jhuria | Technical Marketing Engineer | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "初级",
+                level: "Beginner",
                 topic: "Computer Vision",
                 sub_topic: "Image / Video Detection & Recognition",
-                description: "Computer vision is a cornerstone of the generative AI revolution, providing the essential visual metadata required by vision language models (VLMs) to extract actionable insights. 在这个 two-hour instructor-led workshop, you will learn how to GPU-accelerate your video analytics workflow by combining the NVIDIA DeepStream SDK with the power of prompt engineering. 了解如何 to generate complete, GPU-accelerated DeepStream pipelines using simple natural language prompts. Whether you are a developer new to DeepStream or an advanced user looking to accelerate your prototyping, this course demonstrates how to produce intuitive, readable Python applications without the manual overhead. Join us to bridge the gap between traditional video analytics and modern GenAI development. 先决条件： Understanding of Python and basic knowledge of computer vision models."
+                description: "Computer vision is a cornerstone of the generative AI revolution, providing the essential visual metadata required by vision language models (VLMs) to extract actionable insights. In this two-hour instructor-led workshop, you will learn how to GPU-accelerate your video analytics workflow by combining the NVIDIA DeepStream SDK with the power of prompt engineering. Discover how to generate complete, GPU-accelerated DeepStream pipelines using simple natural language prompts. Whether you are a developer new to DeepStream or an advanced user looking to accelerate your prototyping, this course demonstrates how to produce intuitive, readable Python applications without the manual overhead. Join us to bridge the gap between traditional video analytics and modern GenAI development. Prerequisite(s): Understanding of Python and basic knowledge of computer vision models."
             },
             {
                 id: "gtc26-dlit81936",
                 title: "Fine-Tune a Telco Reasoning Model: A Guide to Synthetic Data, Tool Calling, and Evaluation [DLIT81936]",
                 time: "2:00 PM",
-                full时间段: "March 16, 2026 - 2:00 p.m. - 3:45 p.m. PDT",
+                fullTime: "March 16, 2026 - 2:00 p.m. - 3:45 p.m. PDT",
                 位演讲者s: "Amparo Canaveras | Sr. Solutions Architect Generative AI | NVIDIA, Aiden Chang | Solutions Architect | NVIDIA, Ari Uskudar | Telco AI Principal | NVIDIA, Rajeshwari Devaramani | Solutions Architect | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "AI Agents",
                 sub_topic: "Text Generation",
-                description: "Network operation centers (NoC) are the central nervous system of telecommunications, but they are often overwhelmed by \"alarm storms.\" In a traditional setup, engineers manually validate alarms, swivel between multiple dashboards, check topologies, and perform root-cause analysis. This manual process is time-consuming and prone to fatigue. To solve this, we are moving toward zero-touch, self-healing networks. 在这个 tutorial, we'll walk through creating a fine-tuning playbook that integrates synthetic data generation, training, and evaluation pipelines. We'll demonstrate how to build an AI-driven reasoning model capable of autonomously performing NoC engineer workflows - detecting issues, calling tools, and remediating incidents without human intervention. 先决条件： Familiarity with Python, LLM fine-tuning concepts, and basic containerization."
+                description: "Network operation centers (NoC) are the central nervous system of telecommunications, but they are often overwhelmed by \"alarm storms.\" In a traditional setup, engineers manually validate alarms, swivel between multiple dashboards, check topologies, and perform root-cause analysis. This manual process is time-consuming and prone to fatigue. To solve this, we are moving toward zero-touch, self-healing networks. In this tutorial, we'll walk through creating a fine-tuning playbook that integrates synthetic data generation, training, and evaluation pipelines. We'll demonstrate how to build an AI-driven reasoning model capable of autonomously performing NoC engineer workflows - detecting issues, calling tools, and remediating incidents without human intervention. Prerequisite(s): Familiarity with Python, LLM fine-tuning concepts, and basic containerization."
             },
             {
                 id: "gtc26-ex82039",
                 title: "Synergy at Scale: Unify Compute, Power and Cooling (Presented by COMPAL) [EX82039]",
                 time: "2:00 PM",
-                full时间段: "March 16, 2026 - 2:00 p.m. - 2:15 p.m. PDT",
+                fullTime: "March 16, 2026 - 2:00 p.m. - 2:15 p.m. PDT",
                 位演讲者s: "John Leung | Sr. Director | USA Products & Operations",
                 language: "English",
                 format: "线下",
-                level: "商业/管理",
+                level: "Business / Executive",
                 topic: "Data Center",
                 sub_topic: "Infrastructure",
-                description: "High-density AI workloads demand a paradigm shift, from siloed infrastructure to integrated ecosystems. This presentation reveals how a combined entity is leveraging its expanded scale and expertise to deliver the first truly total solution for next-gen data centers. 我们将 explore how unifying compute, power, and liquid cooling into a single, validated solution stack eliminates integration risk, slashes deployment time, and ensures optimal performance for NVIDIA's GPU architecture. 学习如何 to transition from fragmented purchasing to a seamless, factory-integrated, plug-and-play AI infrastructure solution."
+                description: "High-density AI workloads demand a paradigm shift, from siloed infrastructure to integrated ecosystems. This presentation reveals how a combined entity is leveraging its expanded scale and expertise to deliver the first truly total solution for next-gen data centers. We will explore how unifying compute, power, and liquid cooling into a single, validated solution stack eliminates integration risk, slashes deployment time, and ensures optimal performance for NVIDIA's GPU architecture. Learn how to transition from fragmented purchasing to a seamless, factory-integrated, plug-and-play AI infrastructure solution."
             },
             {
                 id: "gtc26-ex82045",
                 title: "Liquid-Cooled AI Server Platforms for Next-Generation Performance (Presented by ASRock Rack, Inc.) [EX82045]",
                 time: "1:40 PM",
-                full时间段: "March 16, 2026 - 1:40 p.m. - 1:55 p.m. PDT",
+                fullTime: "March 16, 2026 - 1:40 p.m. - 1:55 p.m. PDT",
                 位演讲者s: "Charlotte Li | Director of Product Marketing | ASRock Rack",
                 language: "English",
                 format: "线下",
-                level: "通用",
+                level: "General Interest",
                 topic: "Data Center",
                 sub_topic: "Infrastructure",
-                description: "Explore ASRock Rack AI server solutions from edge to cloud and discover how ASRock Rack adopts liquid-cooling approaches in next-generation AI platforms to unlock higher performance and scalability. 学习如何 these liquid-cooled server designs are validated in ASRock Rack's Liquid Cooling Lab to ensure reliability, efficiency, and readiness for modern AI workloads."
+                description: "Explore ASRock Rack AI server solutions from edge to cloud and discover how ASRock Rack adopts liquid-cooling approaches in next-generation AI platforms to unlock higher performance and scalability. Learn how these liquid-cooled server designs are validated in ASRock Rack's Liquid Cooling Lab to ensure reliability, efficiency, and readiness for modern AI workloads."
             },
             {
                 id: "gtc26-ex82046",
                 title: "Practical Applications of NVIDIA 3 Computers in Vision, Robotics, and Edge (Presented by EDOM Technology) [EX82046]",
                 time: "2:40 PM",
-                full时间段: "March 16, 2026 - 2:40 p.m. - 2:55 p.m. PDT",
+                fullTime: "March 16, 2026 - 2:40 p.m. - 2:55 p.m. PDT",
                 位演讲者s: "Wilson Yen | Product Director | EDOM",
                 language: "English",
                 format: "线下",
-                level: "通用",
+                level: "General Interest",
                 topic: "Edge Computing",
                 sub_topic: "Embedded Edge",
-                description: "本次会议 explores how NVIDIA 3 Computers-Train, Simulate, and Deploy-enable enterprises to turn AI models into real-world applications across computer vision, robotics, and edge AI. 学习如何 this end-to-end architecture accelerates AI deployment, reduces risk, and helps organizations scale AI from experimentation to production."
+                description: "This session explores how NVIDIA 3 Computers-Train, Simulate, and Deploy-enable enterprises to turn AI models into real-world applications across computer vision, robotics, and edge AI. Learn how this end-to-end architecture accelerates AI deployment, reduces risk, and helps organizations scale AI from experimentation to production."
             },
             {
                 id: "gtc26-ex82054",
                 title: "Leverage the Power of Thor in Industrial Applications (Presented by Advantech) [EX82054]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:15 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:15 p.m. PDT",
                 位演讲者s: "Jason Waldman | Associate Director of Embedded Business Development | Advantech",
                 language: "English",
                 format: "线下",
-                level: "商业/管理",
+                level: "Business / Executive",
                 topic: "Edge Computing",
                 sub_topic: "Embedded Edge",
-                description: "As physical AI becomes more prevalent in industrial applications, performance, longevity, and reliability are critical. Enter NVIDIA Jetson Thor solutions from Advantech. 在这个 session, Advantech will provide an overview of both NVIDIA IGX and Jetson Thor, discuss use cases in a variety of industries, and showcase how NVIDIA Thor platform and Advantech together solve some of the biggest challenges facing you today."
+                description: "As physical AI becomes more prevalent in industrial applications, performance, longevity, and reliability are critical. Enter NVIDIA Jetson Thor solutions from Advantech. In this session, Advantech will provide an overview of both NVIDIA IGX and Jetson Thor, discuss use cases in a variety of industries, and showcase how NVIDIA Thor platform and Advantech together solve some of the biggest challenges facing you today."
             },
             {
                 id: "gtc26-ex82085",
                 title: "Advance AI Data Center Infrastructure Design and Construction to Accommodate GW Scale (Presented by EdgeConnex) [EX82085]",
                 time: "2:20 PM",
-                full时间段: "March 16, 2026 - 2:20 p.m. - 2:35 p.m. PDT",
+                fullTime: "March 16, 2026 - 2:20 p.m. - 2:35 p.m. PDT",
                 位演讲者s: "Aron Smith | VP Product Management | EdgeConneX",
                 language: "English",
                 format: "线下",
-                level: "商业/管理",
+                level: "Business / Executive",
                 topic: "Data Center",
                 sub_topic: "Infrastructure",
-                description: "今日会议's data center industry is evolving faster than ever, with record demand for gigawatt (GW)-scale designs now paired with the accelerated delivery intervals needed to meet today's ever-changing technology demands. This race to build large-scale data center infrastructure has fundamentally shifted the industry's approach, from traditional design and construction methods to ones that are highly optimized for accelerated delivery at GW scale. 在这个 session, explore the drivers and overall impacts of designing and building large-scale GW data center infrastructure that serves as the building blocks for AI factories of the future. Better understand the new challenges faced by the industry and the general path forward for designing and constructing large-scale data center architectures at accelerated delivery intervals to accommodate the technology innovations of tomorrow."
+                description: "今日会议's data center industry is evolving faster than ever, with record demand for gigawatt (GW)-scale designs now paired with the accelerated delivery intervals needed to meet today's ever-changing technology demands. This race to build large-scale data center infrastructure has fundamentally shifted the industry's approach, from traditional design and construction methods to ones that are highly optimized for accelerated delivery at GW scale. In this session, explore the drivers and overall impacts of designing and building large-scale GW data center infrastructure that serves as the building blocks for AI factories of the future. Better understand the new challenges faced by the industry and the general path forward for designing and constructing large-scale data center architectures at accelerated delivery intervals to accommodate the technology innovations of tomorrow."
             },
             {
                 id: "gtc26-ex82205",
                 title: "Scale AI Data Pipelines With High-Capacity JBODs and NVIDIA BlueField-4 DPUs (Presented by Seagate Technology) [EX82205]",
                 time: "1:40 PM",
-                full时间段: "March 16, 2026 - 1:40 p.m. - 1:55 p.m. PDT",
+                fullTime: "March 16, 2026 - 1:40 p.m. - 1:55 p.m. PDT",
                 位演讲者s: "Mohamad El-Batal | Chief Technologist, Seagate CSG; and Technologist, CTO Office | Seagate Technology",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Data Center",
                 sub_topic: "Infrastructure",
-                description: "学习如何 to move data-intensive applications from proof of concept (PoC) to production scale using a reference architecture that pairs high-capacity JBOD storage with NVIDIA BlueField 4 DPUs to accelerate data access, reduce CPU overhead, and improve end-to-end efficiency. 本次会议 presents a practical blueprint for solution architects designing cost-effective, high-throughput storage systems to support modern, data-driven and AI-enabled applications at scale."
+                description: "Learn how to move data-intensive applications from proof of concept (PoC) to production scale using a reference architecture that pairs high-capacity JBOD storage with NVIDIA BlueField 4 DPUs to accelerate data access, reduce CPU overhead, and improve end-to-end efficiency. This session presents a practical blueprint for solution architects designing cost-effective, high-throughput storage systems to support modern, data-driven and AI-enabled applications at scale."
             },
             {
                 id: "gtc26-ex82253",
                 title: "Supercharging Postgres for Agentic Analytics with Rapids Accelerator and Apache Iceberg (Presented by EDB) [EX82253]",
                 time: "2:40 PM",
-                full时间段: "March 16, 2026 - 2:40 p.m. - 2:55 p.m. PDT",
+                fullTime: "March 16, 2026 - 2:40 p.m. - 2:55 p.m. PDT",
                 位演讲者s: "Quais Taraki | CTO | EDB",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "AI Agents",
                 sub_topic: "Retrieval-Augmented Generation (RAG)",
-                description: "As data volumes increase, the primary bottleneck for high-performance AI agents will shift from the model to the data. This increases the importance of the underlying data engine's ability to process massive enterprise datasets in real time. This scaling problem is further amplified by the desire to make the latest transactional business data seamlessly available to agentic processing. Join the experts from EDB for a technical deep dive into how to overcome these scaling and transactional integration hurdles using the world's most popular open-source database. 我们将 showcase the architecture behind GPU acceleration in EDB Postgres AI, specifically how offloading complex analytical workloads to an NVIDIA RAPIDS Accelerator for Apache Spark eliminates traditional CPU bottlenecks. Through a review of TPC-DS benchmarks, we will demonstrate how to transform Postgres into a high-throughput engine capable of powering autonomous agentic analytics for real-time business decision-making. 我们将 also showcase how EDB Postgres makes all transactional data available to GPU processing in real time through Apache Iceberg. This establishes a GPU-accelerated 混合 Analytics and Transactional Processing (HTAP) stack, which at the same time avoids vendor lock-in by being fully compatible with the modern open analytics ecosystems. 注意： 全部 attendees will receive a complimentary copy of the new O'Reilly business guide, Building a Data and AI Platform with PostgreSQL."
+                description: "As data volumes increase, the primary bottleneck for high-performance AI agents will shift from the model to the data. This increases the importance of the underlying data engine's ability to process massive enterprise datasets in real time. This scaling problem is further amplified by the desire to make the latest transactional business data seamlessly available to agentic processing. Join the experts from EDB for a technical deep dive into how to overcome these scaling and transactional integration hurdles using the world's most popular open-source database. We will showcase the architecture behind GPU acceleration in EDB Postgres AI, specifically how offloading complex analytical workloads to an NVIDIA RAPIDS Accelerator for Apache Spark eliminates traditional CPU bottlenecks. Through a review of TPC-DS benchmarks, we will demonstrate how to transform Postgres into a high-throughput engine capable of powering autonomous agentic analytics for real-time business decision-making. We will also showcase how EDB Postgres makes all transactional data available to GPU processing in real time through Apache Iceberg. This establishes a GPU-accelerated Hybrid Analytics and Transactional Processing (HTAP) stack, which at the same time avoids vendor lock-in by being fully compatible with the modern open analytics ecosystems. Note: All attendees will receive a complimentary copy of the new O'Reilly business guide, Building a Data and AI Platform with PostgreSQL."
             },
             {
                 id: "gtc26-ex82286",
                 title: "The Agentic AI Data Factory: Why Agents Need a GPU-Native Data Platform to Create Real Value (Presented by Capgemini) [EX82286]",
                 time: "2:00 PM",
-                full时间段: "March 16, 2026 - 2:00 p.m. - 2:15 p.m. PDT",
+                fullTime: "March 16, 2026 - 2:00 p.m. - 2:15 p.m. PDT",
                 位演讲者s: "Rajesh Iyer | Global Head of ML and Gen AI for Financial Services | Capgemini",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Data Science",
                 sub_topic: "Recommenders / Personalization",
-                description: "Agentic AI is evolving fast-but most organizations can't fully capitalize on it, because their data foundations weren't built for real-time, AI-driven decision-making. 在这个 session, we introduce InsightGrid-a GPU-accelerated data factory built on NVIDIA technologies that unifies all enterprise data into a single, AI-ready foundation. InsightGrid brings together batch, streaming, structured, and unstructured data, and embeds unstructured content alongside core business entities to give agents a complete, contextual view of your business. The result: agentic systems that don't just retrieve information-they reason, decide, and automate with confidence, transparency, and auditability. Join us for a live demonstration of how this new architecture expands what agentic AI can do across the enterprise, enabling smarter decisions, faster operations, and more resilient workflows at scale."
+                description: "Agentic AI is evolving fast-but most organizations can't fully capitalize on it, because their data foundations weren't built for real-time, AI-driven decision-making. In this session, we introduce InsightGrid-a GPU-accelerated data factory built on NVIDIA technologies that unifies all enterprise data into a single, AI-ready foundation. InsightGrid brings together batch, streaming, structured, and unstructured data, and embeds unstructured content alongside core business entities to give agents a complete, contextual view of your business. The result: agentic systems that don't just retrieve information-they reason, decide, and automate with confidence, transparency, and auditability. Join us for a live demonstration of how this new architecture expands what agentic AI can do across the enterprise, enabling smarter decisions, faster operations, and more resilient workflows at scale."
             },
             {
                 id: "gtc26-ex82340",
                 title: "Reducing the Sim2Real Gap for Industrial Robotics (Presented by Synopsys) [EX82340]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:15 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:15 p.m. PDT",
                 位演讲者s: "Rich Goldman | Strategic Partnerships Director | Synopsys, Philip Sharos | Principal Engineer, Edge AI | Analog Devices",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Simulation",
                 sub_topic: "CAE",
-                description: "Robotics and physical AI have reached their ChatGPT moment. The reliability for industrial use requires precision dexterity, beginning with precision simulation and high sim2real fidelity, where robots learn and reason in simulation before deployment. 本次会议 highlights the collaboration between Synopsys and Analog Devices (ADI) to augment the fidelity of simulation environments for dexterity in industrial robotics. The collaboration includes an industry-standard benchmark for tactile manipulation, led by ADI and enabled by Synopsys."
+                description: "Robotics and physical AI have reached their ChatGPT moment. The reliability for industrial use requires precision dexterity, beginning with precision simulation and high sim2real fidelity, where robots learn and reason in simulation before deployment. This session highlights the collaboration between Synopsys and Analog Devices (ADI) to augment the fidelity of simulation environments for dexterity in industrial robotics. The collaboration includes an industry-standard benchmark for tactile manipulation, led by ADI and enabled by Synopsys."
             },
             {
                 id: "gtc26-s81561",
                 title: "Scaling Out and Across: Networking Innovations for Giga-Scale AI Systems [S81561]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Gilad Shainer | SVP Networking | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "初级",
+                level: "Beginner",
                 topic: "Networking",
                 sub_topic: "AI Networking",
-                description: "As AI factories grow to hundreds of thousands, and soon millions, of interconnected GPUs, the network has become the defining architecture of large-scale AI. Achieving uncompromised performance requires fabrics that not only scale up and out within a single data center, but scale across multiple sites with predictable latency, lossless throughput, and end-to-end resilience. 在这个 session, NVIDIA unveils the full breadth of networking innovations that enable the construction of giga-scale AI infrastructure. 学习如何 advancements in networking, including ultra-high-radix switches, next-generation NVIDIA Quantum-X InfiniBand and Spectrum-X Ethernet platforms with co-packaged optics, and accelerator-optimized SuperNICs, deliver the performance required to train massive foundation models, deploy real-time inference pipelines, and interconnect federated AI factories globally."
+                description: "As AI factories grow to hundreds of thousands, and soon millions, of interconnected GPUs, the network has become the defining architecture of large-scale AI. Achieving uncompromised performance requires fabrics that not only scale up and out within a single data center, but scale across multiple sites with predictable latency, lossless throughput, and end-to-end resilience. In this session, NVIDIA unveils the full breadth of networking innovations that enable the construction of giga-scale AI infrastructure. Learn how advancements in networking, including ultra-high-radix switches, next-generation NVIDIA Quantum-X InfiniBand and Spectrum-X Ethernet platforms with co-packaged optics, and accelerator-optimized SuperNICs, deliver the performance required to train massive foundation models, deploy real-time inference pipelines, and interconnect federated AI factories globally."
             },
             {
                 id: "gtc26-s81564",
                 title: "AI-First Design: Build Smarter From Day Zero Through Every Funding Stage [S81564]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Daman Oberoi |  | NVIDIA, Carlos Morais | Developer Relations Manager - AI Natives (France & Southern Europe) | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "商业/管理",
+                level: "Business / Executive",
                 topic: "AI Agents",
                 sub_topic: "Code / Software Generation",
-                description: "The decisions AI-first companies make on Day Zero will radically shift based on initial resources. Does a $5 million seed round change the fundamental AI strategy compared to a bootstrapped $0 start? Absolutely. 本次会议 explores four distinct Day Zero scenarios, each representing a different starting capital: $0 (Bootstrapped), $500,000 (Pre-Seed), $5 million (Seed/Series A), and $50 million (Series B+). For each scenario, we'll highlight high-leverage AI-first tactics, illustrating how capital immediately dictates where to spend resources and how fast to build proprietary technology. You'll leave with a clear, resource-aligned playbook for your own AI-first launch."
+                description: "The decisions AI-first companies make on Day Zero will radically shift based on initial resources. Does a $5 million seed round change the fundamental AI strategy compared to a bootstrapped $0 start? Absolutely. This session explores four distinct Day Zero scenarios, each representing a different starting capital: $0 (Bootstrapped), $500,000 (Pre-Seed), $5 million (Seed/Series A), and $50 million (Series B+). For each scenario, we'll highlight high-leverage AI-first tactics, illustrating how capital immediately dictates where to spend resources and how fast to build proprietary technology. You'll leave with a clear, resource-aligned playbook for your own AI-first launch."
             },
             {
                 id: "gtc26-s81633",
                 title: "Scale Sports Intelligence and Insight With Foundational Models [S81633]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Patrick Lucey | Chief Scientist | Stats Perform",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Computer Vision",
                 sub_topic: "Video Analytics",
-                description: "Imagine that you could generate the world's most in-depth dataset for sports using the same video you see on your TV screen. 在这个 presentation we'll show you how we combine computer vision and our own proprietary multimodal foundation model that takes away the need for in-venue hardware and processing and scales infinitely across the game of soccer and beyond; uncovering and explaining the language of sport. We'll show how GPU acceleration allows us to model entire matches as unified multi-agent sequences, and how this foundation model powers the next generation of soccer intelligence - from tactical reconstruction to semantic embeddings - within the Opta OS ecosystem. The session will detail the model design, engineering challenges, and key breakthroughs."
+                description: "Imagine that you could generate the world's most in-depth dataset for sports using the same video you see on your TV screen. In this presentation we'll show you how we combine computer vision and our own proprietary multimodal foundation model that takes away the need for in-venue hardware and processing and scales infinitely across the game of soccer and beyond; uncovering and explaining the language of sport. We'll show how GPU acceleration allows us to model entire matches as unified multi-agent sequences, and how this foundation model powers the next generation of soccer intelligence - from tactical reconstruction to semantic embeddings - within the Opta OS ecosystem. The session will detail the model design, engineering challenges, and key breakthroughs."
             },
             {
                 id: "gtc26-s81645",
                 title: "From Concept to Production: Humanoid Robotics at Scale [S81645]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Amit Goel | Head of Robotics and Edge Computing Ecosystem | NVIDIA, Ashok Elluswamy | VP, AI Software | Tesla, Arnaud Robert | CEO | Hexagon Robotics, Pras Velagapudi | CTO | Agility, Deepak Pathak | CEO and Co-Founder | Skild AI, Chelsea Finn | Assistant Professor at Stanford University | Co-Founder at Physical Intelligence",
                 language: "English",
                 format: "线下",
-                level: "通用",
+                level: "General Interest",
                 topic: "Robotics",
                 sub_topic: "Humanoid Robots",
-                description: "Humanoid robots are evolving from prototypes to production-ready systems, powered by breakthroughs in reasoning AI, large-scale simulation, and real-time edge computing. But to get there, the industry must bridge the gap between digital intelligence and physical reality. 聆听 luminaries at the world's leading robotics companies on the future of physical AI, and what it will take to unlock truly capable humanoids."
+                description: "Humanoid robots are evolving from prototypes to production-ready systems, powered by breakthroughs in reasoning AI, large-scale simulation, and real-time edge computing. But to get there, the industry must bridge the gap between digital intelligence and physical reality. Hear from luminaries at the world's leading robotics companies on the future of physical AI, and what it will take to unlock truly capable humanoids."
             },
             {
                 id: "gtc26-s81715",
                 title: "Turning Models Into Engines: The AI Factory Era [S81715]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Gauthier Delerce | HPC Lead | Mistral AI, Jean-Olivier Gerphagnon | Software Architect | Mistral AI",
                 language: "English",
                 format: "线下",
-                level: "通用",
+                level: "General Interest",
                 topic: "Data Center",
                 sub_topic: "Software-Defined Data Center",
-                description: "走进 Mistral's journey to industrial-scale AI as we share lessons learned and the principles guiding our approach in creating Mistral Compute. Built on four key pillars-open-source foundations, security by design, sustainability at scale, and digital sovereignty-we'll share how our approach unlocks bare-metal GPU performance, why that matters in building trusted, European-hosted future-ready AI systems, and how we're bringing collaboration to the next level by giving innovators access to the same infrastructure powering our models."
+                description: "Step inside Mistral's journey to industrial-scale AI as we share lessons learned and the principles guiding our approach in creating Mistral Compute. Built on four key pillars-open-source foundations, security by design, sustainability at scale, and digital sovereignty-we'll share how our approach unlocks bare-metal GPU performance, why that matters in building trusted, European-hosted future-ready AI systems, and how we're bringing collaboration to the next level by giving innovators access to the same infrastructure powering our models."
             },
             {
                 id: "gtc26-s81717",
                 title: "Big Compute Powering the Energy Value Chain [S81717]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Herlinde Mannaerts-Drew | Senior Vice President | BP",
                 language: "English",
                 format: "线下",
-                level: "商业/管理",
+                level: "Business / Executive",
                 topic: "Simulation",
                 sub_topic: "Seismic / Geosciences",
                 description: "Herlinde Mannaerts-Drew, SVP oil and gas technology, will discuss how bp is working with NVIDIA to help enhance seismic imaging and reservoir modelling to enable faster exploration and reduce uncertainty."
@@ -1125,63 +1125,63 @@
                 id: "gtc26-s81769",
                 title: "The Era of GPU Data Processing: From SQL to Search and Back Again [S81769]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Todd Mostak | Sr. Director of Engineering | NVIDIA, Joshua Patterson | VP, Solutions Architecture - Accelerating Data Processing | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Data Science",
                 sub_topic: "Data Analytics / Processing",
-                description: "本次会议 delivers a technical state of the union on GPU-accelerated data processing across SQL/DataFrames, vector search, ML, and decision optimization. 学习如何 GPU-native engines enable interactive analytics on massive lakehouse-scale datasets, real-time semantic and vector search over billions of embeddings, and makes the hardest ML and decision science workloads tractable, cost-efficient, and energy-efficient. The talk highlights the implications for high-impact scientific and enterprise computing, then looks ahead to what's in flight for 2026 and beyond, outlining concrete architectural patterns and practical guidance for building the next generation of GPU-accelerated data platforms and using them in your day-to-day work."
+                description: "This session delivers a technical state of the union on GPU-accelerated data processing across SQL/DataFrames, vector search, ML, and decision optimization. Learn how GPU-native engines enable interactive analytics on massive lakehouse-scale datasets, real-time semantic and vector search over billions of embeddings, and makes the hardest ML and decision science workloads tractable, cost-efficient, and energy-efficient. The talk highlights the implications for high-impact scientific and enterprise computing, then looks ahead to what's in flight for 2026 and beyond, outlining concrete architectural patterns and practical guidance for building the next generation of GPU-accelerated data platforms and using them in your day-to-day work."
             },
             {
                 id: "gtc26-s81779",
                 title: "From Research to Production: How Alpamayo Accelerates Autonomous Vehicle Development [S81779]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Marco Pavone | Sr. Research Director | NVIDIA, Patrick Liu | Director, Autonomous Driving | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "初级",
+                level: "Beginner",
                 topic: "Robotics",
                 sub_topic: "Robot Navigation",
-                description: "Discover the latest advancements in end-to-end autonomous driving as the industry accelerates toward scalable, 难度级别 4 AI-driven systems. 本次会议 explores how NVIDIA's Alpamayo-particularly reasoning vision-language-action models (VLA)-enable vehicles to interpret, reason about, and navigate complex real-world scenarios with greater humanlike understanding. We'll highlight how this approach is strengthened by a continuous, self-improving loop powered by NVIDIA Cosmos and agentic AI, and safeguarded by NVIDIA Halos, NVIDIA's comprehensive full-stack safety system for physical AI. Finally, we'll discuss how NVIDIA is building an open ecosystem to empower partners in developing next-generation, robotaxi-ready autonomous vehicles."
+                description: "Discover the latest advancements in end-to-end autonomous driving as the industry accelerates toward scalable, Level 4 AI-driven systems. This session explores how NVIDIA's Alpamayo-particularly reasoning vision-language-action models (VLA)-enable vehicles to interpret, reason about, and navigate complex real-world scenarios with greater humanlike understanding. We'll highlight how this approach is strengthened by a continuous, self-improving loop powered by NVIDIA Cosmos and agentic AI, and safeguarded by NVIDIA Halos, NVIDIA's comprehensive full-stack safety system for physical AI. Finally, we'll discuss how NVIDIA is building an open ecosystem to empower partners in developing next-generation, robotaxi-ready autonomous vehicles."
             },
             {
                 id: "gtc26-s81789",
                 title: "Open Source AI Shaping the Next Era of Intelligent Digital Workers [S81789]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Kari Briski | VP AI Software Product Management | NVIDIA, Adel El Hallak | Vice President, Software Product Management | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "通用",
+                level: "General Interest",
                 topic: "AI Agents",
                 sub_topic: "Text Generation",
-                description: "Open source AI is redefining how we build and scale intelligence. 在这个 session, we explore how AI factories unlock a new generation of digital workers who learn continuously, collaborate with humans, and drive breakthroughs across every industry."
+                description: "Open source AI is redefining how we build and scale intelligence. In this session, we explore how AI factories unlock a new generation of digital workers who learn continuously, collaborate with humans, and drive breakthroughs across every industry."
             },
             {
                 id: "gtc26-s81804",
                 title: "Integrating AI and Quantum Computing to Accelerate the Future of Supercomputing [S81804]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Sam Stanwyck | Director of Quantum Product | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "商业/管理",
+                level: "Business / Executive",
                 topic: "Simulation",
                 sub_topic: "Quantum Computing",
-                description: "The path to fault-tolerant quantum computing is an AI and supercomputing challenge. This talk outlines a vision to accelerate scientific discovery for everyone, everywhere, through the complete convergence of AI with quantum hardware and systems. 我们将 present the blueprint for a collaborative, open quantum ecosystem that transcends boundaries. By leveraging open standards, CUDA-Q, and NVQLink, we are creating a unified, hybrid infrastructure where academia, labs, startups, and industry can collaborate to drive the future of supercomputing"
+                description: "The path to fault-tolerant quantum computing is an AI and supercomputing challenge. This talk outlines a vision to accelerate scientific discovery for everyone, everywhere, through the complete convergence of AI with quantum hardware and systems. We will present the blueprint for a collaborative, open quantum ecosystem that transcends boundaries. By leveraging open standards, CUDA-Q, and NVQLink, we are creating a unified, hybrid infrastructure where academia, labs, startups, and industry can collaborate to drive the future of supercomputing"
             },
             {
                 id: "gtc26-s81806",
                 title: "How Open Models, Agents, and Physical AI Are Fueling a Flywheel of Healthcare Innovation [S81806]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Kimberly Powell | VP, Healthcare and Life Sciences | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "通用",
+                level: "General Interest",
                 topic: "AI Agents",
                 sub_topic: "Biology - Generative AI",
                 description: "Healthcare is entering a once-in-a-generation leap as AI, accelerated computing, and robotics converge to turn data into decisions and accelerate breakthrough discovery. At GTC 2026, NVIDIA will showcase how open foundation models, agentic AI, and physical AI are creating entirely new categories of applications across care delivery, drug discovery, and laboratory operations. AI for science is closing the loop between digital dry labs and autonomous wet labs, catalyzing biology's transformer moment. Healthcare robotics that combine digital and physical agents are closing care gaps around the world at historic speed. Together with industry leaders, NVIDIA is building the AI-powered platforms that are enabling this next generation of medicine."
@@ -1190,11 +1190,11 @@
                 id: "gtc26-s81846",
                 title: "洞察 2026 中国 AI 市场 - AI 智能体和物理 AI 浪潮下的创业风口 [S81846]",
                 time: "1:00 AM",
-                full时间段: "March 16, 2026 - 1:00 a.m. - 2:00 a.m. PDT",
+                fullTime: "March 16, 2026 - 1:00 a.m. - 2:00 a.m. PDT",
                 位演讲者s: "Jack Pei | NVIDIA 初创加速计划经理 | NVIDIA, 张 煜 | 创始合伙人 | 清智资本, Haofei Liu | 创始合伙人 | 盛景嘉成创投, 吴 杰茜 | 创始人兼 CEO | 好耶科技",
                 language: "Chinese",
                 format: "线上",
-                level: "商业/管理",
+                level: "Business / Executive",
                 topic: "AI Agents",
                 sub_topic: "Image Generation",
                 description: "NVIDIA 将与创投联盟中的优秀投资人代表及典型被投企业代表共同探讨 2026 年中国 AI 市场的前景，分析市场的潜在爆发点、新兴创业企业以及新机遇。此外，他们还将就大模型、生成式 AI、AI 智能体、物理 AI 等热门行业的投资趋势，以及投资人和投资机构如何选择被投企业等话题进行深入探讨。"
@@ -1203,24 +1203,24 @@
                 id: "gtc26-s81847",
                 title: "A Playbook - Operating Cloud AI Factories at Scale [S81847]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Vishal Ganeriwala | Sr. Director, Product Marketing | NVIDIA, Warren Barkley | VP of Product Management, DGX Cloud | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Data Center",
                 sub_topic: "Infrastructure",
-                description: "了解如何 to build and operate AI factories that scale with your ambitions. 在这个 session, NVIDIA shares hard-earned lessons from working alongside Cloud Partners and ecosystem ISVs to power massive AI infrastructure around the world. You'll gain a practical framework-built on open, composable infrastructure software-for managing the full lifecycle of large AI systems, from reliability and performance to multi-tenant orchestration. Walk away ready to accelerate your time-to-production and deliver sustainable scale for your own AI operations."
+                description: "Discover how to build and operate AI factories that scale with your ambitions. In this session, NVIDIA shares hard-earned lessons from working alongside Cloud Partners and ecosystem ISVs to power massive AI infrastructure around the world. You'll gain a practical framework-built on open, composable infrastructure software-for managing the full lifecycle of large AI systems, from reliability and performance to multi-tenant orchestration. Walk away ready to accelerate your time-to-production and deliver sustainable scale for your own AI operations."
             },
             {
                 id: "gtc26-s81858",
                 title: "基于具身智能加速即时物流机器人研发：从大语言动作模型训练到数字孪生验证 [S81858]",
                 time: "1:00 AM",
-                full时间段: "March 16, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
+                fullTime: "March 16, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
                 位演讲者s: "HAOTIAN WU | 高级总监, 硬件研发负责人 | 美团",
                 language: "Chinese",
                 format: "线上",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Robotics",
                 sub_topic: "Robot Manipulation",
                 description: "基于 PI0.5 架构与英伟达 GPU 集群的大语言动作模型训练：在 Isaac Lab 平台上，依托 PI0.5 架构训练灵巧手操作及换电夹爪模型，在仿真环境中实现 90% 的抓取成功率；融合 100 余个真实场景运动捕捉数据集与 Isaac GR00T 拟态技术，完成 10 倍数据增广，有效缩小仿真到现实的落地差距。 面向快速原型开发的物理数字孪生技术：在物理原型制作前，于 Isaac Sim 平台完成无人机机器人对接及换电站的设计验证；以 0.1 毫米的精度仿真 500 余种对接场景（如对位偏差、振动干扰等）；硬件落地前，基于数字孪生实现 75% 的首次对接成功率，将现场测试故障率降低 30%。 实际场景性能提升：通过数字孪生验证替代 80% 的物理测试，研发周期缩短 50%；经 200 次数字孪生迭代优化后，货物转运成功率达 92%。"
@@ -1229,24 +1229,24 @@
                 id: "gtc26-s81859",
                 title: "CUDA: New Features and Beyond [S81859]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Stephen Jones | CUDA Architect | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Developer Tools",
-                sub_topic: "Programming 语言s / Compilers",
+                sub_topic: "Programming Languages / Compilers",
                 description: "The CUDA platform is the foundation of the GPU computing ecosystem. Every application and framework that uses the GPU does so through CUDA's libraries, compilers, runtimes and language-which means CUDA is growing as fast as its ecosystem is evolving. Presented by one of the architects of CUDA, at this engineering-focused talk you will learn about all that's new and what's coming next for both CUDA and GPU computing as a whole."
             },
             {
                 id: "gtc26-s81883",
-                title: "多模态大模型训练的性能优化 Performance optimization for training Multimodal Large 语言 Models [S81883]",
+                title: "多模态大模型训练的性能优化 Performance optimization for training Multimodal Large Language Models [S81883]",
                 time: "1:00 AM",
-                full时间段: "March 16, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
+                fullTime: "March 16, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
                 位演讲者s: "Shifang Xu | 高级工程师 | NVIDIA, 亦博 朱 | 首席技术官 | 阶跃星辰（StepFun）",
                 language: "Chinese",
                 format: "线上",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Developer Tools",
                 sub_topic: "Performance Optimization",
                 description: "与大语言模型相比，多模态大模型（MLLM）能够处理文本、图像和音频等多种类型的数据，更接近人类对世界的感知方式。然而，不同模态之间的数据和模型结构存在差异，这使得传统的模型训练方式难以高效地训练多模态大模型。DistTrain 通过解耦编码器、主干网络和生成器的训练并行策略，实现了更高的训练效率。NVIDIA 与 Stepfun 合作，在开源框架 Megatron-LM 上实现了 DistTrain 方案，使社区能够更轻松且高效地训练多模态模型。 Multimodal large language models (LLMs) can process and generate different types of data, such as text, images, and audio. However, combining these modalities creates challenges for model training due to differences in their data and model structures. DistTrain introduced optimizations that separate the training parallelism of different model components (encoders, backbone, and generators) and has achieved better training efficiency. NVIDIA and Stepfun have collaborated to implement the DistTrain solution on the open-source framework Megatron-LM, making it easier for the community to train their own multimodal models with optimized efficiency."
@@ -1255,11 +1255,11 @@
                 id: "gtc26-s81984",
                 title: "基于 NVIDIA HPC 打造端到端生成式推荐 OneRec 训练：面向工业级推荐大模型的「超算引擎」 [S81984]",
                 time: "12:00 AM",
-                full时间段: "March 16, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
+                fullTime: "March 16, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
                 位演讲者s: "Bin Chai | 软件开发工程师 | NVIDIA, 晋 欧阳 | AIPlatform 训练负责人 | 快手科技",
                 language: "Chinese",
                 format: "线上",
-                level: "高级",
+                level: "Advanced",
                 topic: "Data Science",
                 sub_topic: "Recommenders / Personalization",
                 description: "我们基于 NVIDIA GPU，针对快手内部的生成式推荐模型 OneRec 做了较为深入的软硬结合优化，高效利用 TensorCore 算力、HBM、高速 RDMA 网络在单机算力/多机互联两个维度加速生成式推荐训练，助力 OneRec 在全场景的部署上线。"
@@ -1268,128 +1268,128 @@
                 id: "gtc26-s82017",
                 title: "Accelerating Industrial Engineering: From Product Design to Manufacturing in the AI Supercomputing Era [S82017]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Timothy Costa | General Manager (GM) for Industrial and Computational Engineering | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "商业/管理",
+                level: "Business / Executive",
                 topic: "Simulation",
                 sub_topic: "CAE",
-                description: "Accelerated computing and AI supercomputing are redefining industrial engineering, spanning computational engineering (CAE) to semiconductor design and manufacturing. Together, these fields drive how the world conceives, simulates, and builds everything from advanced machinery to next-generation chips increasingly in the digital world before physical production begins. 在这个 address, NVIDIA's Tim Costa, general manager for Industrial and Computational Engineering, will show how CUDA-accelerated platforms, AI physics, DGX and cloud-scale AI infrastructure, and NVIDIA Omniverse are reshaping workflows across computer-aided engineering and semiconductor design and manufacturing. He will demonstrate how customers use GPU-accelerated solvers, AI physics models, and agentic AI to cut turnaround, broaden design exploration, and boost yield and reliability, revealing a unified accelerated-computing blueprint spanning classical, AI, and emerging quantum acceleration."
+                description: "Accelerated computing and AI supercomputing are redefining industrial engineering, spanning computational engineering (CAE) to semiconductor design and manufacturing. Together, these fields drive how the world conceives, simulates, and builds everything from advanced machinery to next-generation chips increasingly in the digital world before physical production begins. In this address, NVIDIA's Tim Costa, general manager for Industrial and Computational Engineering, will show how CUDA-accelerated platforms, AI physics, DGX and cloud-scale AI infrastructure, and NVIDIA Omniverse are reshaping workflows across computer-aided engineering and semiconductor design and manufacturing. He will demonstrate how customers use GPU-accelerated solvers, AI physics models, and agentic AI to cut turnaround, broaden design exploration, and boost yield and reliability, revealing a unified accelerated-computing blueprint spanning classical, AI, and emerging quantum acceleration."
             },
             {
                 id: "gtc26-s82057",
                 title: "Industrial Takeoff: Reinventing Operations with Physical AI at Scale (Presented by Accenture) [S82057]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Christian Souche | Managing Director | Accenture, Pierre-Jean Rivière | Digital Twin Solutions Leader | Airbus",
                 language: "English",
                 format: "线下",
-                level: "商业/管理",
+                level: "Business / Executive",
                 topic: "AI Agents",
                 sub_topic: "Code / Software Generation",
-                description: "Industrial operations are entering a decisive new phase. As manufacturers face rising pressures on resilience, sustainability, productivity, and geopolitical exposure, emerging technologies-Physical AI, Robotics, and next generation digital twins-are converging to redefine how factories and supply chains operate. 了解如何 Accenture and Airbus are reinventing operations-from foundational technologies to transformative business applications. With NVIDIA Omniverse and Isaac Sim, Accenture can enable high-fidelity simulation, synthetic data generation, and scalable AI training across interoperable industrial digital twin environments. With this foundation for Physical AI, the industry is ready for takeoff."
+                description: "Industrial operations are entering a decisive new phase. As manufacturers face rising pressures on resilience, sustainability, productivity, and geopolitical exposure, emerging technologies-Physical AI, Robotics, and next generation digital twins-are converging to redefine how factories and supply chains operate. Discover how Accenture and Airbus are reinventing operations-from foundational technologies to transformative business applications. With NVIDIA Omniverse and Isaac Sim, Accenture can enable high-fidelity simulation, synthetic data generation, and scalable AI training across interoperable industrial digital twin environments. With this foundation for Physical AI, the industry is ready for takeoff."
             },
             {
                 id: "gtc26-s82091",
                 title: "Improving AIDC Operational Efficiency with AI Hardware Diagnostic Innovations (Presented by Aivres) [S82091]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "James Zou | R&D Fellow | Aivres Systems, Inc.",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Data Center",
                 sub_topic: "Infrastructure",
-                description: "本次会议 will dive into the current difficulties in addressing common data center conundrums, with a specific focus on the intricate world of AI hardware interaction and failure analysis. With a comprehensive overview of existing strategies for effective troubleshooting and a detailed case study of real-world data center diagnostic scenarios, we will analyze the limitations of current methodologies. Furthermore, this talk will explore forward-looking perspectives beyond present-day solutions and outline the desired features and functionalities that next-gen AI hardware could incorporate to transform and simplify the diagnostic landscape. Gain actionable insights into current best practices and contribute to the advancement of shaping the future design of resilient data center hardware."
+                description: "This session will dive into the current difficulties in addressing common data center conundrums, with a specific focus on the intricate world of AI hardware interaction and failure analysis. With a comprehensive overview of existing strategies for effective troubleshooting and a detailed case study of real-world data center diagnostic scenarios, we will analyze the limitations of current methodologies. Furthermore, this talk will explore forward-looking perspectives beyond present-day solutions and outline the desired features and functionalities that next-gen AI hardware could incorporate to transform and simplify the diagnostic landscape. Gain actionable insights into current best practices and contribute to the advancement of shaping the future design of resilient data center hardware."
             },
             {
                 id: "gtc26-s82200",
-                title: "Real Cloud Infrastructure for Real AI Workloads: 培训 and Inference at Production Scale (Presented by CoreWeave) [S82200]",
+                title: "Real Cloud Infrastructure for Real AI Workloads: Training and Inference at Production Scale (Presented by CoreWeave) [S82200]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Corey Sanders | SVP of Product | CoreWeave, Chen Goldberg | EVP, Product & Engineering | CoreWeave, Sebastian Yunge | Senior Staff Software Engineer | Mercado Libre",
                 language: "English",
                 format: "线下",
-                level: "初级",
+                level: "Beginner",
                 topic: "Data Center",
                 sub_topic: "Infrastructure",
-                description: "As dense frontier and mixture-of-experts models move toward multi-trillion parameters, AI pioneers need real cloud infrastructure ready for real-world AI workloads spanning from training trillion-parameter models to long-context inference and reinforcement learning. 在这个 session, we will provide a deep dive on how we optimized every layer of our full stack architecture from infrastructure and orchestration to observability to run large-scale training and inference workloads efficiently to power all AI workloads, especially agentic AI. 我们将 examine the architectural breakthroughs, and new innovations that enable AI pioneers to engineer rack-scale systems with ultra-low latency and reliability for their training and inference workloads."
+                description: "As dense frontier and mixture-of-experts models move toward multi-trillion parameters, AI pioneers need real cloud infrastructure ready for real-world AI workloads spanning from training trillion-parameter models to long-context inference and reinforcement learning. In this session, we will provide a deep dive on how we optimized every layer of our full stack architecture from infrastructure and orchestration to observability to run large-scale training and inference workloads efficiently to power all AI workloads, especially agentic AI. We will examine the architectural breakthroughs, and new innovations that enable AI pioneers to engineer rack-scale systems with ultra-low latency and reliability for their training and inference workloads."
             },
             {
                 id: "gtc26-s82281",
                 title: "LLM 如何赋能量化投资 [S82281]",
                 time: "1:00 AM",
-                full时间段: "March 16, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
+                fullTime: "March 16, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
                 位演讲者s: "康 何 | 策略首席分析师，金融工程首席分析师 | 华泰证券, 洋 沈 | 金融工程分析师 | 华泰证券",
                 language: "Chinese",
                 format: "线上",
-                level: "初级",
+                level: "Beginner",
                 topic: "Developer Tools",
-                sub_topic: "Large 语言 Models (LLMs)",
+                sub_topic: "Large Language Models (LLMs)",
                 description: "LLM 作为 AI 技术的核心分支，正在重塑量化投资范式。LLM 具有超乎寻常的语义理解与推理能力，可以作为强大的工具模型嵌入量化投资流程。 从 LLM 的输出随机性出发，我们可以依赖 LLM 进行因子挖掘，并基于 NVIDIA NIM 和 TensorRT-LLM 加速挖掘； 从 LLM 的语义理解能力出发，我们基于 GPU 本地部署LLM解读海量文本、提取情感信息，构建或优化量化选股策略； 从 LLM 的多模态思维链出发，我们可利用 LLM 对K线图像进行交互式技术分析。LLM 正在引发一场量化投资技术更迭的革命......"
             },
             {
                 id: "gtc26-s82289",
                 title: "Enable Seamless Human-Humanoid Collaboration in a Shared Operational Environment (Presented by EY) [S82289]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Giuseppe Perrone | AI and Data Leader, Italy | EY, Michele Tornielli |  | Fincantieri Digital LAB, Paolo Cerioli | Chief Innovation and Information Technology Officer | Fincantieri",
                 language: "English",
                 format: "线下",
-                level: "商业/管理",
+                level: "Business / Executive",
                 topic: "Robotics",
                 sub_topic: "Humanoid Robots",
-                description: "学习如何 Fincantieri, one of the world's largest shipbuilders, designed and implemented humanoid robots engineered to perform complex tasks in dangerous shipyard environments characterized by high variability and stringent safety requirements. Leveraging NVIDIA's simulation and AI orchestration solutions, EY helped Fincantieri accelerate workflow automation and reduce manual interventions. 深入了解 Fincantieri's strategic vision and understand the challenges for integrating humanoids into an industrial environment."
+                description: "Learn how Fincantieri, one of the world's largest shipbuilders, designed and implemented humanoid robots engineered to perform complex tasks in dangerous shipyard environments characterized by high variability and stringent safety requirements. Leveraging NVIDIA's simulation and AI orchestration solutions, EY helped Fincantieri accelerate workflow automation and reduce manual interventions. Dive into Fincantieri's strategic vision and understand the challenges for integrating humanoids into an industrial environment."
             },
             {
                 id: "gtc26-s82329",
                 title: "Transforming Retail Commerce and Supply Chain Operations With AI [S82329]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Azita Martin | VP and General Manager, Retail and CPG | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "商业/管理",
+                level: "Business / Executive",
                 topic: "AI Agents",
                 sub_topic: "Code / Software Generation",
-                description: "Retail and consumer packaged goods (CPG) companies are uniquely positioned to use AI to drive revenue growth and margin expansion. Leading retailers around the world are partnering with NVIDIA to deploy AI at enterprise scale. NVIDIA's VP and General Manager of Retail and CPG, Azita Martin, will share how retailers can build an end-to-end, CEO-sponsored AI strategy and infrastructure that avoids siloed initiatives and delivers measurable return on investment. 了解如何 agentic AI and physical AI are transforming supply chains and store operations through simulation, robotics, and computer vision, while Agentic Commerce, AI Blueprints, and data science libraries unlock new opportunities in ecommerce and retail media. Learn best practices for deploying AI at scale with interoperability across any cloud and with full ownership of models trained on proprietary retail data."
+                description: "Retail and consumer packaged goods (CPG) companies are uniquely positioned to use AI to drive revenue growth and margin expansion. Leading retailers around the world are partnering with NVIDIA to deploy AI at enterprise scale. NVIDIA's VP and General Manager of Retail and CPG, Azita Martin, will share how retailers can build an end-to-end, CEO-sponsored AI strategy and infrastructure that avoids siloed initiatives and delivers measurable return on investment. Discover how agentic AI and physical AI are transforming supply chains and store operations through simulation, robotics, and computer vision, while Agentic Commerce, AI Blueprints, and data science libraries unlock new opportunities in ecommerce and retail media. Learn best practices for deploying AI at scale with interoperability across any cloud and with full ownership of models trained on proprietary retail data."
             },
             {
                 id: "gtc26-s82368",
                 title: "Transform Enterprise and Edge Infra with the Latest Blackwell Platform [S82368]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Abhishek Verma | Group Product Manager | NVIDIA, Anthony Larijani | Product Marketing Manager | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "中级",
+                level: "Intermediate",
                 topic: "Data Center",
                 sub_topic: "Infrastructure",
-                description: "Join us for a deep dive into the newest addition to NVIDIA's Blackwell data center portfolio, a compact, energy-efficient, multi-workload accelerator designed for mainstream data center and edge platforms. 了解如何 the technologies behind this new platform, backed by a broad ecosystem of infrastructure and independent software vendor partners, paired with NVIDIA enterprise software solutions for AI, data science, scientific computing, collaboration, and 3D design, deliver breakthrough performance across a wide range of applications."
+                description: "Join us for a deep dive into the newest addition to NVIDIA's Blackwell data center portfolio, a compact, energy-efficient, multi-workload accelerator designed for mainstream data center and edge platforms. Discover how the technologies behind this new platform, backed by a broad ecosystem of infrastructure and independent software vendor partners, paired with NVIDIA enterprise software solutions for AI, data science, scientific computing, collaboration, and 3D design, deliver breakthrough performance across a wide range of applications."
             },
             {
                 id: "gtc26-s82435",
                 title: "Transform Data Into Intelligence: How AI and Open Models are Shaping the Future of Financial Services [S82435]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Yogesh Agrawal | VP | NVIDIA",
                 language: "English",
                 format: "线下",
-                level: "初级",
+                level: "Beginner",
                 topic: "Data Science",
-                sub_topic: "时间段 Series Forecasting",
-                description: "AI is transforming the world's financial institutions from systems of record into systems of intelligence. 在这个 session, we'll explore why banks, asset managers, and payments firms are building AI \"factories\" that transform transactional exhaust into high-value signals, powering everything from profitable trading and precision risk management to hyper-personalized customer experiences and proactive fraud detection. We'll discuss emerging patterns for domain-adapted models, AI agents embedded in core banking and payments workflows, and the governance required to scale safely in a highly regulated environment. You'll leave with a practical roadmap for partnering with NVIDIA's platforms and ecosystem to build AI-native financial services that learn continuously and compete on intelligence, not just balance sheet size."
+                sub_topic: "Time Series Forecasting",
+                description: "AI is transforming the world's financial institutions from systems of record into systems of intelligence. In this session, we'll explore why banks, asset managers, and payments firms are building AI \"factories\" that transform transactional exhaust into high-value signals, powering everything from profitable trading and precision risk management to hyper-personalized customer experiences and proactive fraud detection. We'll discuss emerging patterns for domain-adapted models, AI agents embedded in core banking and payments workflows, and the governance required to scale safely in a highly regulated environment. You'll leave with a practical roadmap for partnering with NVIDIA's platforms and ecosystem to build AI-native financial services that learn continuously and compete on intelligence, not just balance sheet size."
             },
             {
                 id: "gtc26-s82476",
                 title: "GTC Live 2026 Keynote Pregame [S82476]",
                 time: "8:00 AM",
-                full时间段: "March 16, 2026 - 8:00 a.m. - 11:00 a.m. PDT",
+                fullTime: "March 16, 2026 - 8:00 a.m. - 11:00 a.m. PDT",
                 位演讲者s: "Sarah Guo | Founder and Managing Partner | Conviction, Gavin Baker | Managing Partner & Chief Investment Officer | Atreides Management, LP, Alfred Lin | Partner | Sequoia Capital",
                 language: "English",
                 format: "线下",
-                level: "通用",
+                level: "General Interest",
                 topic: "Developer Tools",
                 sub_topic: "AI Platforms",
                 description: "Catch the excitement of the keynote pregame. Be there for the live conversations between the hosts and industry leader panelists as they examine accelerated computing beyond AI, NVIDIA's role as a full-stack infrastructure company, and the five-layer foundation behind one of the largest infrastructures build-outs in history - and the ecosystem required to deliver it worldwide."
@@ -1398,24 +1398,24 @@
                 id: "gtc26-s82553",
                 title: "Safety in the OpenClaw Era [S82553]",
                 time: "3:00 PM",
-                full时间段: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
+                fullTime: "March 16, 2026 - 3:00 p.m. - 3:40 p.m. PDT",
                 位演讲者s: "Elia Zaitsev | Global CTO | CrowdStrike, Ali Golshan | Sr. Director | NVIDIA, Amit Zavery | President, CPO | ServiceNow, Francis deSouza | Chief Operating Officer and President, Security Products | Google Cloud",
                 language: "English",
                 format: "线下",
-                level: "商业/管理",
+                level: "Business / Executive",
                 topic: "AI Agents",
                 sub_topic: "Code / Software Generation",
-                description: "AI has crossed a threshold. Autonomous agents like OpenClaw, no longer just assist but hold credentials, persist context across 场会议, spawn subagents, and execute continuously against production systems. That's a fundamentally different threat model than anything enterprise security was built to handle. The attack surface is real. Every prompt injection is a potential credential leak. Every third-party skill is an unreviewed binary. Every major enterprise platform is becoming an agent platform, and the governance infrastructure to match that reality doesn't exist at scale yet. This panel brings together security and AI leaders to ask the hard questions: what does a real security model for autonomous agents look like? The agents are ready. The infrastructure to trust them is what we're here to discuss."
+                description: "AI has crossed a threshold. Autonomous agents like OpenClaw, no longer just assist but hold credentials, persist context across sessions, spawn subagents, and execute continuously against production systems. That's a fundamentally different threat model than anything enterprise security was built to handle. The attack surface is real. Every prompt injection is a potential credential leak. Every third-party skill is an unreviewed binary. Every major enterprise platform is becoming an agent platform, and the governance infrastructure to match that reality doesn't exist at scale yet. This panel brings together security and AI leaders to ask the hard questions: what does a real security model for autonomous agents look like? The agents are ready. The infrastructure to trust them is what we're here to discuss."
             },
         {
             id: "gtc26-s82109",
             title: "基于多模态端到端世界模型的智驾体验",
             time: "12:00 AM",
-            full时间段: "March 17, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
             位演讲者s: "Xiaozhi Chen | AI 首席技术官 | 深圳卓驭科技有限公司",
             language: "Chinese",
             format: "线上",
-            level: "高级",
+            level: "Advanced",
             topic: "Computer Vision / Video Analytics",
             sub_topic: "Image / Video Detection & Recognition",
             description: "卓驭作为国际一流的智能驾驶供应商及服务商，以'为世界提供安全、轻松的移动智能'为使命，提供行业领先的智能驾驶系统及自研核心零部件，为多种价位、多种动力类型的乘用车提供灵活多样的智能驾驶解决方案，推动智能驾驶功能全面普及，提升消费者的移动出行体验。演讲内容将为听众介绍卓驭多模态端到端世界模型的最新技术..."
@@ -1424,11 +1424,11 @@
             id: "gtc26-s82188",
             title: "从物理近似到物理真实：基于真实物理参数的 Physical AI 合成数据基础设施",
             time: "12:00 AM",
-            full时间段: "March 17, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
             位演讲者s: "Jianwei Zhang | VP of Solutions | Lightwheel",
             language: "Chinese",
             format: "线上",
-            level: "通用",
+            level: "General Interest",
             topic: "Robotics",
             sub_topic: "Robotics Simulation",
             description: "随着 Physical AI（包括具身智能与机器人）的快速发展，行业对高质量合成数据的需求正从'视觉真实'转向'物理真实'。然而，传统仿真流程往往依赖经验参数、人工调试与近似建模，导致仿真与真实世界之间存在难以量化的物理差距，限制了物理 AI 的规模化训练与可靠部署。本次分享中，Lightwheel..."
@@ -1437,24 +1437,24 @@
             id: "gtc26-s82321",
             title: "SeamlessFlow：NVIDIA GPU 集群上基于 Megatron-Core 的 Trainer-Agent 隔离与标签调度无空泡强化学习框架",
             time: "12:00 AM",
-            full时间段: "March 17, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
             位演讲者s: "Yinghan Cui | Senior Expert | 快手科技",
             language: "Chinese",
             format: "线上",
-            level: "高级",
+            level: "Advanced",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Code / Software Generation",
             description: "探索基于 Megatron-Core 构建的 SeamlessFlow 可扩展 RL框架，了解如何通过 Trainer-Agent 隔离和标签驱动调度在 NVIDIA GPU 集群上消除流水线气泡。我们将展示如何利用时空复用技术最大化资源利用率，实现相比 VERL 提升 100% 的吞吐量并将训练时..."
         },
         {
             id: "gtc26-s82322",
-            title: "规模化架构：大语言模型持续学习的探索与实践 Architectures of Scale: Navigate the Continual Learning in Large 语言 Models",
+            title: "规模化架构：大语言模型持续学习的探索与实践 Architectures of Scale: Navigate the Continual Learning in Large Language Models",
             time: "1:00 AM",
-            full时间段: "March 17, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
             位演讲者s: "xue chao | 系统与基础模型部负责人 | 京东科技",
             language: "Chinese",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Text Generation",
             description: "当前的机器学习模型，尤其是大语言模型（LLMs），其知识在很大程度上被 '封存' 在两个地方：一是在预训练阶段习得的静态信息，二是由输入窗口提供的瞬时上下文。一旦训练终止或上下文消失，这些知识便会固定下来。最直接的解决方案似乎是 '持续学习'—— 利用新数据不断更新模型参数。然而，这种方法往往会带来..."
@@ -1463,11 +1463,11 @@
             id: "gtc26-s81995",
             title: "用基座模型重塑智能边界",
             time: "1:00 AM",
-            full时间段: "March 17, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
             位演讲者s: "通易 曹 | CTO | DeepRoute.ai",
             language: "Chinese",
             format: "线上",
-            level: "高级",
+            level: "Advanced",
             topic: "Developer Tools & Techniques",
             sub_topic: "AI Platforms",
             description: "在城市NOA走向大规模量产的当下，整个智能驾驶行业正面临两大共性挑战：一是如何更有效地应对复杂的长尾场景，二是如何以可控成本实现规模化能力泛化与交付。而基座模型（Foundation Model）的出现，为解决这两大痛点提供了新的范式可能。 作为最早实践'视觉-语言-动作'（VLA）模型的人工智能企..."
@@ -1476,11 +1476,11 @@
             id: "gtc26-s81944",
             title: "AI 与工业的融合：探索工业具身智能新路径",
             time: "1:00 AM",
-            full时间段: "March 17, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
             位演讲者s: "晓辉 张 | CTO | 思摩尔智能科技（广州）有限公司, Xianglin Mao | CEO | 思摩尔智能科技（广州）有限公司",
             language: "Chinese",
             format: "线上",
-            level: "商业/管理",
+            level: "Business / Executive",
             topic: "Robotics",
             sub_topic: "Robot Manipulation",
             description: "我们开发了与英伟达AI生态深度融合的工业具身智能控制平台。该平台基于云边端架构，并采用虚拟化和容器化技术，使得工业控制不再局限于特定硬件和操作系统，进而可根据 AI 算力需求部署到不同的硬件设施上，加速推动了 NVIDIA AI 生态与工业的融合。基于该平台，我们开发了一套工业具身智能机器人拆码垛工..."
@@ -1489,24 +1489,24 @@
             id: "gtc26-s82203",
             title: "Build a GPU-Accelerated Database Engine With CUDA",
             time: "1:00 AM",
-            full时间段: "March 17, 2026 - 1:00 a.m. - 1:25 a.m. PDT",
+            fullTime: "March 17, 2026 - 1:00 a.m. - 1:25 a.m. PDT",
             位演讲者s: "Harishankar G | Member Leadership Staff | Zoho Corp., Jalakandeshwaran A | Member Leadership Staff | Zoho Corp.",
             language: "English",
             format: "线上",
-            level: "高级",
+            level: "Advanced",
             topic: "Data Science",
             sub_topic: "Databases",
-            description: "Join us for a deep dive into how data-intensive workloads can be accelerated using GPUs. 本次会议 explores the inner workings of a GPU-accelerated..."
+            description: "Join us for a deep dive into how data-intensive workloads can be accelerated using GPUs. This session explores the inner workings of a GPU-accelerated..."
         },
         {
             id: "gtc26-s81899",
             title: "AI Factories in Europe: Building the Foundations for Scalable Intelligence",
             time: "1:00 AM",
-            full时间段: "March 17, 2026 - 1:00 a.m. - 2:00 a.m. PDT",
+            fullTime: "March 17, 2026 - 1:00 a.m. - 2:00 a.m. PDT",
             位演讲者s: "Carlo Ruiz | VP, EMEA AI and Data Center Operations | NVIDIA, Julia Koch | Executive Director, CCO, CDO | Finanz Informatik, Imran Shafi | | Nscale, Eric Leandri | Chief Executive Officer | Aleria, Zhaopeng Chen | CEO and Founder | Agile Robots, Peter Lorenz | Senior Vice President, Digital Solutions | Deutsche Telekom, T-Systems International",
             language: "English",
             format: "线上",
-            level: "商业/管理",
+            level: "Business / Executive",
             topic: "Data Center / Cloud",
             sub_topic: "Infrastructure",
             description: "As Europe accelerates its AI ambitions, the concept of 'AI factories' has become central to scaling innovation and production. This panel examines the..."
@@ -1515,11 +1515,11 @@
             id: "gtc26-s81942",
             title: "Powering Research: Real Academic Use Cases With NVIDIA Accelerated Computing and AI",
             time: "1:00 AM",
-            full时间段: "March 17, 2026 - 1:00 a.m. - 2:00 a.m. PDT",
+            fullTime: "March 17, 2026 - 1:00 a.m. - 2:00 a.m. PDT",
             位演讲者s: "Tomasz Bednarz | Director of Strategic Researcher Engagement | NVIDIA, Mirco Musolesi | Professor of Computer Science | University College London, Tomasz Trzciński | Director of R&D and Professor | Warsaw University of Technology, Andy Cooper | Royal Society Research Professor | University of Liverpool, Oya Celiktutan | Associate Professor, Reader in AI and Robotics | King's College London",
             language: "English",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Developer Tools & Techniques",
             sub_topic: "AI Platforms",
             description: "Effective use of AI, accelerated computing, and advanced infrastructure is essential to drive research innovation and scientific breakthroughs. Resear..."
@@ -1528,37 +1528,37 @@
             id: "gtc26-s81627",
             title: "AI in the Age of Regulation: Build Trust Through Compliance",
             time: "2:00 AM",
-            full时间段: "March 17, 2026 - 2:00 a.m. - 3:00 a.m. PDT",
+            fullTime: "March 17, 2026 - 2:00 a.m. - 3:00 a.m. PDT",
             位演讲者s: "William Dunning | Managing Associate (AI Regulation) | Simmons & Simmons, Barnaby Simkin | Director, Trustworthy AI | NVIDIA, Jonathan Dotan | Founder | EQTY Lab, Nikki Pope | Sr. Director, AI and Legal Ethics | NVIDIA, Antoine Gautier | Chief Scientist | Quantpi",
             language: "English",
             format: "线上",
-            level: "通用",
+            level: "General Interest",
             topic: "Trustworthy AI / Cybersecurity",
             sub_topic: "Security for AI",
-            description: "As global AI regulation accelerates, understanding and aligning with evolving compliance standards has never been more critical. 本次会议 brings t..."
+            description: "As global AI regulation accelerates, understanding and aligning with evolving compliance standards has never been more critical. This session brings t..."
         },
         {
             id: "gtc26-s81982",
             title: "Revolutionize Automated Parcel Handling With Humanoid Robots",
             time: "2:00 AM",
-            full时间段: "March 17, 2026 - 2:00 a.m. - 2:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 2:00 a.m. - 2:50 a.m. PDT",
             位演讲者s: "António Conde | EVP | Körber Supply Chain",
             language: "English",
             format: "线上",
-            level: "通用",
+            level: "General Interest",
             topic: "Robotics",
             sub_topic: "Humanoid Robots",
-            description: "本次会议 unpacks how Koerber is building a humanoid 'robot brain' for parcel logistics using NVIDIA Omniverse, Isaac Sim, and Jetson across simula..."
+            description: "This session unpacks how Koerber is building a humanoid 'robot brain' for parcel logistics using NVIDIA Omniverse, Isaac Sim, and Jetson across simula..."
         },
         {
             id: "gtc26-s82306",
-            title: "Teach AI to Code in Every 语言 With NVIDIA NeMo",
+            title: "Teach AI to Code in Every Language With NVIDIA NeMo",
             time: "2:00 AM",
-            full时间段: "March 17, 2026 - 2:00 a.m. - 2:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 2:00 a.m. - 2:50 a.m. PDT",
             位演讲者s: "Miguel Martinez | Sr. Applied Deep Learning Researcher | NVIDIA, Meriem Bendris | Sr. Deep Learning Data Scientist | NVIDIA, Oleg Sudakov | Solutions Architect | NVIDIA",
             language: "English",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Code / Software Generation",
             description: "Large language models for code are transforming how developers create, maintain, and understand software—but building these models from the ground up ..."
@@ -1567,11 +1567,11 @@
             id: "gtc26-s81509",
             title: "Build Physical Intelligence: Open Collaboration Across Robotics Ecosystems",
             time: "3:00 AM",
-            full时间段: "March 17, 2026 - 3:00 a.m. - 3:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 3:00 a.m. - 3:50 a.m. PDT",
             位演讲者s: "Sandra Skaff | | NVIDIA, Steven Palma | Robotics AI Engineer | Hugging Face, Markus Mueller | Senior Investment Manager | Hyundai Europe, Nicolas Keller | Co-Founder | Poke & Wiggle, Evan Helda | Head of Physical AI | Nebius, David Höller | CTO and Co-Founder | Flexion",
             language: "English",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Robotics",
             sub_topic: "Humanoid Robots",
             description: "This panel brings together leaders to reveal what it truly takes to build a robotics company today. We'll discuss the integration of real-world data, ..."
@@ -1580,50 +1580,50 @@
             id: "gtc26-s82400",
             title: "UK AI Minister: AI Growth Zones and the UK's AI Opportunities Action Plan",
             time: "3:00 AM",
-            full时间段: "March 17, 2026 - 3:00 a.m. - 3:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 3:00 a.m. - 3:50 a.m. PDT",
             位演讲者s: "Bea Longworth | Director of Government Relations EMEA | NVIDIA, Kanishka Narayan | Parliamentary Under-Secretary of State | UK Department for Science, Innovation and Technology",
             language: "English",
             format: "线上",
-            level: "通用",
+            level: "General Interest",
             topic: "Data Center / Cloud",
             sub_topic: "Infrastructure",
-            description: "加入这个 fireside chat with Kanishka Narayan, MP and U.K. AI Minister, and Bea Longworth, Director of Government Relations, EMEA to examine how the U..."
+            description: "Join this fireside chat with Kanishka Narayan, MP and U.K. AI Minister, and Bea Longworth, Director of Government Relations, EMEA to examine how the U..."
         },
         {
             id: "gtc26-s81941",
             title: "Agentic Systems for End-to-End Surgical Workflows",
             time: "4:00 AM",
-            full时间段: "March 17, 2026 - 4:00 a.m. - 4:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 4:00 a.m. - 4:50 a.m. PDT",
             位演讲者s: "Pieter De Backer | Head of Innovation | Orsi",
             language: "English",
             format: "线上",
-            level: "初级",
+            level: "Beginner",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Speech Generation",
-            description: "在这个 presentation, we'll introduce the Surgical AI Copilot, an agentic assistant developed by NVIDIA and Orsi Academy to support robotic surgery in..."
+            description: "In this presentation, we'll introduce the Surgical AI Copilot, an agentic assistant developed by NVIDIA and Orsi Academy to support robotic surgery in..."
         },
         {
             id: "gtc26-s82116",
             title: "Customer-Centric Innovation in Automotive",
             time: "4:00 AM",
-            full时间段: "March 17, 2026 - 4:00 a.m. - 4:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 4:00 a.m. - 4:50 a.m. PDT",
             位演讲者s: "Benedict Kistner | AI and Future Business Fields | Porsche Engineering",
             language: "English",
             format: "线上",
-            level: "商业/管理",
+            level: "Business / Executive",
             topic: "Simulation / Modeling / Design",
             sub_topic: "Industrial Digitalization / Digital Twin",
-            description: "本次会议 showcases how Porsche Engineering fosters innovation in the context of automotive engineering. 学习如何 NVIDIA technology helps push the..."
+            description: "This session showcases how Porsche Engineering fosters innovation in the context of automotive engineering. Learn how NVIDIA technology helps push the..."
         },
         {
             id: "gtc26-s81464",
             title: "Medical Speech and Transcription Frontiers: Transforming European Healthcare Delivery",
             time: "5:00 AM",
-            full时间段: "March 17, 2026 - 5:00 a.m. - 6:00 a.m. PDT",
-            位演讲者s: "Cedric Steenbeke | Digital Health Product DevRel | NVIDIA, Alessandro De Sario | CEO and Co-Founder | Therapyside, Alex Brown | Strategic 全部iances, Healthcare Director | PolyAI, María González Manso | CEO and Co-Founder | Tucuvi, Ricardo Herreros-Symons | Founding Member & Chief Strategy and Revenue Officer | Speechmatics",
+            fullTime: "March 17, 2026 - 5:00 a.m. - 6:00 a.m. PDT",
+            位演讲者s: "Cedric Steenbeke | Digital Health Product DevRel | NVIDIA, Alessandro De Sario | CEO and Co-Founder | Therapyside, Alex Brown | Strategic Alliances, Healthcare Director | PolyAI, María González Manso | CEO and Co-Founder | Tucuvi, Ricardo Herreros-Symons | Founding Member & Chief Strategy and Revenue Officer | Speechmatics",
             language: "English",
             format: "线上",
-            level: "通用",
+            level: "General Interest",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Text Generation",
             description: "This panel explores how AI technologies designed and developed in Europe are revolutionizing the healthcare sector, particularly in the realms of spee..."
@@ -1632,24 +1632,24 @@
             id: "gtc26-s81987",
             title: "From Vision to Reality: Building AI Factories",
             time: "5:00 AM",
-            full时间段: "March 17, 2026 - 5:00 a.m. - 6:00 a.m. PDT",
+            fullTime: "March 17, 2026 - 5:00 a.m. - 6:00 a.m. PDT",
             位演讲者s: "Raquel Hernansanz | Metaverse and Industrial Excellence Director | Horse Technologies, Andres Benitez Pozo | Manager | Deloitte",
             language: "English",
             format: "线上",
-            level: "通用",
+            level: "General Interest",
             topic: "Computer Vision / Video Analytics",
             sub_topic: "Image / Video Detection & Recognition",
-            description: "了解如何 to turn the vision of AI into a tangible reality within the industry. 本次会议 explores the organization, design, and deployment of '..."
+            description: "Discover how to turn the vision of AI into a tangible reality within the industry. This session explores the organization, design, and deployment of '..."
         },
         {
             id: "gtc26-s82044",
             title: "Supercharging Responsible AI Innovation: Compute, Synthetic Data, and Regulatory-Informed Design",
             time: "5:00 AM",
-            full时间段: "March 17, 2026 - 5:00 a.m. - 5:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 5:00 a.m. - 5:50 a.m. PDT",
             位演讲者s: "Colin Payne | Head of Department | Financial Conduct Authority, Savannah Price | | Serene",
             language: "English",
             format: "线上",
-            level: "商业/管理",
+            level: "Business / Executive",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Code / Software Generation",
             description: "As AI adoption accelerates across financial services, firms face a dual challenge: moving fast enough to stay competitive while meeting growing expect..."
@@ -1658,11 +1658,11 @@
             id: "gtc26-s82175",
             title: "Beyond the Black Box: Interpretability of LLMs in Finance",
             time: "6:00 AM",
-            full时间段: "March 17, 2026 - 6:00 a.m. - 6:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 6:00 a.m. - 6:50 a.m. PDT",
             位演讲者s: "Hariom Tatsat | VP – Risk AI | Barclays, ARIYE SHATER | Managing Director, Head of Risk AI, Head of Traded Risk and Treasury Quantitative Analytics | Barclays",
             language: "English",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Trustworthy AI / Cybersecurity",
             sub_topic: "Security for AI",
             description: "Financial institutions are deploying LLMs for several use cases including trading, advisory, and consumer-facing applications—but opaque model behavio..."
@@ -1671,11 +1671,11 @@
             id: "gtc26-s81991",
             title: "Venture Capitalist Reverse Pitch: EMEA",
             time: "7:00 AM",
-            full时间段: "March 17, 2026 - 7:00 a.m. - 7:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 7:00 a.m. - 7:50 a.m. PDT",
             位演讲者s: "Troy Estes | Developer Relations | NVIDIA, Rebecka Löthman Rydå | General Partner | Norrsken Evolve, Miriam Shtilman-Lavsovski | Partner | TAL Ventures, Philipp Moehring | Co-Founder | Tiny Supercomputer Investment Co.",
             language: "English",
             format: "线上",
-            level: "商业/管理",
+            level: "Business / Executive",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Text Generation",
             description: "Finding the right investor for your startup can be tricky. Venture capital (VC) firms offer more than just funding. They provide mentorship, technical..."
@@ -1684,11 +1684,11 @@
             id: "gtc26-dlit81814",
             title: "Build Agentic Workflows for Financial Applications",
             time: "8:00 AM",
-            full时间段: "March 17, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
+            fullTime: "March 17, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
             位演讲者s: "Benjamin Wu | Sr. Solutions Architect | NVIDIA, David Williams | Solutions Architect | NVIDIA, Flora Huang | Sr. Solutions Architect | NVIDIA",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Text Generation",
             description: "We'll walk you through how to turn financial services workflows into end‑to‑end AI agents, covering orchestration, tools, retrieval, and guardrails ta..."
@@ -1697,24 +1697,24 @@
             id: "gtc26-dlit81816",
             title: "Build Robot-Ready Assets for Physically Accurate Simulations With Lightwheel",
             time: "8:00 AM",
-            full时间段: "March 17, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
+            fullTime: "March 17, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
             位演讲者s: "Frank Chen | VP of Engineering | Lightwheel, Siyi Lin | Technical Artist Lead | Lightwheel",
             language: "English",
             format: "线下",
-            level: "高级",
+            level: "Advanced",
             topic: "Simulation / Modeling / Design",
             sub_topic: "Industrial Digitalization / Digital Twin",
-            description: "在这个 hands-on lab, Lightwheel, a leading provider of simulation-ready assets, platforms, and synthetic data for embodied AI, guides you through the..."
+            description: "In this hands-on lab, Lightwheel, a leading provider of simulation-ready assets, platforms, and synthetic data for embodied AI, guides you through the..."
         },
         {
             id: "gtc26-dlit81861",
             title: "Compress, Cut, and Distill: The Latest Gen AI Model Compression Techniques in Practice",
             time: "8:00 AM",
-            full时间段: "March 17, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
+            fullTime: "March 17, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
             位演讲者s: "Harshita Seth | Solutions Architect | NVIDIA, Lavinia Ghita | Solutions Architect Manager | NVIDIA, Sergio Perez | Solutions Architect | NVIDIA, Liana Mikaelyan | Sr. Solutions Architect | NVIDIA",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Developer Tools & Techniques",
             sub_topic: "Performance Optimization",
             description: "This training lab explores the art and engineering of compressing large language models to make them cheaper, faster, and easier to deploy while prese..."
@@ -1723,11 +1723,11 @@
             id: "gtc26-dlit82184",
             title: "How to Provision and Install NVIDIA Run:ai",
             time: "8:00 AM",
-            full时间段: "March 17, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
+            fullTime: "March 17, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
             位演讲者s: "David Whitehouse | NVIDIA Academy Lab Manager | NVIDIA",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Data Center / Cloud",
             sub_topic: "Infrastructure",
             description: "Get grounded in the practical fundamentals of deploying NVIDIA Run:ai from the ground up. This lab walks you through every stage of installation—from ..."
@@ -1736,24 +1736,24 @@
             id: "gtc26-c82414",
             title: "NVIDIA Certification Overview: What You Need to Know",
             time: "8:00 AM",
-            full时间段: "March 17, 2026 - 8:00 a.m. - 9:00 a.m. PDT",
+            fullTime: "March 17, 2026 - 8:00 a.m. - 9:00 a.m. PDT",
             位演讲者s: "Aeshah Hadges | Certification Program Manager | NVIDIA, Gary Fluitt | Technical Certification Manager | NVIDIA, Marco Alves | Technical Certification Lead | NVIDIA",
             language: "English",
             format: "线下",
-            level: "通用",
+            level: "General Interest",
             topic: "Certification",
             sub_topic: "",
-            description: "Considering an NVIDIA certification? 加入这个 exclusive overview session to learn how NVIDIA's certification program can help you validate your skill..."
+            description: "Considering an NVIDIA certification? Join this exclusive overview session to learn how NVIDIA's certification program can help you validate your skill..."
         },
         {
             id: "gtc26-s81424",
             title: "Achieve Truly Serverless GPUs With libfuse, CRIU, and CUDA-Checkpoint",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Charles Frye | Member of Technical Staff | Modal",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Developer Tools & Techniques",
             sub_topic: "Performance Optimization",
             description: "Unpredictable workloads make inference a natural fit for serverless computing (a.k.a. 'functions-as-a-service'). But serverless execution only works i..."
@@ -1762,24 +1762,24 @@
             id: "gtc26-s81584",
             title: "Autonomous AI Factories: A Technical Preview of Agent-Native Production",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "JP Vasseur | Sr. Distinguished Engineer and Chief Architect | NVIDIA, César Martinez Spessot | Technical Head of AI Infrastructure | Microsoft Research",
             language: "English",
-            format: "混合",
-            level: "中级",
+            format: "Hybrid",
+            level: "Intermediate",
             topic: "Data Center / Cloud",
             sub_topic: "Infrastructure",
-            description: "For two decades, the 'self-healing system' was just a theory. 今日会议, it's an architectural reality. 本次会议 unveils the blueprint for the fully a..."
+            description: "For two decades, the 'self-healing system' was just a theory. 今日会议, it's an architectural reality. This session unveils the blueprint for the fully a..."
         },
         {
             id: "gtc26-s81630",
-            title: "Beyond the Basics: OpenUSD for 高级 Physical AI Simulation",
+            title: "Beyond the Basics: OpenUSD for Advanced Physical AI Simulation",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Aaron Luk | Director of Product Management | NVIDIA",
             language: "English",
             format: "线下",
-            level: "初级",
+            level: "Beginner",
             topic: "Simulation / Modeling / Design",
             sub_topic: "3D Data Interoperability",
             description: "Universal Scene Description (OpenUSD) is the foundational 3D data framework of NVIDIA's physical AI technology stack, serving as a standard across ind..."
@@ -1788,11 +1788,11 @@
             id: "gtc26-s81793",
             title: "Build Gigascale AI Factories With Next-Generation Rack-Scale Systems",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Charlie Boyle | VP, DGX Systems | NVIDIA, Brian Knapp | SVP, AI and Data | Walmart",
             language: "English",
-            format: "混合",
-            level: "商业/管理",
+            format: "Hybrid",
+            level: "Business / Executive",
             topic: "Data Center / Cloud",
             sub_topic: "Infrastructure",
             description: "The next generation of AI models is driving unprecedented compute consumption, exposing the limitations of traditional system architectures. Enterpris..."
@@ -1801,37 +1801,37 @@
             id: "gtc26-s81623",
             title: "Build High-Performance Financial AI: Achieve Microsecond Latency and Scalable LLM Inference",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Martin Marciniszyn Mehringer | Sr. AI Developer Technology Manager | NVIDIA, Nikolai Markovskii | Sr. AI Developer Technology Engineer | NVIDIA",
             language: "English",
-            format: "混合",
-            level: "中级",
+            format: "Hybrid",
+            level: "Intermediate",
             topic: "Developer Tools & Techniques",
             sub_topic: "AI Inference",
-            description: "了解如何 financial institutions can accelerate real-time decision-making with high-performance AI systems built on NVIDIA's Grace Hopper Superchip..."
+            description: "Discover how financial institutions can accelerate real-time decision-making with high-performance AI systems built on NVIDIA's Grace Hopper Superchip..."
         },
         {
             id: "gtc26-s81677",
             title: "Building the Intelligent Control Plane for Medical Imaging",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Taha Kass-Hout | Global Chief Science and Technology Officer | GE HealthCare, Roland Rott | President and CEO | GE HealthCare",
             language: "English",
-            format: "混合",
-            level: "通用",
+            format: "Hybrid",
+            level: "General Interest",
             topic: "Robotics",
             sub_topic: "Robotics Simulation",
-            description: "A shortage of scalable clinical expertise is becoming healthcare's limiting factor, not access to imaging hardware. 在这个 session, Taha Kass-Hout, G..."
+            description: "A shortage of scalable clinical expertise is becoming healthcare's limiting factor, not access to imaging hardware. In this session, Taha Kass-Hout, G..."
         },
         {
             id: "gtc26-s81492",
             title: "Disney's Robotic Characters: From the Screen to Reality via Physical AI",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Moritz Baecher | Director, Research Lab Zurich | Disney Research Imagineering",
             language: "English",
-            format: "混合",
-            level: "初级",
+            format: "Hybrid",
+            level: "Beginner",
             topic: "Robotics",
             sub_topic: "Robotics Simulation",
             description: "The translation of animated characters like Olaf, or the design of characters like our BDX Droids, requires balancing artistic fidelity with the const..."
@@ -1840,11 +1840,11 @@
             id: "gtc26-s82139",
             title: "From Idle to Optimized: Managing GPUs, Kubernetes, and Automated Compute at Scale (Presented by HPE)",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Abhishek Agarwal | Product Manager | HPE",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Data Center / Cloud",
             sub_topic: "Infrastructure",
             description: "As AI workloads grow in size and complexity, infrastructure teams are under pressure to deliver high GPU utilization, predictable performance, and str..."
@@ -1853,11 +1853,11 @@
             id: "gtc26-s82423",
             title: "Future of Enterprise AI: Infrastructure to Intelligence (Presented by Tata Consultancy Services)",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Sujatha Gopal | CTO of Communications, Media & Information Services | Tata Consultancy Services, Amit Kapur | Chief AI and Services Transformation Officer | Tata Consultancy Services, Babu Unnikrishnan | VP and Chief Technology Officer BFSI Americas | Tata Consultancy Services",
             language: "English",
             format: "线下",
-            level: "商业/管理",
+            level: "Business / Executive",
             topic: "MLOps",
             sub_topic: "InfraOps",
             description: "The future of enterprise AI is shaped by how intelligence is designed, deployed, and scaled across the enterprise. Next-gen computing platforms enable..."
@@ -1866,24 +1866,24 @@
             id: "gtc26-s81999",
             title: "Immersive Robotics Teleop 101: Standardize Large-Scale Data Collection and Processing Pipeline",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Tiffany Chen | Distinguished Software Engineer and Manager | NVIDIA, Ke Jing | Lead Product Manager | PICO",
             language: "English",
             format: "线下",
-            level: "初级",
+            level: "Beginner",
             topic: "Robotics",
             sub_topic: "Humanoid Robots",
             description: "Learn to build scalable data pipelines for training robot policies using Teleop Core, an open-source framework that unifies simulation and real-world ..."
         },
         {
             id: "gtc26-s81590",
-            title: "学习如何 New AI Coding Agents and Tools Unlock GPU Performance for Everyone",
+            title: "Learn how New AI Coding Agents and Tools Unlock GPU Performance for Everyone",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Jackson Marusarz | Technical Product Manager | NVIDIA",
             language: "English",
             format: "线下",
-            level: "初级",
+            level: "Beginner",
             topic: "Developer Tools & Techniques",
             sub_topic: "Profilers / Debuggers / Code Analysis",
             description: "Whether you're hand-tuning CUDA kernels for the latest GPUs or vibe-coding your way to the next great AI app, intelligent developer tools are here to ..."
@@ -1892,24 +1892,24 @@
             id: "gtc26-s81719",
             title: "Nemotron Unpacked: Build, Fine-Tune, and Deploy NVIDIA's Open Models",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Bryan Catanzaro | VP, Applied Deep Learning Research | NVIDIA",
             language: "English",
-            format: "混合",
-            level: "通用",
+            format: "Hybrid",
+            level: "General Interest",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Text Generation",
-            description: "聆听 NVIDIA's VP of Applied Deep Learning Research the story of NVIDIA Nemotron—an open-source ecosystem for the full AI life cycle. NVIDIA Nemot..."
+            description: "Hear from NVIDIA's VP of Applied Deep Learning Research the story of NVIDIA Nemotron—an open-source ecosystem for the full AI life cycle. NVIDIA Nemot..."
         },
         {
             id: "gtc26-s81833",
             title: "Optimize Performance of Vision AI Models on the Edge",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Louise Huang | Product Manager | NVIDIA",
             language: "English",
             format: "线下",
-            level: "初级",
+            level: "Beginner",
             topic: "Computer Vision / Video Analytics",
             sub_topic: "Video Analytics",
             description: "As vision AI continues to expand into real-world applications—from multi-modal systems like vision language models (VLMs) to depth-aware robotics usin..."
@@ -1918,50 +1918,50 @@
             id: "gtc26-s81491",
             title: "Security for the AI-First Enterprise",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "David Reber | CSO | NVIDIA",
             language: "English",
-            format: "混合",
-            level: "商业/管理",
+            format: "Hybrid",
+            level: "Business / Executive",
             topic: "Trustworthy AI / Cybersecurity",
             sub_topic: "Security for AI",
             description: "As AI transforms every layer of modern computing, security must evolve in parallel—shifting from a separate function to an embedded capability woven i..."
         },
         {
             id: "gtc26-s82149",
-            title: "Take AV2.0 to the Next 难度级别 With End-to-End Embodied AI",
+            title: "Take AV2.0 to the Next Level With End-to-End Embodied AI",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Alex Kendall | Co-Founder and CEO | Wayve",
             language: "English",
-            format: "混合",
-            level: "中级",
+            format: "Hybrid",
+            level: "Intermediate",
             topic: "Edge Computing",
             sub_topic: "Autonomous Machines",
-            description: "了解如何 Wayve is evolving embodied AI foundation models from frontier research into production-ready driving intelligence that can scale across v..."
+            description: "Discover how Wayve is evolving embodied AI foundation models from frontier research into production-ready driving intelligence that can scale across v..."
         },
         {
             id: "gtc26-s81503",
             title: "The State of the Art of Quantum Chemistry on GPUs: EXESS, Exascale, and Floating-Point Emulation on Blackwell",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Giuseppe M. J. Barca | Professor at MIPS and ANU, Co-Founder and Head of Research at QDX | Monash Institute of Pharmaceutical Sciences, Australian National University, and QDX Technologies",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Simulation / Modeling / Design",
             sub_topic: "Supercomputing",
-            description: "Quantum chemistry has long been the gold standard for molecular accuracy—and the bottleneck for scale. 本次会议 presents EXESS, a GPU-native quant..."
+            description: "Quantum chemistry has long been the gold standard for molecular accuracy—and the bottleneck for scale. This session presents EXESS, a GPU-native quant..."
         },
         {
             id: "gtc26-s81690",
             title: "Transform Content Delivery With Generative AI at the Edge",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Kevin Deierling | SVP, Networking | NVIDIA",
             language: "English",
-            format: "混合",
-            level: "中级",
+            format: "Hybrid",
+            level: "Intermediate",
             topic: "Networking / Communications",
             sub_topic: "Storage Networking",
             description: "As AI reshapes digital experiences, content delivery needs a major transformation. Traditional networks built for static caching can't meet real-time,..."
@@ -1970,11 +1970,11 @@
             id: "gtc26-s82241",
             title: "Unlocking Data at Scale for AI Factories (Presented by DDN)",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Jacob Liberman | Director, Enterprise Product | NVIDIA, James Coomer | Sr. VP, Products | DDN",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Data Center / Cloud",
             sub_topic: "Infrastructure",
             description: "In next-generation AI infrastructure, the data layer determines how efficiently GPUs run, how much energy and cooling are consumed, and how fast retri..."
@@ -1983,11 +1983,11 @@
             id: "gtc26-s82438",
             title: "Accelerating Scientific Discovery Through Global Innovation",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Dario Gil | Undersecretary for Science | U.S. Department of Energy, Ian Buck | VP Hyperscale and HPC Computing | NVIDIA",
             language: "English",
-            format: "混合",
-            level: "商业/管理",
+            format: "Hybrid",
+            level: "Business / Executive",
             topic: "Simulation / Modeling / Design",
             sub_topic: "Supercomputing",
             description: "Join Undersecretary Dario Gil for a forward-looking update on the Genesis Mission—a bold initiative redefining how science, technology, and global col..."
@@ -1996,37 +1996,37 @@
             id: "gtc26-s81737",
             title: "Game Agent Models - Picking & perfecting the right AI models for your gaming applications",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 10:30 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 10:30 a.m. PDT",
             位演讲者s: "Vinay Raman | Sr. Deep Learning Scientist | NVIDIA, Ameya Sunil Mahabaleshwarkar | Sr. Deep Learning Scientist | NVIDIA, Jani Joki | Director, Benchmarking and GeForce Technical Marketing | NVIDIA",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Developer Tools & Techniques",
-            sub_topic: "培训 AI Models",
+            sub_topic: "Training AI Models",
             description: "As developer approaches to in-game agentic AI become more advanced, standard off-the-shelf models often fall short. Game developers frequently seek ex..."
         },
         {
             id: "gtc26-cwes81649",
             title: "AI For Science: Driving Innovation in Research Labs and Academia",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:50 a.m. PDT",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:50 a.m. PDT",
             位演讲者s: "Daniel Burkhardt | Developer Relations Manager, Multiscale Biology | NVIDIA, Justin Smith | Sr. Developer Relations Manager | NVIDIA, Xin Yu | Sr. Solution Architect | NVIDIA, Savitha Pareek | Sr. Solutions Architect NVIS CBU | NVIDIA, John Linford | Director, Industrial Engineering | NVIDIA, Christian Munley | Solutions Architect | NVIDIA, Ramya Gurunathan | Senior Application Engineer - Edge Supercomputing | NVIDIA, Huiwen Ju | Solutions Architect | NVIDIA",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Code / Software Generation",
-            description: "AI is revolutionizing the way researchers approach their work and accelerating the pace of discovery. 加入这个 interactive session to discuss the lat..."
+            description: "AI is revolutionizing the way researchers approach their work and accelerating the pace of discovery. Join this interactive session to discuss the lat..."
         },
         {
             id: "gtc26-s81610",
             title: "The Agentic Revolution for Specialty Care, Powered by AI for Better Lives and Bottom Lines",
             time: "9:00 AM",
-            full时间段: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
-            位演讲者s: "Brad Genereaux | Global Lead, Healthcare 全部iances | NVIDIA, Ricardo Rei | Head of AI Research | Sword Health, Jaya Savkar | SVP of Product | Maven Clinic, Mainul Mondal | CEO | Ellipsis Health",
+            fullTime: "March 17, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            位演讲者s: "Brad Genereaux | Global Lead, Healthcare Alliances | NVIDIA, Ricardo Rei | Head of AI Research | Sword Health, Jaya Savkar | SVP of Product | Maven Clinic, Mainul Mondal | CEO | Ellipsis Health",
             language: "English",
             format: "线下",
-            level: "商业/管理",
+            level: "Business / Executive",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Text Generation",
             description: "Agentic AI and generative AI are not just incremental upgrades—they represent a fundamental paradigm shift in healthcare, transforming myriad medical ..."
@@ -2035,11 +2035,11 @@
             id: "gtc26-cwes81568",
             title: "Build Smarter Robots Using NVIDIA Isaac Sim and Isaac Lab",
             time: "2:00 PM",
-            full时间段: "March 17, 2026 - 2:00 p.m. - 2:50 p.m. PDT",
+            fullTime: "March 17, 2026 - 2:00 p.m. - 2:50 p.m. PDT",
             位演讲者s: "Teresa Conceicao | Solutions Architect Manager - Robotics | NVIDIA, Edith Llontop | Technical Marketing Engineer, Robotics | NVIDIA, Akul Santhosh | Solution Architect, Robotics | NVIDIA, Kartik Sachdev | Solutions Architect | NVIDIA, Ruben D'Sa | Sr. Product Manager | NVIDIA, Austin Klein | Product Manager, Isaac Sim | NVIDIA, Rishabh Chadha | Technical Marketing Engineer - Isaac | NVIDIA, Hammad Mazhar | | NVIDIA, Sangeeta Subramanian | Senior Product Manager | NVIDIA, Alex Millane | Senior Robotics Engineer | NVIDIA, Peter Du | | NVIDIA, Asawaree Bhide | Robotics Technical Marketing Engineer | NVIDIA, Gavriel State | Sr. Director - Simulation and AI | NVIDIA, Kelly Guo | Engineering Manager | NVIDIA",
             language: "English",
             format: "线下",
-            level: "初级",
+            level: "Beginner",
             topic: "Robotics",
             sub_topic: "Robotics Simulation",
             description: "Next-generation robots need the ability to sense, plan, and act with full autonomy. A simulation-first approach is key to building robots that are ada..."
@@ -2048,11 +2048,11 @@
             id: "gtc26-s81979",
             title: "基于扩散模型的具身智能：从统一理论到 GPU 加速的机器人策略 Diffusion-Driven Embodied AI: From Unified Theory to GPU-Accelerated Robot Policies",
             time: "12:00 AM",
-            full时间段: "March 18, 2026 - 12:00 a.m. - 1:00 a.m. PDT",
+            fullTime: "March 18, 2026 - 12:00 a.m. - 1:00 a.m. PDT",
             位演讲者s: "野 石 | 助理教授，瞬适科技创始人 | 上海科技大学，瞬适科技（上海）有限公司, Yu Huang | 资深解决方案架构师 | NVIDIA",
             language: "Chinese",
             format: "线上",
-            level: "高级",
+            level: "Advanced",
             topic: "Robotics",
             sub_topic: "Humanoid Robots",
             description: "本报告将系统阐述基于可控扩散模型的新一代机器人学习框架。首先，我们提出一种用于全新的可控扩散模型的统一理论框架，揭示其如何为机器人决策提供一种兼具表达力与可控性的数学新范式。随后，将展示一种突破性的、原生运行于 GPU 的 on-policy 扩散强化学习算法，在效率上树立新的标杆。最后，我们将通过..."
@@ -2061,11 +2061,11 @@
             id: "gtc26-s82312",
             title: "基于多模态数据湖的新一代人工智能应用：NVIDIA 工具链落地实践的深度洞察",
             time: "12:00 AM",
-            full时间段: "March 18, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
+            fullTime: "March 18, 2026 - 12:00 a.m. - 12:50 a.m. PDT",
             位演讲者s: "彦辉 王 | 产品总监 | 火山引擎",
             language: "Chinese",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Data Science",
             sub_topic: "Data Analytics / Processing",
             description: "多模态数据湖已成为新一代人工智能开发的核心基石，能够助力企业高效处理各类数据类型，为生成式人工智能流水线提供数据支撑。本次分享将深入讲解构建可扩展、GPU 加速型多模态数据湖的实操策略 —— 重点聚焦性能提升与工作流的无缝集成两大核心。我们将探讨 NVIDIA 工具链（包括 Nemo Curator..."
@@ -2074,50 +2074,50 @@
             id: "gtc26-s81975",
             title: "AIBOX + AIOS：构建生成式 AI 在智能汽车的端侧落地新范式",
             time: "12:30 AM",
-            full时间段: "March 18, 2026 - 12:30 a.m. - 1:20 a.m. PDT",
+            fullTime: "March 18, 2026 - 12:30 a.m. - 1:20 a.m. PDT",
             位演讲者s: "东超 徐 | 智能汽车事业群副总裁 | 中科创达, 晟 卢 | AIOS 智能中心-高级软件工程师 | 中科创达",
             language: "Chinese",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Code / Software Generation",
             description: "随着生成式 AI 的爆发，汽车正成为继手机之后的下一个核心载体。然而，当前车载系统仍面临端侧算力不足、架构碎片化、高延迟及隐私安全等严峻挑战。 本次演讲将深度解析 AIBox + AIOS 的全栈技术方案。该方案在不破坏既有座舱架构的前提下，通过即插即用的 AI 硬件底座与 AI 原生操作系统，结合..."
         },
         {
             id: "gtc26-s81867",
-            title: "From Data to Meaning: Vision-语言 Models Shaping the Cities of Tomorrow",
+            title: "From Data to Meaning: Vision-Language Models Shaping the Cities of Tomorrow",
             time: "1:00 AM",
-            full时间段: "March 18, 2026 - 1:00 a.m. - 1:40 a.m. PDT",
+            fullTime: "March 18, 2026 - 1:00 a.m. - 1:40 a.m. PDT",
             位演讲者s: "Giuditta Zardoni | Executive Manager | K2K",
             language: "English",
             format: "线上",
-            level: "初级",
+            level: "Beginner",
             topic: "Computer Vision / Video Analytics",
             sub_topic: "Video Analytics",
-            description: "在这个 session, we will explore how K2K is applying data-compliant Vision-语言 Models (VLMs) integrated with NVIDIA Cosmos Reason and Metropolis ..."
+            description: "In this session, we will explore how K2K is applying data-compliant Vision-Language Models (VLMs) integrated with NVIDIA Cosmos Reason and Metropolis ..."
         },
         {
             id: "gtc26-s81994",
             title: "Model Builders at the Frontier of EMEA's Open and Sovereign AI Movement",
             time: "1:00 AM",
-            full时间段: "March 18, 2026 - 1:00 a.m. - 2:00 a.m. PDT",
+            fullTime: "March 18, 2026 - 1:00 a.m. - 2:00 a.m. PDT",
             位演讲者s: "Meriem Bendris | Sr. Deep Learning Data Scientist | NVIDIA, Shaltiel Shmidman | Software Developer | Dicta, Pontus Stenetorp | Professor and Deputy Director | University College London, Imanol Schlag | Research Scientist | ETH Zurich, Andres Desantes | | 1MillionBot",
             language: "English",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Developer Tools & Techniques",
             sub_topic: "Pre-Trained / Foundation Models",
             description: "Europe's drive toward sovereign AI is redefining the way open, transparent, and multilingual large models are built at scale. This panel explores the ..."
         },
         {
             id: "gtc26-s82282",
-            title: "PAI Integrates NVIDIA Physical AI: Power E2E SDG, Model 培训 & Evaluation",
+            title: "PAI Integrates NVIDIA Physical AI: Power E2E SDG, Model Training & Evaluation",
             time: "1:00 AM",
-            full时间段: "March 18, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
+            fullTime: "March 18, 2026 - 1:00 a.m. - 1:50 a.m. PDT",
             位演讲者s: "Boyuan Huang | Product Director of Big Data and AI Platform | Alibaba Cloud",
             language: "Chinese",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Developer Tools & Techniques",
             sub_topic: "AI Platforms",
             description: "Since 2025, PAI (Platform for AI) has integrated advanced NVIDIA Physical AI technologies to empower Embodied AI, Autonomous Driving, and AGI teams wo..."
@@ -2126,11 +2126,11 @@
             id: "gtc26-s82221",
             title: "NVIDIA Accelerates AD 2.0 Era: Large-Scale Application of AI-Defined Vehicles",
             time: "1:30 AM",
-            full时间段: "March 18, 2026 - 1:30 a.m. - 2:20 a.m. PDT",
+            fullTime: "March 18, 2026 - 1:30 a.m. - 2:20 a.m. PDT",
             位演讲者s: "Haonan Shao | Senior Solution Architect, Automotive China | NVIDIA, Wenjing Zhu | GPU Computing Expert Group Manager | NVIDIA, Tao Yin | Software Manager | NVIDIA",
             language: "Chinese",
             format: "线上",
-            level: "高级",
+            level: "Advanced",
             topic: "Computer Vision / Video Analytics",
             sub_topic: "Video Analytics",
             description: "This presentation will introduce NVIDIA's core assisted driving modules, from cloud training to in-vehicle inference full-stack solutions, including N..."
@@ -2139,24 +2139,24 @@
             id: "gtc26-s81521",
             title: "European Robotics Startup Showcase",
             time: "2:00 AM",
-            full时间段: "March 18, 2026 - 2:00 a.m. - 2:50 a.m. PDT",
+            fullTime: "March 18, 2026 - 2:00 a.m. - 2:50 a.m. PDT",
             位演讲者s: "Chang Liu | CEO and Chief Designer | Extend Robotics, Snehal Deshmukh | | NVIDIA, Josef Franko | Founder and CEO | AI.Land, Elvis Nava | Co-Founder & CTO | Mimic Robotics, Sandy Hefftz | CEO | BellBoy Robotics, Daniele Pucci | Chief Executive Officer (CEO) | Generative Bionics",
             language: "English",
             format: "线上",
-            level: "初级",
+            level: "Beginner",
             topic: "Robotics",
             sub_topic: "Robot Manipulation",
-            description: "学习如何 European startups are leveraging NVIDIA platforms to advance robotics and automation across real-world industries. From teaching robotic han..."
+            description: "Learn how European startups are leveraging NVIDIA platforms to advance robotics and automation across real-world industries. From teaching robotic han..."
         },
         {
             id: "gtc26-s82028",
             title: "Accelerating Small Molecule Drug Discovery for Hard-to-Target Proteins",
             time: "3:00 AM",
-            full时间段: "March 18, 2026 - 3:00 a.m. - 3:50 a.m. PDT",
+            fullTime: "March 18, 2026 - 3:00 a.m. - 3:50 a.m. PDT",
             位演讲者s: "Carlo Fisicaro | CTO | Peptone, Inc., Michele Invernizzi | Sr. Scientist | Peptone, Ltd.",
             language: "English",
             format: "线上",
-            level: "初级",
+            level: "Beginner",
             topic: "Simulation / Modeling / Design",
             sub_topic: "BioPharma",
             description: "Learn about the practicalities and challenges of developing a flow-matching sequence-to-ensemble model for intrinsically disordered proteins, and an e..."
@@ -2165,24 +2165,24 @@
             id: "gtc26-s81718",
             title: "Agentic AI for the Next Generation of Financial Advisors",
             time: "3:00 AM",
-            full时间段: "March 18, 2026 - 3:00 a.m. - 3:50 a.m. PDT",
+            fullTime: "March 18, 2026 - 3:00 a.m. - 3:50 a.m. PDT",
             位演讲者s: "Anastasia Varava | Head of Research, SEBx | SEB, Nicolas Moch | Head of SEBx | SEB",
             language: "English",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Retrieval-Augmented Generation (RAG)",
-            description: "在这个 session, we will dive into designing an agentic system to support financial analysis and advisory. Inspired by NVIDIA AI-Q Research Assistant ..."
+            description: "In this session, we will dive into designing an agentic system to support financial analysis and advisory. Inspired by NVIDIA AI-Q Research Assistant ..."
         },
         {
             id: "gtc26-s82204",
-            title: "Manufacturing Intelligence: Agentic AI to Unlock the Next 难度级别 of Performance",
+            title: "Manufacturing Intelligence: Agentic AI to Unlock the Next Level of Performance",
             time: "3:00 AM",
-            full时间段: "March 18, 2026 - 3:00 a.m. - 3:50 a.m. PDT",
+            fullTime: "March 18, 2026 - 3:00 a.m. - 3:50 a.m. PDT",
             位演讲者s: "Paolo Avagliano | Managing Director - Manufacturing and Operations Lead | Accenture, Pierluigi Astorino | COO | Ariston Group",
             language: "English",
             format: "线上",
-            level: "商业/管理",
+            level: "Business / Executive",
             topic: "Agentic AI / Generative AI",
             sub_topic: "3D Model Generation",
             description: "Hear about an intelligent, self-learning, and adaptive system where manufacturing expertise is accelerated, orchestrated, and augmented in real time t..."
@@ -2191,11 +2191,11 @@
             id: "gtc26-s81927",
             title: "Neural Physics for AI-Powered Differentiable PDE-Solvers and Digital Twins",
             time: "3:00 AM",
-            full时间段: "March 18, 2026 - 3:00 a.m. - 3:50 a.m. PDT",
+            fullTime: "March 18, 2026 - 3:00 a.m. - 3:50 a.m. PDT",
             位演讲者s: "Christopher Pain | Professor | Imperial College London (ICL)",
             language: "English",
             format: "线上",
-            level: "高级",
+            level: "Advanced",
             topic: "Simulation / Modeling / Design",
             sub_topic: "Physics",
             description: "AI has revolutionized surrogate models in the field of computational physics. However, in this session we take a look at how AI tools can benefit phys..."
@@ -2204,11 +2204,11 @@
             id: "gtc26-s81992",
             title: "Beyond the Model: Driving Cutting-Edge Drug Discovery",
             time: "4:00 AM",
-            full时间段: "March 18, 2026 - 4:00 a.m. - 5:00 a.m. PDT",
-            位演讲者s: "David Ruau | Head of Strategic 全部iances, Drug Discovery AI, EMEA | NVIDIA, Simon Kohl | Founder & CEO | Latent Labs, Eric Durand | Chief Data Science Officer | Owkin, Robin Röhm | CEO and Co-Founder | Apheris",
+            fullTime: "March 18, 2026 - 4:00 a.m. - 5:00 a.m. PDT",
+            位演讲者s: "David Ruau | Head of Strategic Alliances, Drug Discovery AI, EMEA | NVIDIA, Simon Kohl | Founder & CEO | Latent Labs, Eric Durand | Chief Data Science Officer | Owkin, Robin Röhm | CEO and Co-Founder | Apheris",
             language: "English",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Biology - Generative AI",
             description: "How can we accelerate breakthrough drug discovery beyond model performance? This panel unites leaders from Apheris, Latent Labs, and Owkin to explore ..."
@@ -2217,11 +2217,11 @@
             id: "gtc26-s81993",
             title: "From Physical Vision Systems to OpenUSD: Building Digital Twins for 线上 Commissioning",
             time: "4:00 AM",
-            full时间段: "March 18, 2026 - 4:00 a.m. - 4:50 a.m. PDT",
+            fullTime: "March 18, 2026 - 4:00 a.m. - 4:50 a.m. PDT",
             位演讲者s: "Justus Basler | Application Engineer | Basler AG, Kamil Lelowicz | Machine Learning Engineer | Basler AG",
             language: "English",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Simulation / Modeling / Design",
             sub_topic: "Industrial Digitalization / Digital Twin",
             description: "As conventional development of machine vision solutions is time-consuming and costly, and AI-driven automation accelerates, the ability to virtually c..."
@@ -2230,50 +2230,50 @@
             id: "gtc26-s82115",
             title: "Optimizing $1 Trillion in Payments: From Contextual Bandits to Foundational Models",
             time: "4:00 AM",
-            full时间段: "March 18, 2026 - 4:00 a.m. - 5:00 a.m. PDT",
+            fullTime: "March 18, 2026 - 4:00 a.m. - 5:00 a.m. PDT",
             位演讲者s: "Dhruv Ghulati | Principal Product Manager | Adyen",
             language: "English",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Code / Software Generation",
-            description: "Making split-second decisions that balance fraud, cost, and conversion is central to global payments. 本次会议 explores how machine learning techn..."
+            description: "Making split-second decisions that balance fraud, cost, and conversion is central to global payments. This session explores how machine learning techn..."
         },
         {
             id: "gtc26-s81898",
             title: "Europe's AI Launchpad: Unlock Startup Growth Through Sovereign AI Infrastructure",
             time: "5:00 AM",
-            full时间段: "March 18, 2026 - 5:00 a.m. - 6:00 a.m. PDT",
+            fullTime: "March 18, 2026 - 5:00 a.m. - 6:00 a.m. PDT",
             位演讲者s: "Cedric Auliac | AI2F Program Director | GENCI, Pierre-Antoine Beaudoin | Regional Lead, Startup Ecosystem, Southern Europe | NVIDIA, Sadaf Alam | CTO | University of Bristol, BriCS, Yann Lechelle | Executive President | Probabl.ai",
             language: "English",
             format: "线上",
-            level: "商业/管理",
+            level: "Business / Executive",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Code / Software Generation",
-            description: "本次会议 will explore Europe's dynamic AI compute landscape and guide founders through leveraging both publicly funded AI factories—designed for o..."
+            description: "This session will explore Europe's dynamic AI compute landscape and guide founders through leveraging both publicly funded AI factories—designed for o..."
         },
         {
             id: "gtc26-s82230",
             title: "Transform Data for Industrial Mobility Automation",
             time: "5:00 AM",
-            full时间段: "March 18, 2026 - 5:00 a.m. - 5:25 a.m. PDT",
+            fullTime: "March 18, 2026 - 5:00 a.m. - 5:25 a.m. PDT",
             位演讲者s: "Horia Porav | Principal Engineer | Oxa Autonomy Ltd.",
             language: "English",
             format: "线上",
-            level: "中级",
+            level: "Intermediate",
             topic: "Agentic AI / Generative AI",
             sub_topic: "Image Generation",
-            description: "了解如何 Oxa transforms both real-world data (real-to-real) and data from SIM (sim-to-real) leveraging NVIDIA Cosmos for industrial domains such a..."
+            description: "Discover how Oxa transforms both real-world data (real-to-real) and data from SIM (sim-to-real) leveraging NVIDIA Cosmos for industrial domains such a..."
         },
         {
             id: "gtc26-c81544",
             title: "Your Learning Pathway: Get Certified for Career Success",
             time: "6:00 AM",
-            full时间段: "March 18, 2026 - 6:00 a.m. - 6:50 a.m. PDT",
-            位演讲者s: "Karine Vardazaryan | Sr. 培训 Advisor at NVIDIA's Deep Learning Institute (DLI) | NVIDIA, Radoslav Baťo Varga | Research, Development and Youth of the Slovak Republic, Adviser to the Minister | Ministry of Education, David Senicic | Head of Technology | HTEC Group, Bora Ger | Global Lead for Human-AI Advantage | Capgemini",
+            fullTime: "March 18, 2026 - 6:00 a.m. - 6:50 a.m. PDT",
+            位演讲者s: "Karine Vardazaryan | Sr. Training Advisor at NVIDIA's Deep Learning Institute (DLI) | NVIDIA, Radoslav Baťo Varga | Research, Development and Youth of the Slovak Republic, Adviser to the Minister | Ministry of Education, David Senicic | Head of Technology | HTEC Group, Bora Ger | Global Lead for Human-AI Advantage | Capgemini",
             language: "English",
             format: "线上",
-            level: "初级",
+            level: "Beginner",
             topic: "Developer Tools & Techniques",
             sub_topic: "Transfer Learning / Fine Tuning",
             description: "Join a discussion featuring industry practitioners, along with representatives from both the public and private sectors, as they share how professiona..."
@@ -2282,11 +2282,11 @@
             id: "gtc26-dlit81541",
             title: "Build Surgical and Medical Robotics With NVIDIA Isaac for Healthcare: From Simulation to Deployment",
             time: "8:00 AM",
-            full时间段: "March 18, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
+            fullTime: "March 18, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
             位演讲者s: "Maximilian Ofir | Technical Marketing Engineer | NVIDIA GmbH",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Robotics",
             sub_topic: "Robotics Simulation",
             description: "Gain hands-on experience in setting up simulation environments, generating and converting synthetic medical data, modifying scenes and assets, collect..."
@@ -2295,24 +2295,24 @@
             id: "gtc26-dlit81798",
             title: "Building and Deploying Digital Twin Applications With Omniverse Kit App Streaming",
             time: "8:00 AM",
-            full时间段: "March 18, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
+            fullTime: "March 18, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
             位演讲者s: "Sebastian Misiurek | Sr. Product Manager, Omniverse | NVIDIA, Andrew Wrenn | Cloud Software Engineer | NVIDIA",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Simulation / Modeling / Design",
             sub_topic: "Industrial Digitalization / Digital Twin",
-            description: "Unlock the power of real-time 3D digital twin applications with NVIDIA Omniverse Kit App Streaming. 在这个 lab, you will build, containerize, deploy,..."
+            description: "Unlock the power of real-time 3D digital twin applications with NVIDIA Omniverse Kit App Streaming. In this lab, you will build, containerize, deploy,..."
         },
         {
             id: "gtc26-dlit81660",
             title: "Data to Decisions: GPU-Accelerated Decision Optimization",
             time: "8:00 AM",
-            full时间段: "March 18, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
+            fullTime: "March 18, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
             位演讲者s: "Adi Yanovsky | Technical Marketing Engineer | NVIDIA, Burcin Bozkaya | Sr. Developer Relations Manager | NVIDIA",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Data Science",
             sub_topic: "Logistics / Route Optimization",
             description: "Learn to optimize decision optimization problems with GPU-accelerated workflows using NVIDIA cuOpt, RAPIDS, CUDA-X libraries, and Nemotron models. Thi..."
@@ -2321,11 +2321,11 @@
             id: "gtc26-dlit82008",
             title: "Deploy and Customize Your AI Factory: Make Your AI Factory Feel Like Home!",
             time: "8:00 AM",
-            full时间段: "March 18, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
-            位演讲者s: "Max Steele | Sr. Technical Instructor in AI and Data Center | NVIDIA, Terrell Bennett | Technical 培训 Content Developer | NVIDIA",
+            fullTime: "March 18, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
+            位演讲者s: "Max Steele | Sr. Technical Instructor in AI and Data Center | NVIDIA, Terrell Bennett | Technical Training Content Developer | NVIDIA",
             language: "English",
             format: "线下",
-            level: "初级",
+            level: "Beginner",
             topic: "Data Center / Cloud",
             sub_topic: "Infrastructure",
             description: "This hands-on lab will get you down and dirty with customizing an AI factory. Experience how typical administrator tasks are made easier with NVIDIA M..."
@@ -2334,11 +2334,11 @@
             id: "gtc26-dlit81945",
             title: "Faster Together: Train and Deploy a Speculative Decoding Model for Low-Latency LLM Inference",
             time: "8:00 AM",
-            full时间段: "March 18, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
+            fullTime: "March 18, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
             位演讲者s: "Mireille Fares | Sr. AI Solution Architect | NVIDIA, Tiyasa Mitra | | NVIDIA",
             language: "English",
             format: "线下",
-            level: "高级",
+            level: "Advanced",
             topic: "Developer Tools & Techniques",
             sub_topic: "AI Inference",
             description: "Dive deep into theory and practice of low-latency inference by deploying NVIDIA TensorRT-LLM with advanced speculative decoding techniques. You will t..."
@@ -2347,24 +2347,24 @@
             id: "gtc26-dlit81698",
             title: "Scalable Environment Setup and Policy Evaluation in Simulation with Isaac Lab-Arena and GR00T",
             time: "8:00 AM",
-            full时间段: "March 18, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
+            fullTime: "March 18, 2026 - 8:00 a.m. - 9:45 a.m. PDT",
             位演讲者s: "Asawaree Bhide | Robotics Technical Marketing Engineer | NVIDIA, Edith Llontop | Technical Marketing Engineer, Robotics | NVIDIA, Sangeeta Subramanian | Senior Product Manager | NVIDIA, Alex Millane | Senior Robotics Engineer | NVIDIA",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Robotics",
             sub_topic: "Robotics Simulation",
-            description: "在这个 hands-on lab, you will gain expertise on workflows for simulation-based policy evaluation, including how to setup simulation environments with..."
+            description: "In this hands-on lab, you will gain expertise on workflows for simulation-based policy evaluation, including how to setup simulation environments with..."
         },
         {
             id: "gtc26-c81931",
             title: "Your Path to Physical AI and OpenUSD Certification at GTC",
             time: "8:00 AM",
-            full时间段: "March 18, 2026 - 8:00 a.m. - 8:45 a.m. PDT",
-            位演讲者s: "Krista Glanville | Technical Marketing Manager - Physical AI Learning & 培训 | NVIDIA, Matias Codesal | Lead Technical Marketing Engineer - OpenUSD | NVIDIA",
+            fullTime: "March 18, 2026 - 8:00 a.m. - 8:45 a.m. PDT",
+            位演讲者s: "Krista Glanville | Technical Marketing Manager - Physical AI Learning & Training | NVIDIA, Matias Codesal | Lead Technical Marketing Engineer - OpenUSD | NVIDIA",
             language: "English",
             format: "线下",
-            level: "通用",
+            level: "General Interest",
             topic: "Developer Tools & Techniques",
             sub_topic: "Pre-Trained / Foundation Models",
             description: "Ready to build the next generation of autonomous systems that perceive, reason, and act in the physical world? Join us for an in-depth look at NVIDIA'..."
@@ -2373,11 +2373,11 @@
             id: "gtc26-s81489",
             title: "A New Paradigm: Verifiable AI",
             time: "9:00 AM",
-            full时间段: "March 18, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 18, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Ofir Arkin | Sr. Distinguished Engineer | NVIDIA, Jonathan Dotan | Founder | EQTY Lab, Caroline Yap | CTO | Sovereign AI",
             language: "English",
             format: "线下",
-            level: "中级",
+            level: "Intermediate",
             topic: "Trustworthy AI / Cybersecurity",
             sub_topic: "Security for AI",
             description: "Autonomous AI requires a new security model. From AI agents to robots, we need to rethink how we should trust these systems to deliver the full promis..."
@@ -2386,11 +2386,11 @@
             id: "gtc26-s81663",
             title: "Accelerate the Path to In-Silico Life Sciences and Drug Discovery",
             time: "9:00 AM",
-            full时间段: "March 18, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 18, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Anthony Costa | Director, Digital Biology | NVIDIA",
             language: "English",
-            format: "混合",
-            level: "中级",
+            format: "Hybrid",
+            level: "Intermediate",
             topic: "Simulation / Modeling / Design",
             sub_topic: "BioPharma",
             description: "Representing life in silico and designing compounds and therapies that modulate that biology are among the most foundational goals of modern life scie..."
@@ -2399,11 +2399,11 @@
             id: "gtc26-s82010",
             title: "AI Grid Explained: From Secure AI Factories to Distributed Intelligence",
             time: "9:00 AM",
-            full时间段: "March 18, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
+            fullTime: "March 18, 2026 - 9:00 a.m. - 9:40 a.m. PDT",
             位演讲者s: "Sree Sankar | Global Head, AI-Grid | NVIDIA, Masum Mir | SVP and GM, Provider Mobility | Cisco, Shawn Hakl | SVP & Head of Business Product | AT&T",
             language: "English",
             format: "线下",
-            level: "商业/管理",
+            level: "Business / Executive",
             topic: "Data Center / Cloud",
             sub_topic: "Infrastructure",
             description: "As AI adoption accelerates, isolated AI factories must scale across to a connected, distributed and secure AI grid that can run diverse workloads —fro..."
@@ -2423,10 +2423,10 @@
         let searchQuery = '';
 
         function renderSessions() {
-            const container = document.getElementById('场会议-container');
+            const container = document.getElementById('sessions-container');
             const noResults = document.getElementById('no-results');
 
-            const filteredSessions = 场会议.filter(session => {
+            const filteredSessions = sessions.filter(session => {
                 // Search filter
                 if (searchQuery) {
                     const searchLower = searchQuery.toLowerCase();
@@ -2437,22 +2437,22 @@
                     if (!matchSearch) return false;
                 }
 
-                // 日期 filter
+                // Date filter
                 if (activeFilters.date.length > 0) {
-                    let session日期 = 'March 18';
-                    if (session.full时间段.includes('March 15')) {
-                        session日期 = 'March 15';
-                    } else if (session.full时间段.includes('March 16')) {
-                        session日期 = 'March 16';
-                    } else if (session.full时间段.includes('March 17')) {
-                        session日期 = 'March 17';
+                    let sessionDate = 'March 18';
+                    if (session.fullTime.includes('March 15')) {
+                        sessionDate = 'March 15';
+                    } else if (session.fullTime.includes('March 16')) {
+                        sessionDate = 'March 16';
+                    } else if (session.fullTime.includes('March 17')) {
+                        sessionDate = 'March 17';
                     }
-                    if (!activeFilters.date.includes(session日期)) {
+                    if (!activeFilters.date.includes(sessionDate)) {
                         return false;
                     }
                 }
 
-                // 时间段 filter - OR logic within category
+                // Time filter - OR logic within category
                 if (activeFilters.time.length > 0) {
                     const timeMatch = activeFilters.time.some(time => {
                         // Check if time matches and also verify date if the time button includes date info
@@ -2464,7 +2464,7 @@
                         
                         if (dateFromButton) {
                             // If button has date info, check both time and date
-                            return session.time.includes(timeOnly) && session.full时间段.includes(dateFromButton);
+                            return session.time.includes(timeOnly) && session.fullTime.includes(dateFromButton);
                         } else {
                             // If button doesn't have date info, just check time (backward compatibility)
                             return session.time.includes(time);
@@ -2473,33 +2473,33 @@
                     if (!timeMatch) return false;
                 }
                 
-                // 会议形式 filter - OR logic within category
+                // Format filter - OR logic within category
                 if (activeFilters.format.length > 0) {
                     const formatMatch = activeFilters.format.some(format => session.format === format);
                     if (!formatMatch) return false;
                 }
                 
-                // 难度级别 filter - OR logic within category
+                // Level filter - OR logic within category
                 if (activeFilters.level.length > 0) {
                     const levelMatch = activeFilters.level.some(level => session.level === level);
                     if (!levelMatch) return false;
                 }
                 
-                // 语言 filter - OR logic within category
+                // Language filter - OR logic within category
                 if (activeFilters.language.length > 0) {
                     const languageMatch = activeFilters.language.some(lang => session.language === lang);
                     if (!languageMatch) return false;
                 }
                 
-                // 主题分类 filter - OR logic within category
+                // Topic filter - OR logic within category
                 if (activeFilters.topic.length > 0) {
-                    const match主题分类 = activeFilters.topic.some(topic =>
+                    const matchTopic = activeFilters.topic.some(topic =>
                         session.topic.toLowerCase().includes(topic.toLowerCase())
                     );
-                    if (!match主题分类) return false;
+                    if (!matchTopic) return false;
                 }
                 
-                // 精选 filter
+                // Highlights filter
                 if (activeFilters.highlights.length > 0) {
                     const sessionIdNum = session.id.replace('gtc26-s', '').replace(/[^0-9]/g, '');
                     const isHighlight = highlightsSessionIds.includes(sessionIdNum);
@@ -2513,8 +2513,8 @@
             const hasActiveFilter = Object.values(activeFilters).some(arr => arr.length > 0) || searchQuery;
             
             // Calculate stats
-            const inPersonCount = 场会议.filter(s => s.format === '线下').length;
-            const virtualCount = 场会议.filter(s => s.format === '线上').length;
+            const inPersonCount = sessions.filter(s => s.format === '线下').length;
+            const virtualCount = sessions.filter(s => s.format === '线上').length;
             document.getElementById('in-person-count').textContent = inPersonCount;
             document.getElementById('virtual-count').textContent = virtualCount;
             
@@ -2541,7 +2541,7 @@
                         <div class="session-card" data-time="${session.time}" data-format="${session.format}" data-level="${session.level}" data-topic="${session.topic}">
                             <div class="card-header">
                                 ${(() => {
-                                    const dateMatch = session.full时间段.match(/March (\d+)/);
+                                    const dateMatch = session.fullTime.match(/March (\d+)/);
                                     const dateStr = dateMatch ? `3月${dateMatch[1]}号 ` : '';
                                     return `<span class="session-time">${dateStr}${session.time} PDT</span>`;
                                 })()}
@@ -2580,7 +2580,7 @@
         });
 
         // Filter button handlers
-        document.querySelector全部('.filter-btn').forEach(btn => {
+        document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 const filterType = btn.dataset.filter;
                 const filterValue = btn.dataset.value;
