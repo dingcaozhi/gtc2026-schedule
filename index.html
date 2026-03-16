@@ -389,22 +389,26 @@
             <p>NVIDIA GPU 技术大会 - March 15-19, 2026 (PDT)</p>
             <div id='pdt-time' style='background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 20px; border-radius: 20px; font-size: 1.1rem; font-weight: 600; margin-top: 10px; display: inline-block;'></div>
 
-            <div class='stats-bar'>
-                <div class='stat-item'>
-                    <div class='stat-number' id='total-count'>143</div>
-                    <div class='stat-label'>总会议数</div>
+            <!-- 精简统计栏 -->
+            <div style='display: flex; justify-content: center; gap: 30px; margin: 15px 0; font-size: 0.9rem; color: #666;'>
+                <span>📊 总会议数: <strong id='total-count' style='color: #667eea;'>143</strong></span>
+                <span>🏬 线下: <strong id='in-person-count' style='color: #667eea;'>-</strong></span>
+                <span>💻 线上: <strong id='virtual-count' style='color: #667eea;'>-</strong></span>
+            </div>
+
+            <!-- S81595 重点会议 Banner -->
+            <div id='featured-banner' style='background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; padding: 20px 25px; border-radius: 16px; margin: 20px 0; box-shadow: 0 8px 30px rgba(238, 90, 36, 0.3); cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;' onclick="window.location.href='session/gtc26-s81595.html'">
+                <div style='display: flex; align-items: center; gap: 15px; margin-bottom: 10px;'>
+                    <span style='background: #ffeaa7; color: #d63031; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;'>⭐ 重点关注</span>
+                    <span style='font-family: monospace; font-size: 0.85rem; opacity: 0.9;'>GTC26-S81595</span>
                 </div>
-                <div class='stat-item'>
-                    <div class='stat-number' id='in-person-count'>-</div>
-                    <div class='stat-label'>线下会议</div>
+                <h2 style='margin: 0 0 10px 0; font-size: 1.4rem;'>GTC 2026 主题演讲</h2>
+                <p style='margin: 0 0 12px 0; opacity: 0.95; font-size: 0.95rem;'>在这场主题演讲中，英伟达创始人兼首席执行官黄仁勋展望了加速计算和人工智能的未来，以及它们将如何塑造各行各业下一代计算时代。</p>
+                <div style='display: flex; align-items: center; gap: 10px; font-size: 0.9rem; opacity: 0.9;'>
+                    <span>👤 Jensen Huang | Founder and CEO | NVIDIA</span>
                 </div>
-                <div class='stat-item'>
-                    <div class='stat-number' id='virtual-count'>-</div>
-                    <div class='stat-label'>线上会议</div>
-                </div>
-                <div class='stat-item'>
-                    <div class='stat-number'>5</div>
-                    <div class='stat-label'>会议天数</div>
+                <div style='margin-top: 15px; text-align: right; font-size: 0.9rem; font-weight: 600;'>
+                    查看详情 →
                 </div>
             </div>
         </header>
@@ -2929,26 +2933,47 @@
                 noResults.classList.remove('show');
                 document.getElementById('total-count').textContent = filteredSessions.length;
 
+                // 将S81595会议置顶
+                const s81595Index = filteredSessions.findIndex(s => s.id.includes('s81595'));
+                if (s81595Index > 0) {
+                    const s81595 = filteredSessions.splice(s81595Index, 1)[0];
+                    filteredSessions.unshift(s81595);
+                }
+
                 container.innerHTML = filteredSessions.map(session => {
                     const subTopicSpan = session.sub_topic 
                         ? '<span class="session-sub-topic" style="background: #e0e0e0; color: #555; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem;">' + session.sub_topic + '</span>'
                         : '';
+                    
+                    // S81595特殊样式
+                    const isS81595 = session.id.includes('s81595');
+                    const cardStyle = isS81595 
+                        ? 'background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; border: 3px solid #ff9f43; box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);'
+                        : '';
+                    const titleStyle = isS81595 ? 'color: white;' : '';
+                    const descStyle = isS81595 ? 'color: rgba(255,255,255,0.9);' : '';
+                    const speakerStyle = isS81595 ? 'color: rgba(255,255,255,0.95);' : '';
+                    const topicStyle = isS81595 ? 'background: rgba(255,255,255,0.2); color: white;' : 'background: #667eea; color: white;';
+                    const viewStyle = isS81595 ? 'color: #ffeaa7; border-color: rgba(255,255,255,0.3);' : 'color: #667eea;';
+                    const featuredBadge = isS81595 ? '<div style="background: #ffeaa7; color: #d63031; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-bottom: 10px; display: inline-block;">⭐ 重点关注</div>' : '';
+                    
                     return `
                     <a href="session/${session.id}.html" class="session-card-link" style="text-decoration: none; color: inherit;">
-                        <div class="session-card" data-time="${session.time}" data-format="${session.format}" data-level="${session.level}" data-topic="${session.topic}">
+                        <div class="session-card" data-time="${session.time}" data-format="${session.format}" data-level="${session.level}" data-topic="${session.topic}" style="${cardStyle}">
+                            ${featuredBadge}
                             <div class="session-id">${session.id}</div>
-                            <h3 class="session-title">${session.title}</h3>
+                            <h3 class="session-title" style="${titleStyle}">${session.title}</h3>
                             <div class="session-topics" style="margin-bottom: 10px;">
-                                <span class="session-main-topic" style="background: #667eea; color: white; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; margin-right: 6px;">${session.topic}</span>
+                                <span class="session-main-topic" style="${topicStyle}; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; margin-right: 6px;">${session.topic}</span>
                                 ${subTopicSpan}
                             </div>
-                            <div class="session-speakers">
+                            <div class="session-speakers" style="${speakerStyle}">
                                 👤 ${session.speakers}
                             </div>
-                            <div class="session-description">
+                            <div class="session-description" style="${descStyle}">
                                 ${session.description}
                             </div>
-                            <div class="view-analysis" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; color: #667eea; font-weight: 600; font-size: 0.9rem;">
+                            <div class="view-analysis" style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee; ${viewStyle}; font-weight: 600; font-size: 0.9rem;">
                                 🔍 查看洞察分析 →
                             </div>
                         </div>
