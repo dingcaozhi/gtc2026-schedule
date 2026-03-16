@@ -390,25 +390,30 @@
             <div id='pdt-time' style='background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 20px; border-radius: 20px; font-size: 1.1rem; font-weight: 600; margin-top: 10px; display: inline-block;'></div>
 
             <!-- 精简统计栏 -->
-            <div style='display: flex; justify-content: center; gap: 30px; margin: 15px 0; font-size: 0.9rem; color: #666;'>
-                <span>📊 总会议数: <strong id='total-count' style='color: #667eea;'>143</strong></span>
-                <span>🏬 线下: <strong id='in-person-count' style='color: #667eea;'>-</strong></span>
-                <span>💻 线上: <strong id='virtual-count' style='color: #667eea;'>-</strong></span>
+            <div style='display: flex; justify-content: center; gap: 30px; margin: 15px 0; font-size: 0.9rem; color: #ffffff;'>
+                <span>📊 总会议数: <strong id='total-count' style='color: #ffffff;'>143</strong></span>
+                <span>🏬 线下: <strong id='in-person-count' style='color: #ffffff;'>-</strong></span>
+                <span>💻 线上: <strong id='virtual-count' style='color: #ffffff;'>-</strong></span>
             </div>
 
             <!-- S81595 重点会议 Banner -->
-            <div id='featured-banner' style='background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; padding: 20px 25px; border-radius: 16px; margin: 20px 0; box-shadow: 0 8px 30px rgba(238, 90, 36, 0.3); cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;' onclick="window.location.href='session/gtc26-s81595.html'">
-                <div style='display: flex; align-items: center; gap: 15px; margin-bottom: 10px;'>
-                    <span style='background: #ffeaa7; color: #d63031; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;'>⭐ 重点关注</span>
-                    <span style='font-family: monospace; font-size: 0.85rem; opacity: 0.9;'>GTC26-S81595</span>
-                </div>
-                <h2 style='margin: 0 0 10px 0; font-size: 1.4rem;'>GTC 2026 主题演讲</h2>
-                <p style='margin: 0 0 12px 0; opacity: 0.95; font-size: 0.95rem;'>在这场主题演讲中，英伟达创始人兼首席执行官黄仁勋展望了加速计算和人工智能的未来，以及它们将如何塑造各行各业下一代计算时代。</p>
-                <div style='display: flex; align-items: center; gap: 10px; font-size: 0.9rem; opacity: 0.9;'>
-                    <span>👤 Jensen Huang | Founder and CEO | NVIDIA</span>
-                </div>
-                <div style='margin-top: 15px; text-align: right; font-size: 0.9rem; font-weight: 600;'>
-                    查看详情 →
+            <div id='featured-banner' style='background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; padding: 20px 25px; border-radius: 16px; margin: 20px 0; box-shadow: 0 8px 30px rgba(238, 90, 36, 0.3);'>
+                <div style='display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px;'>
+                    <div style='flex: 1; min-width: 300px;'>
+                        <div style='display: flex; align-items: center; gap: 15px; margin-bottom: 10px;'>
+                            <span style='background: #ffeaa7; color: #d63031; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;'>⭐ 重点关注</span>
+                            <span style='font-family: monospace; font-size: 0.85rem; opacity: 0.9;'>GTC26-S81595</span>
+                        </div>
+                        <h2 style='margin: 0 0 10px 0; font-size: 1.4rem;'>GTC 2026 主题演讲</h2>
+                        <p style='margin: 0 0 12px 0; opacity: 0.95; font-size: 0.95rem;'>在这场主题演讲中，英伟达创始人兼首席执行官黄仁勋展望了加速计算和人工智能的未来，以及它们将如何塑造各行各业下一代计算时代。</p>
+                        <div style='display: flex; align-items: center; gap: 10px; font-size: 0.9rem; opacity: 0.9;'>
+                            <span>👤 Jensen Huang | Founder and CEO | NVIDIA</span>
+                        </div>
+                    </div>
+                    <div style='display: flex; flex-direction: column; gap: 10px; min-width: 200px;'>
+                        <a href='session/gtc26-s81595.html' style='background: #ffeaa7; color: #d63031; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center; transition: all 0.3s;' onmouseover="this.style.background='#ffd93d'" onmouseout="this.style.background='#ffeaa7'">2026 Keynote 深度洞察 →</a>
+                        <a href='gtc2025-keynote-insight.html' style='background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s;' onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'"> 2025 Keynote 深度洞察 →</a>
+                    </div>
                 </div>
             </div>
         </header>
