@@ -40,6 +40,48 @@
         header p {
             font-size: 1.1rem;
             opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .header-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .header-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .header-btn:hover {
+            background: rgba(255,255,255,0.3);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .header-btn.primary {
+            background: #76b900;
+            border-color: #76b900;
+        }
+
+        .header-btn.primary:hover {
+            background: #5a9100;
+            border-color: #5a9100;
         }
 
         .stats-bar {
@@ -388,6 +430,12 @@
             <h1>🚀 GTC 2026 会议日程</h1>
             <p>NVIDIA GPU 技术大会 - March 15-19, 2026 (PDT)</p>
             <div id='pdt-time' style='background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 20px; border-radius: 20px; font-size: 1.1rem; font-weight: 600; margin-top: 10px; display: inline-block;'></div>
+
+            <!-- 头部按钮 -->
+            <div class='header-buttons'>
+                <a href='session/deep_research_report.html' class='header-btn primary'>📊 深度研究报告</a>
+                <a href='gtc2026_keynote_insight.html' class='header-btn'>🎯 Keynote 洞察</a>
+            </div>
 
             <!-- 精简统计栏 -->
             <div style='display: flex; justify-content: center; gap: 30px; margin: 15px 0; font-size: 0.9rem; color: #ffffff;'>
