@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026计算范式转移与智能基础设施重构 | 完整技术报告</title>
+    <style>
+        :root {
+            --nvidia-green: #76b900;
+            --nvidia-dark: #1a1a1a;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --accent-blue: #0066cc;
+            --border-color: #e5e7eb;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            color: var(--nvidia-dark);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--nvidia-green);
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            color: var(--nvidia-dark);
+            margin: 40px 0 20px;
+            padding-left: 15px;
+            border-left: 4px solid var(--nvidia-green);
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            color: var(--nvidia-dark);
+            margin: 30px 0 15px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, rgba(118, 185, 0, 0.1), rgba(0, 102, 204, 0.1));
+            border-left: 4px solid var(--nvidia-green);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.9rem;
+        }
+        
+        th {
+            background: var(--bg-color);
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid var(--nvidia-green);
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        tr:hover {
+            background: rgba(118, 185, 0, 0.05);
+        }
+        
+        .section {
+            background: var(--card-bg);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        ul, ol {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        strong {
+            color: var(--nvidia-dark);
+        }
+        
+        @media (max-width: 768px) {
+            .container { padding: 20px 15px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+            h3 { font-size: 1rem; }
+            .section { padding: 20px 15px; }
+            table { font-size: 0.8rem; }
+            th, td { padding: 8px; }
+        }
+        
+        .references {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .references li {
+            margin-bottom: 8px;
+            word-break: break-all;
+        }
+        
+        .references a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+        
+        .references a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>2026计算范式转移与智能基础设施重构</h1>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 30px;">面向专家的深度技术洞察报告 | 基于 NVIDIA GTC 2026 Keynote</p>
+        
+        <div class="section">
+            <h2>引言：从检索式计算到生成式智能的范式跃迁</h2>
+            <p>全球计算基础设施正处于一个不可逆转的终极拐点。传统的检索式计算架构已经无法支撑当前以多模态、连续推理为核心的生成式人工智能需求。随着自主数字员工和智能体（Agents）的商业化普及，计算需求的增长呈现出指数级爆发的态势，其核心驱动力不再是单一的语言模型训练，而是进入了被业界称为<strong>"推理翻转（Inference Flip）"</strong>的全新阶段。</p>
+            
+            <div class="highlight">
+                <p>在这一全新的数字经济体系中，<strong>Token已取代传统的数据字节</strong>，成为核心的大宗商品与价值度量单位。对于数据中心运营方和基础设施提供商而言，评估计算基础设施的标准已经从单纯的峰值理论性能（Peak Theoretical Performance）转移到了在固定物理与电力限制下的经济产出，即<strong>"每瓦Token生成率（Tokens per Watt）"</strong>。</p>
+            </div>
+            
+            <p>全球电力网的承载能力构成了计算扩展的绝对物理边界，因此，如何在兆瓦乃至吉瓦级（Gigawatt）的设施中最大化Token的产出与收益，成为了整个半导体与系统工程领域的首要战略目标。为了应对这一挑战，传统的单体通用图形处理单元（GPU）架构正在发生断裂，演变为高度专业化、异构化、以机架为最小计算单元的超级计算织物（Computing Fabric）。</p>
+        </div>
+
+        <div class="section">
+            <h2>AI工厂的底层逻辑：Token经济学与全栈数字孪生协同</h2>
+            <p>随着智能体工作流复杂度的增加，大语言模型的上下文窗口已经扩展至数百万Token的级别。这就要求底层基础设施必须以工厂化的思维进行构建与运营。AI工厂不再是传统意义上用于存储和检索数据的仓库，而是专门用于摄取原始数据并将其精炼为高价值Token的重工业制造设施。</p>
+            
+            <p>在吉瓦级规模下，设施的供电配置、热力学管理与网络拓扑极其复杂，传统的试错型物理部署模式将导致不可接受的时间延迟与资本损耗。为解决这一难题，工业界广泛采纳了基于<strong>NVIDIA Omniverse DSX平台</strong>的AI工厂参考架构。该平台利用高保真的数字孪生（Digital Twin）技术，在物理设施动工之前，对全栈基础设施进行像素级与物理级别的实时模拟验证，从而将集群从部署到产生首个Token（Time to First Token）的周期从数月压缩至数天。</p>
+            
+            <h3>DSX核心组件</h3>
+            <table>
+                <tr>
+                    <th>组件</th>
+                    <th>架构功能与运行机制</th>
+                    <th>业务层面的影响与产出</th>
+                </tr>
+                <tr>
+                    <td><strong>DSX Sim / Air</strong></td>
+                    <td>利用高保真数字孪生对GPU、网络设备及基础设施进行逻辑建模与仿真</td>
+                    <td>在物理部署前验证电气与热力学布局，确保"首日即巅峰"的性能表现，消除盲目试错成本</td>
+                </tr>
+                <tr>
+                    <td><strong>DSX Max-Q</strong></td>
+                    <td>动态电力编排系统，结合工作负载感知进行细粒度的功率优化</td>
+                    <td>削峰填谷，降低散热系统功耗，将节省的电力重定向至计算节点，在固定电力配额内提升高达30%的基础设施部署密度</td>
+                </tr>
+                <tr>
+                    <td><strong>DSX Flex</strong></td>
+                    <td>电网协同软件层，将AI工厂内部需求与外部电网状态实时同步</td>
+                    <td>解锁闲置电网容量，接入混合现场可再生能源发电，使得AI工厂成为电网的柔性负载资产</td>
+                </tr>
+                <tr>
+                    <td><strong>DSX Exchange</strong></td>
+                    <td>实现IT（信息技术）与OT（运营技术）系统间的信号双向安全集成</td>
+                    <td>将数字孪生模型、物理设施控制单元与自主运维智能体统一至单一控制面，实现工厂级的自动化闭环管理</td>
+                </tr>
+            </table>
+            
+            <p>通过实施DSX Max-Q和工作负载感知的能量优化配置文件，超大规模集群能够在维持关键应用97%以上性能吞吐的前提下，实现高达15%的绝对能源节省。这一系统级优化意味着，在电力受限的计算中心内，整体Token的并行生成吞吐量可获得13%以上的净增长，直接转化为实质性的商业收益。</p>
+        </div>
+
+        <div class="section">
+            <h2>Vera Rubin架构深度解析：机架级计算的异构重塑</h2>
+            <p>面对千万亿级参数模型的挑战，传统的服务器主板设计已经遭遇了严重的I/O瓶颈。因此，计算的最小物理和逻辑单元已经正式从单块芯片跃升为整机架系统。Vera Rubin架构正是这一理念的终极体现。该架构通过极致的软硬件协同设计（Extreme Co-design），将七款定制化硅芯片（包括Vera CPU、Rubin GPU、NVLink 6交换芯片、ConnectX-9 SuperNIC、BlueField-4 DPU、Spectrum-6以太网交换机以及新整合的Groq 3 LPU）融合为一个具备内存一致性的超级计算节点。</p>
+            
+            <h3>Vera CPU：专为智能体编排而生的控制面核心</h3>
+            <p>在生成式AI早期，通用x86和传统的ARM处理器勉强能够胜任GPU的宿主角色。然而，在强化学习、多智能体沙盒环境以及极大规模的数据清洗管道中，通用CPU由于高延迟的跨小芯片（Cross-chiplet）通信和较低的内存带宽，成为了拖累整个GPU集群的致命瓶颈。为了彻底消除这一系统性短板，Vera CPU被从零开始设计为专用的数据移动引擎与智能体推理编排中枢。</p>
+            
+            <p>Vera CPU摒弃了通用的内核设计，搭载了88个由NVIDIA完全定制的Olympus内核。该微架构全面兼容Arm v9.2指令集，并且是业界首个原生支持FP8张量处理的通用处理器核心。其最核心的架构创新在于引入了<strong>"空间多线程（Spatial Multithreading）"</strong>技术。传统的时间切片并发多线程（SMT）通过在单一流水线上交替执行指令来提升资源利用率，但在多租户AI环境中，这会导致严重的性能抖动（Jitter）和不可预测的长尾延迟。与之相反，空间多线程通过在物理层面上严格硬隔离并划分内核资源，使每个Olympus核心能够同时处理两个独立线程（单芯片总计176个线程），从而在保障高并发的同时，提供极其确定性的执行延迟。</p>
+            
+            <p>在内存子系统方面，Vera CPU采用了小型化压缩附加内存模块（SOCAMM）形式的LPDDR5X阵列。该设计不仅在功耗上控制在50瓦以内，更实现了高达<strong>1.2 TB/s</strong>的超高内存带宽与<strong>1.5 TB</strong>的系统容量。这一特性对于处理KV缓存卸载（KV-cache offloading）、图分析以及复杂的数据库检索任务具有决定性意义。</p>
+            
+            <h3>架构参数对比</h3>
+            <table>
+                <tr>
+                    <th>架构参数</th>
+                    <th>前代架构 (Grace CPU)</th>
+                    <th>现代架构 (Vera CPU)</th>
+                </tr>
+                <tr>
+                    <td>内核微架构</td>
+                    <td>72个 Neoverse V2 通用内核</td>
+                    <td>88个 完全定制化 Olympus 内核</td>
+                </tr>
+                <tr>
+                    <td>多线程机制</td>
+                    <td>单核心单线程 (总计72线程)</td>
+                    <td>空间多线程物理隔离 (总计176线程)</td>
+                </tr>
+                <tr>
+                    <td>内存总带宽</td>
+                    <td>最高 512 GB/s</td>
+                    <td>最高 1.2 TB/s</td>
+                </tr>
+                <tr>
+                    <td>最大内存容量</td>
+                    <td>480 GB LPDDR5X</td>
+                    <td>1.5 TB LPDDR5X (SOCAMM封装)</td>
+                </tr>
+                <tr>
+                    <td>芯片间互连</td>
+                    <td>900 GB/s NVLink-C2C</td>
+                    <td>1.8 TB/s NVLink-C2C 缓存一致性总线</td>
+                </tr>
+                <tr>
+                    <td>末级缓存 (L3)</td>
+                    <td>114 MB 共享缓存</td>
+                    <td>162 MB 统一共享缓存</td>
+                </tr>
+            </table>
+            
+            <p>此外，Vera采用单片（Monolithic）硅设计，内置第二代可扩展一致性互连织物（SCF），提供3.4 TB/s的双向对分带宽，彻底消除了小芯片架构带来的非均匀内存访问（NUMA）惩罚。通过带宽翻倍至1.8 TB/s的NVLink-C2C接口，Vera与Rubin GPU之间形成了完美的内存一致性共享空间，极大优化了参数加载与梯度同步的效率。</p>
+            
+            <h3>Rubin GPU与攻克HBM4"内存墙"</h3>
+            <p>在处理万亿参数规模的稀疏混合专家（MoE）模型时，GPU的算力往往受到访存带宽的严重制约。为了打破这一所谓的"内存墙"，Rubin GPU率先集成了新一代的高带宽内存HBM4。与前代HBM3E相比，HBM4的物理接口位宽实现了翻倍。通过底层的存储控制器深度协同设计与先进的混合键合封装技术，每个Rubin GPU不仅搭载了<strong>288 GB</strong>的海量HBM4，其显存总带宽更是飙升至惊人的<strong>22 TB/s</strong>。</p>
+            
+            <p>这种无须依赖软件层面的有损压缩算法即可获得的绝对物理带宽提升，确保了在高度动态的MoE路由和极其冗长的上下文生成过程中，Rubin内部庞大的执行流水线始终处于数据饱和状态，避免了计算核心的闲置等待。在计算逻辑层面，Rubin内置了第三代Transformer引擎，专为下一代前沿大模型设计。该引擎能够输出高达<strong>50 PetaFLOPS</strong>的密集推理算力和<strong>35 PetaFLOPS</strong>的训练算力。支撑这一指数级性能飞跃的底层核心，是一种全新的低精度数值表示格式——NVFP4。</p>
+        </div>
+        </div>
+
+        <div class="section">
+            <h2>参考文献</h2>
+            <ol class="references">
+                <li>NoteGPT_TRANSCRIPT_NVIDIA GTC Keynote 2026.txt</li>
+                <li>Nvidia just admitted the general-purpose GPU era is ending - VentureBeat, <a href="https://venturebeat.com/infrastructure/inference-is-splitting-in-two-nvidias-usd20b-groq-bet-explains-its-next-act" target="_blank">https://venturebeat.com/infrastructure/inference-is-splitting-in-two-nvidias-usd20b-groq-bet-explains-its-next-act</a></li>
+                <li>Nvidia expands Vera Rubin platform, details Groq integration - ComputerWeekly, <a href="https://www.computerweekly.com/news/366640398/Nvidia-expands-Vera-Rubin-platform-details-Groq-integration" target="_blank">https://www.computerweekly.com/news/366640398/Nvidia-expands-Vera-Rubin-platform-details-Groq-integration</a></li>
+                <li>Jensen Huang Skips Chips Talk, Focuses on Where the Money in AI Is Flowing This Time - 36kr, <a href="https://eu.36kr.com/en/p/3726315458048516" target="_blank">https://eu.36kr.com/en/p/3726315458048516</a></li>
+                <li>Nvidia Stock Investors Just Got Great News From CEO Jensen Huang - The Motley Fool, <a href="https://www.fool.com/investing/2026/03/16/nvidia-stock-investors-great-news-ceo-jensen-huang/" target="_blank">https://www.fool.com/investing/2026/03/16/nvidia-stock-investors-great-news-ceo-jensen-huang/</a></li>
+                <li>Inference Performance for Data Center Deep Learning - NVIDIA Developer, <a href="https://developer.nvidia.com/deep-learning-performance-training-inference/ai-inference" target="_blank">https://developer.nvidia.com/deep-learning-performance-training-inference/ai-inference</a></li>
+                <li>Think SMART: How to Optimize AI Factory Inference Performance - NVIDIA Blog, <a href="https://blogs.nvidia.com/blog/think-smart-optimize-ai-factory-inference-performance/" target="_blank">https://blogs.nvidia.com/blog/think-smart-optimize-ai-factory-inference-performance/</a></li>
+                <li>Optimize Data Center Efficiency for AI and HPC Workloads with Power Profiles - NVIDIA Developer Blog, <a href="https://developer.nvidia.com/blog/optimize-data-center-efficiency-for-ai-and-hpc-workloads-with-power-profiles/" target="_blank">https://developer.nvidia.com/blog/optimize-data-center-efficiency-for-ai-and-hpc-workloads-with-power-profiles/</a></li>
+                <li>NVIDIA Releases Vera Rubin DSX AI Factory Reference Design - NVIDIA Newsroom, <a href="https://nvidianews.nvidia.com/news/nvidia-releases-vera-rubin-dsx-ai-factory-reference-design-and-omniverse-dsx-digital-twin-blueprint-with-broad-industry-support" target="_blank">https://nvidianews.nvidia.com/news/nvidia-releases-vera-rubin-dsx-ai-factory-reference-design-and-omniverse-dsx-digital-twin-blueprint-with-broad-industry-support</a></li>
+                <li>Nvidia shifts to rack-scale pairing to ease AI factory bottlenecks - Digital Today, <a href="https://www.digitaltoday.co.kr/en/view/40446/nvidia-shifts-to-rack-scale-pairing-to-ease-ai-factory-bottlenecks" target="_blank">https://www.digitaltoday.co.kr/en/view/40446/nvidia-shifts-to-rack-scale-pairing-to-ease-ai-factory-bottlenecks</a></li>
+                <li>NVIDIA Says Groq Acquisition Will Play a Role Similar to Mellanox - Wccftech, <a href="https://wccftech.com/nvidia-says-groq-acquisition-will-play-a-role-similar-to-mellanox/" target="_blank">https://wccftech.com/nvidia-says-groq-acquisition-will-play-a-role-similar-to-mellanox/</a></li>
+                <li>Data Center Solutions: AI Factories - NVIDIA, <a href="https://www.nvidia.com/en-us/solutions/ai-factories/" target="_blank">https://www.nvidia.com/en-us/solutions/ai-factories/</a></li>
+                <li>NVIDIA Company Overview - Q1 FY2026, <a href="https://s201.q4cdn.com/141608511/files/doc_presentations/2025/05/Q126-NVDA_Company-Overview.pdf" target="_blank">https://s201.q4cdn.com/141608511/files/doc_presentations/2025/05/Q126-NVDA_Company-Overview.pdf</a></li>
+                <li>NVIDIA DSX Air Boosts Time to Token With Accelerated Simulation - NVIDIA Blog, <a href="https://blogs.nvidia.com/blog/dsx-air-simulation-ai-factories/" target="_blank">https://blogs.nvidia.com/blog/dsx-air-simulation-ai-factories/</a></li>
+                <li>What Is a Digital Twin? - NVIDIA Glossary, <a href="https://www.nvidia.com/en-us/glossary/digital-twin/" target="_blank">https://www.nvidia.com/en-us/glossary/digital-twin/</a></li>
+                <li>NVIDIA Vera Rubin Opens Agentic AI Frontier - Futu News, <a href="https://news.futunn.com/en/post/70150369/nvidia-vera-rubin-opens-agentic-ai-frontier" target="_blank">https://news.futunn.com/en/post/70150369/nvidia-vera-rubin-opens-agentic-ai-frontier</a></li>
+                <li>NVIDIA Launches Omniverse DSX Blueprint - NVIDIA Blog, <a href="https://blogs.nvidia.com/blog/omniverse-dsx-blueprint/" target="_blank">https://blogs.nvidia.com/blog/omniverse-dsx-blueprint/</a></li>
+                <li>NVIDIA Rubin Finally Arrives - Medium, <a href="https://medium.com/@cognidownunder/nvidia-rubin-finally-arrives-and-data-centers-will-never-be-the-same-again-2e5cd04d9d5b" target="_blank">https://medium.com/@cognidownunder/nvidia-rubin-finally-arrives-and-data-centers-will-never-be-the-same-again-2e5cd04d9d5b</a></li>
+                <li>Nvidia introduces Vera Rubin, a seven-chip AI platform - VentureBeat, <a href="https://venturebeat.com/infrastructure/nvidia-introduces-vera-rubin-a-seven-chip-ai-platform-with-openai-anthropic" target="_blank">https://venturebeat.com/infrastructure/nvidia-introduces-vera-rubin-a-seven-chip-ai-platform-with-openai-anthropic</a></li>
+                <li>NVIDIA Kicks Off the Next Generation of AI With Rubin - NVIDIA Newsroom, <a href="https://nvidianews.nvidia.com/news/rubin-platform-ai-supercomputer" target="_blank">https://nvidianews.nvidia.com/news/rubin-platform-ai-supercomputer</a></li>
+                <li>Nvidia reinvents the CPU for the age of agentic AI - SiliconANGLE, <a href="https://siliconangle.com/2026/03/16/nvidia-reinvents-cpu-age-agentic-ai/" target="_blank">https://siliconangle.com/2026/03/16/nvidia-reinvents-cpu-age-agentic-ai/</a></li>
+                <li>NVIDIA Unveils Vera CPU at GTC - MLQ.ai, <a href="https://mlq.ai/news/nvidia-unveils-vera-cpu-at-gtc-claiming-2x-efficiency-gains-for-agentic-ai-workloads/" target="_blank">https://mlq.ai/news/nvidia-unveils-vera-cpu-at-gtc-claiming-2x-efficiency-gains-for-agentic-ai-workloads/</a></li>
+                <li>Inside the NVIDIA Vera Rubin Platform - NVIDIA Developer Blog, <a href="https://developer.nvidia.com/blog/inside-the-nvidia-rubin-platform-six-new-chips-one-ai-supercomputer/" target="_blank">https://developer.nvidia.com/blog/inside-the-nvidia-rubin-platform-six-new-chips-one-ai-supercomputer/</a></li>
+                <li>NVIDIA at CES 2026 — Vera Rubin and the Changing Shape of AI Infrastructure - Moor Insights & Strategy, <a href="https://moorinsightsstrategy.com/research-notes/nvidia-at-ces-2026-vera-rubin-and-the-changing-shape-of-ai-infrastructure/" target="_blank">https://moorinsightsstrategy.com/research-notes/nvidia-at-ces-2026-vera-rubin-and-the-changing-shape-of-ai-infrastructure/</a></li>
+                <li>Next Gen Data Center CPU | NVIDIA Vera CPU, <a href="https://www.nvidia.com/en-us/data-center/vera-cpu/" target="_blank">https://www.nvidia.com/en-us/data-center/vera-cpu/</a></li>
+                <li>Nvidia crams 256 Vera CPUs into a single liquid cooled rack - The Register, <a href="https://www.theregister.com/2026/03/16/nvidia_vera_cpu_rack/" target="_blank">https://www.theregister.com/2026/03/16/nvidia_vera_cpu_rack/</a></li>
+                <li>NVIDIA Vera Rubin NVL72 - NVIDIA, <a href="https://www.nvidia.com/en-us/data-center/vera-rubin-nvl72/" target="_blank">https://www.nvidia.com/en-us/data-center/vera-rubin-nvl72/</a></li>
+                <li>Introducing NVFP4 for Efficient and Accurate Low-Precision Inference - NVIDIA Developer Blog, <a href="https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/" target="_blank">https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/</a></li>
+                <li>NVLink & NVSwitch: Fastest HPC Data Center Platform - NVIDIA, <a href="https://www.nvidia.com/en-us/data-center/nvlink/" target="_blank">https://www.nvidia.com/en-us/data-center/nvlink/</a></li>
+                <li>NVIDIA Vera Rubin POD - NVIDIA Developer Blog, <a href="https://developer.nvidia.com/blog/nvidia-vera-rubin-pod-seven-chips-five-rack-scale-systems-one-ai-supercomputer/" target="_blank">https://developer.nvidia.com/blog/nvidia-vera-rubin-pod-seven-chips-five-rack-scale-systems-one-ai-supercomputer/</a></li>
+                <li>NVIDIA, Partners Drive Next-Gen Efficient Gigawatt AI Factories - NVIDIA Blog, <a href="https://blogs.nvidia.com/blog/gigawatt-ai-factories-ocp-vera-rubin/" target="_blank">https://blogs.nvidia.com/blog/gigawatt-ai-factories-ocp-vera-rubin/</a></li>
+                <li>Scaling AI Factories with Co-Packaged Optics - NVIDIA Developer Blog, <a href="https://developer.nvidia.com/blog/scaling-ai-factories-with-co-packaged-optics-for-better-power-efficiency/" target="_blank">https://developer.nvidia.com/blog/scaling-ai-factories-with-co-packaged-optics-for-better-power-efficiency/</a></li>
+                <li>Groq's Deterministic Architecture is Rewriting the Physics of AI Inference - Medium, <a href="https://medium.com/the-low-end-disruptor/groqs-deterministic-architecture-is-rewriting-the-physics-of-ai-inference-bb132675dce4" target="_blank">https://medium.com/the-low-end-disruptor/groqs-deterministic-architecture-is-rewriting-the-physics-of-ai-inference-bb132675dce4</a></li>
+                <li>NVIDIA turns to Groq to fix the GPU inference gap - Edge Industry Review, <a href="https://www.edgeir.com/nvidia-turns-to-groq-to-fix-the-gpu-inference-gap-20260113" target="_blank">https://www.edgeir.com/nvidia-turns-to-groq-to-fix-the-gpu-inference-gap-20260113</a></li>
+                <li>Nvidia's $20B Groq Acquisition - IntuitionLabs.ai, <a href="https://intuitionlabs.ai/articles/nvidia-groq-ai-inference-deal" target="_blank">https://intuitionlabs.ai/articles/nvidia-groq-ai-inference-deal</a></li>
+                <li>Inside NVIDIA Groq 3 LPX - NVIDIA Developer Blog, <a href="https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform/" target="_blank">https://developer.nvidia.com/blog/inside-nvidia-groq-3-lpx-the-low-latency-inference-accelerator-for-the-nvidia-vera-rubin-platform/</a></li>
+                <li>NVIDIA GTC 2026: Rubin GPUs, Groq LPUs, Vera CPUs - StorageReview, <a href="https://www.storagereview.com/news/nvidia-gtc-2026-rubin-gpus-groq-lpus-vera-cpus-and-what-nvidia-is-building-for-trillion-parameter-inference" target="_blank">https://www.storagereview.com/news/nvidia-gtc-2026-rubin-gpus-groq-lpus-vera-cpus-and-what-nvidia-is-building-for-trillion-parameter-inference</a></li>
+                <li>Dynamo Inference Framework - NVIDIA Developer, <a href="https://developer.nvidia.com/dynamo" target="_blank">https://developer.nvidia.com/dynamo</a></li>
+                <li>Scale and Serve Generative AI | NVIDIA Dynamo, <a href="https://www.nvidia.com/en-us/ai/dynamo/" target="_blank">https://www.nvidia.com/en-us/ai/dynamo/</a></li>
+                <li>How NVIDIA Dynamo 1.0 Powers Multi-Node Inference - NVIDIA Developer Blog, <a href="https://developer.nvidia.com/blog/nvidia-dynamo-1-production-ready/" target="_blank">https://developer.nvidia.com/blog/nvidia-dynamo-1-production-ready/</a></li>
+                <li>Streamline Complex AI Inference on Kubernetes with NVIDIA Grove - NVIDIA Developer Blog, <a href="https://developer.nvidia.com/blog/streamline-complex-ai-inference-on-kubernetes-with-nvidia-grove/" target="_blank">https://developer.nvidia.com/blog/streamline-complex-ai-inference-on-kubernetes-with-nvidia-grove/</a></li>
+                <li>Nvidia wraps its NemoClaw around OpenClaw for the sake of security - The Register, <a href="https://www.theregister.com/2026/03/16/nvidia_wraps_its_nemoclaw_around/" target="_blank">https://www.theregister.com/2026/03/16/nvidia_wraps_its_nemoclaw_around/</a></li>
+                <li>Run Autonomous, Self-Evolving Agents More Safely with NVIDIA OpenShell - NVIDIA Developer Blog, <a href="https://developer.nvidia.com/blog/run-autonomous-self-evolving-agents-more-safely-with-nvidia-openshell/" target="_blank">https://developer.nvidia.com/blog/run-autonomous-self-evolving-agents-more-safely-with-nvidia-openshell/</a></li>
+                <li>Nvidia's NemoClaw is OpenClaw with guardrails - The New Stack, <a href="https://thenewstack.io/nemoclaw-openclaw-with-guardrails/" target="_blank">https://thenewstack.io/nemoclaw-openclaw-with-guardrails/</a></li>
+                <li>Nvidia Expects Agentic AI To Drive $1 Trillion In Revenue - Gizmodo, <a href="https://gizmodo.com/nvidia-expects-agentic-ai-to-drive-1-trillion-in-revenue-2000734120" target="_blank">https://gizmodo.com/nvidia-expects-agentic-ai-to-drive-1-trillion-in-revenue-2000734120</a></li>
+                <li>Building Autonomous Vehicles That Reason with NVIDIA Alpamayo - NVIDIA Developer Blog, <a href="https://developer.nvidia.com/blog/building-autonomous-vehicles-that-reason-with-nvidia-alpamayo/" target="_blank">https://developer.nvidia.com/blog/building-autonomous-vehicles-that-reason-with-nvidia-alpamayo/</a></li>
+                <li>Advancing Physical AI with NVIDIA Cosmos World Foundation Model Platform - NVIDIA Developer Blog, <a href="https://developer.nvidia.com/blog/advancing-physical-ai-with-nvidia-cosmos-world-foundation-model-platform/" target="_blank">https://developer.nvidia.com/blog/advancing-physical-ai-with-nvidia-cosmos-world-foundation-model-platform/</a></li>
+                <li>Physical AI with World Foundation Models | NVIDIA Cosmos, <a href="https://www.nvidia.com/en-us/ai/cosmos/" target="_blank">https://www.nvidia.com/en-us/ai/cosmos/</a></li>
+                <li>NVIDIA Alpamayo - Open Models for Autonomous Vehicles, <a href="https://www.nvidia.com/en-us/solutions/autonomous-vehicles/alpamayo/" target="_blank">https://www.nvidia.com/en-us/solutions/autonomous-vehicles/alpamayo/</a></li>
+                <li>Nvidia debuts DLSS 5 for increased visual fidelity in games - Tom's Hardware, <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-debuts-dlss-5-for-increased-visual-fidelity-in-games-ai-infused-tech-transforms-pixels-with-photorealistic-lighting-and-materials" target="_blank">https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-debuts-dlss-5-for-increased-visual-fidelity-in-games-ai-infused-tech-transforms-pixels-with-photorealistic-lighting-and-materials</a></li>
+                <li>NVIDIA RTX Neural Rendering Introduces Next Era of AI-Powered Graphics Innovation - NVIDIA Developer Blog, <a href="https://developer.nvidia.com/blog/nvidia-rtx-neural-rendering-introduces-next-era-of-ai-powered-graphics-innovation/" target="_blank">https://developer.nvidia.com/blog/nvidia-rtx-neural-rendering-introduces-next-era-of-ai-powered-graphics-innovation/</a></li>
+                <li>NVIDIA DLSS 5 Delivers AI-Powered Breakthrough In Visual Fidelity For Games - NVIDIA, <a href="https://www.nvidia.com/en-us/geforce/news/dlss5-breakthrough-in-visual-fidelity-for-games/" target="_blank">https://www.nvidia.com/en-us/geforce/news/dlss5-breakthrough-in-visual-fidelity-for-games/</a></li>
+                <li>NVIDIA unveils Rubin Ultra with 1TB HBM4e memory for 2027, Feynman architecture in 2028 - VideoCardz, <a href="https://videocardz.com/newz/nvidia-unveils-rubin-ultra-with-1tb-hbm4e-memory-for-2027-feynman-architecture-in-2028" target="_blank">https://videocardz.com/newz/nvidia-unveils-rubin-ultra-with-1tb-hbm4e-memory-for-2027-feynman-architecture-in-2028</a></li>
+                <li>Nvidia announces Vera Rubin Space Module — up to 25x the AI compute of H100 for orbital data centers - Tom's Hardware, <a href="https://www.tomshardware.com/pc-components/gpus/nvidia-announces-vera-rubin-space-module" target="_blank">https://www.tomshardware.com/pc-components/gpus/nvidia-announces-vera-rubin-space-module</a></li>
+                <li>NVIDIA Launches Space Computing, Rocketing AI Into Orbit - NVIDIA Newsroom, <a href="https://nvidianews.nvidia.com/news/space-computing" target="_blank">https://nvidianews.nvidia.com/news/space-computing</a></li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
