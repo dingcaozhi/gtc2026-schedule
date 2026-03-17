@@ -410,17 +410,80 @@
         }
 
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
+            body { padding: 10px; }
+            
+            header { padding: 20px 15px; }
+            header h1 { font-size: 1.5rem; }
+            header p { font-size: 0.95rem; }
+            
+            .header-buttons {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 15px;
             }
-
-            .sessions-grid {
-                grid-template-columns: 1fr;
+            
+            .header-btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
             }
-
+            
+            .stats-bar {
+                gap: 15px;
+                margin: 15px 0 30px;
+            }
+            
+            .stat-item {
+                padding: 12px 20px;
+                min-width: 100px;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .stat-label {
+                font-size: 0.8rem;
+            }
+            
+            .filters-section {
+                padding: 15px;
+                border-radius: 12px;
+            }
+            
             .filter-group {
                 min-width: 100%;
             }
+            
+            .filter-buttons {
+                gap: 6px;
+            }
+            
+            .filter-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .sessions-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .session-card {
+                padding: 18px;
+            }
+            
+            .session-title {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.3rem; }
+            .stat-number { font-size: 1.3rem; }
+            .stat-item { padding: 10px 15px; min-width: 80px; }
         }
     </style>
 </head>
