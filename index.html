@@ -658,9 +658,9 @@
             <div id='pdt-time' style='background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 20px; border-radius: 20px; font-size: 1.1rem; font-weight: 600; margin-top: 10px; display: inline-block;'></div>
 
             <!-- 头部按钮 -->
-            <div class='header-buttons'>
-                <a href='session/deep_research_v2.html' class='header-btn primary'>深度研究报告</a>
-            </div>
+            <!-- <div class='header-buttons'>
+                <a href='session/deep_research_s81595.html' class='header-btn primary'>深度研究报告</a>
+            </div> -->
 
             <!-- 精简统计栏 -->
             <div style='display: flex; justify-content: center; gap: 30px; margin: 15px 0; font-size: 0.9rem; color: #ffffff;'>
@@ -685,7 +685,7 @@
                     </div>
                     <div style='display: flex; flex-direction: column; gap: 10px; min-width: 200px;'>
                         <a href='session/gtc26-s81595.html' style='background: #ffeaa7; color: #d63031; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center; transition: all 0.3s;' onmouseover="this.style.background='#ffd93d'" onmouseout="this.style.background='#ffeaa7'">2026 Keynote 深度洞察 →</a>
-                        <a href='gtc2025-keynote-insight.html' style='background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s;' onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'"> 2025 Keynote 深度洞察 →</a>
+                        <a href='session/gtc2025_banner.html' style='background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s;' onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'"> 2025 Keynote 深度洞察 →</a>
                     </div>
                 </div>
             </div>
@@ -701,7 +701,7 @@
                     <label>📅 日期</label>
                     <div class='filter-buttons'>
                         <button class='filter-btn' data-filter='date' data-value='March 15'>📅 3月15日</button>
-                        <button class='filter-btn active' data-filter='date' data-value='March 16'>📅 3月16日</button>
+                        <button class='filter-btn' data-filter='date' data-value='March 16'>📅 3月16日</button>
                         <button class='filter-btn' data-filter='date' data-value='March 17'>📅 3月17日</button>
                         <button class='filter-btn' data-filter='date' data-value='March 18'>📅 3月18日</button>
                     </div>
@@ -784,14 +784,15 @@
     </div>
 
     <script>
-        // Featured/Highlights session IDs (61 sessions)
+        // Featured/Highlights session IDs (62 sessions)
         const highlightsSessionIds = [
             "81475", "81490", "81491", "81492", "81493", "81528", "81537", "81569", "81573", "81584",
             "81595", "81598", "81612", "81613", "81628", "81629", "81636", "81643", "81645", "81667",
             "81671", "81684", "81690", "81695", "81711", "81713", "81715", "81724", "81748", "81755",
             "81769", "81778", "81786", "81789", "81804", "81806", "81810", "81836", "81844", "81859",
-            "81862", "81874", "81911", "82001", "82017", "82132", "82146", "82147", "82167", "82238",
-            "82285", "82391", "82400", "82409", "82429", "82432", "82446", "82448", "82449", "82480", "82553"
+            "81862", "81874", "81911", "82001", "82017", "82109", "82132", "82146", "82147", "82167",
+            "82238", "82285", "82391", "82400", "82409", "82429", "82432", "82446", "82448", "82449",
+            "82480", "82553"
         ];
         
         const sessions = [
@@ -3111,9 +3112,31 @@
     }
 ];
         
+        // 获取当前PDT日期
+        function getCurrentPDTDate() {
+            const now = new Date();
+            // PDT是UTC-7
+            const pdtOffset = -7 * 60; // 分钟
+            const utcOffset = now.getTimezoneOffset(); // 本地时区与UTC的差值（分钟）
+            const pdtTime = new Date(now.getTime() + (utcOffset + pdtOffset) * 60 * 1000);
+            
+            const month = pdtTime.getMonth(); // 0-11
+            const date = pdtTime.getDate();
+            const year = pdtTime.getFullYear();
+            
+            // GTC 2026 日期范围：March 15-18, 2026
+            if (year === 2026 && month === 2) { // 2 = March
+                if (date >= 15 && date <= 18) {
+                    return `March ${date}`;
+                }
+            }
+            // 默认返回会议第一天
+            return 'March 16';
+        }
+        
         // 默认筛选条件：Session Highlights + 当前PDT日期
         let activeFilters = {
-            date: ['March 16'],
+            date: [getCurrentPDTDate()],
             time: [],
             format: [],
             level: [],
@@ -3124,18 +3147,31 @@
 
         let searchQuery = '';
 
+        // 重点关注会议ID（始终置顶且不受筛选影响）
+        const prioritySessionIds = ['s81595', 's82109'];
+        
         function renderSessions() {
             const container = document.getElementById('sessions-container');
             const noResults = document.getElementById('no-results');
+            
+            // 分离重点关注会议和普通会议
+            const prioritySessions = sessions.filter(s => 
+                prioritySessionIds.some(id => s.id.includes(id))
+            );
+            const normalSessions = sessions.filter(s => 
+                !prioritySessionIds.some(id => s.id.includes(id))
+            );
 
-            const filteredSessions = sessions.filter(session => {
+            // 只筛选普通会议
+            const filteredNormalSessions = normalSessions.filter(session => {
                 // Search filter
                 if (searchQuery) {
                     const searchLower = searchQuery.toLowerCase();
                     const matchSearch = session.title.toLowerCase().includes(searchLower) ||
                                       session.speakers.toLowerCase().includes(searchLower) ||
                                       session.topic.toLowerCase().includes(searchLower) ||
-                                      session.description.toLowerCase().includes(searchLower);
+                                      session.description.toLowerCase().includes(searchLower) ||
+                                      session.id.toLowerCase().includes(searchLower);
                     if (!matchSearch) return false;
                 }
 
@@ -3196,6 +3232,16 @@
 
                 return true;
             });
+            
+            // 合并：重点关注会议（始终显示）+ 筛选后的普通会议
+            // 按优先级排序：s81595 第一，s82109 第二
+            const sortedPrioritySessions = [];
+            const s81595 = prioritySessions.find(s => s.id.includes('s81595'));
+            const s82109 = prioritySessions.find(s => s.id.includes('s82109'));
+            if (s81595) sortedPrioritySessions.push(s81595);
+            if (s82109) sortedPrioritySessions.push(s82109);
+            
+            const filteredSessions = [...sortedPrioritySessions, ...filteredNormalSessions];
 
             // Calculate stats
             const inPersonCount = sessions.filter(s => s.format === '线下').length;
@@ -3211,35 +3257,34 @@
                 noResults.classList.remove('show');
                 document.getElementById('total-count').textContent = filteredSessions.length;
 
-                // 将S81595会议置顶
-                const s81595Index = filteredSessions.findIndex(s => s.id.includes('s81595'));
-                if (s81595Index > 0) {
-                    const s81595 = filteredSessions.splice(s81595Index, 1)[0];
-                    filteredSessions.unshift(s81595);
-                }
-
                 container.innerHTML = filteredSessions.map(session => {
                     const subTopicSpan = session.sub_topic 
                         ? '<span class="session-sub-topic" style="background: #e0e0e0; color: #555; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem;">' + session.sub_topic + '</span>'
                         : '';
                     
-                    // S81595特殊样式
-                    const isS81595 = session.id.includes('s81595');
-                    const cardStyle = isS81595 
+                    // 重点关注会议特殊样式（统一红色主题）
+                    const isFeatured = prioritySessionIds.some(id => session.id.includes(id));
+                    
+                    const cardStyle = isFeatured 
                         ? 'background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; border: 3px solid #ff9f43; box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);'
                         : '';
-                    const titleStyle = isS81595 ? 'color: white;' : '';
-                    const descStyle = isS81595 ? 'color: rgba(255,255,255,0.9);' : '';
-                    const speakerStyle = isS81595 ? 'color: rgba(255,255,255,0.95);' : '';
-                    const topicStyle = isS81595 ? 'background: rgba(255,255,255,0.2); color: white;' : 'background: #667eea; color: white;';
-                    const viewStyle = isS81595 ? 'color: #ffeaa7; border-color: rgba(255,255,255,0.3);' : 'color: #667eea;';
-                    const featuredBadge = isS81595 ? '<div style="background: #ffeaa7; color: #d63031; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-bottom: 10px; display: inline-block;">⭐ 重点关注</div>' : '';
+                    
+                    const titleStyle = isFeatured ? 'color: white;' : '';
+                    const descStyle = isFeatured ? 'color: rgba(255,255,255,0.9);' : '';
+                    const speakerStyle = isFeatured ? 'color: rgba(255,255,255,0.95);' : '';
+                    const topicStyle = isFeatured ? 'background: rgba(255,255,255,0.2); color: white;' : 'background: #667eea; color: white;';
+                    const viewStyle = isFeatured ? 'color: #ffeaa7; border-color: rgba(255,255,255,0.3);' : 'color: #667eea;';
+                    const sessionIdStyle = isFeatured ? 'color: white;' : '';
+                    
+                    const featuredBadge = isFeatured 
+                        ? '<div style="background: #ffeaa7; color: #d63031; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-bottom: 10px; display: inline-block;">⭐ 重点关注</div>' 
+                        : '';
                     
                     return `
                     <a href="session/${session.id}.html" class="session-card-link" style="text-decoration: none; color: inherit;">
                         <div class="session-card" data-time="${session.time}" data-format="${session.format}" data-level="${session.level}" data-topic="${session.topic}" style="${cardStyle}">
                             ${featuredBadge}
-                            <div class="session-id">${session.id}</div>
+                            <div class="session-id" style="${sessionIdStyle}">${session.id}</div>
                             <h3 class="session-title" style="${titleStyle}">${session.title}</h3>
                             <div class="session-topics" style="margin-bottom: 10px;">
                                 <span class="session-main-topic" style="${topicStyle}; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; margin-right: 6px;">${session.topic}</span>
@@ -3268,7 +3313,8 @@
             if (highlightsBtn) highlightsBtn.classList.add('active');
             
             // Set current date button active
-            const dateBtn = document.querySelector('[data-filter="date"][data-value="March 16"]');
+            const currentDate = getCurrentPDTDate();
+            const dateBtn = document.querySelector(`[data-filter="date"][data-value="${currentDate}"]`);
             if (dateBtn) dateBtn.classList.add('active');
         });
 

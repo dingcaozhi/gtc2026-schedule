@@ -23,12 +23,13 @@ curl -s -X POST "${OPENCLAW_GATEWAY_URL:-http://localhost:8080}/api/v1/message" 
     \"message\": \"🔍 GTC26-S81595 监控任务开始执行\\n时间: $(date '+%Y-%m-%d %H:%M:%S')\\n搜索: $SEARCH_QUERY\"
   }" 2>/dev/null || echo "Notification sent via OpenClaw"
 
-# 使用 yt-dlp 搜索视频 (如果已安装)
-if command -v yt-dlp &> /dev/null; then
+# 使用 yt-dlp 搜索视频 (使用完整路径)
+YT_DLP_PATH="/usr/local/bin/yt-dlp"
+if [ -f "$YT_DLP_PATH" ]; then
     echo "Searching for videos with query: $SEARCH_QUERY" >> "$LOG_FILE"
     
     # 搜索最近上传的视频
-    yt-dlp --flat-playlist --playlist-end 20 \
+    "$YT_DLP_PATH" --flat-playlist --playlist-end 20 \
         --print "%(id)s|%(title)s|%(upload_date)s" \
         "ytsearch20:$SEARCH_QUERY NVIDIA" 2>/dev/null > "$OUTPUT_DIR/search_results_${TIMESTAMP}.txt"
     
@@ -46,7 +47,7 @@ if command -v yt-dlp &> /dev/null; then
             echo "Attempting to download subtitles from: $VIDEO_URL" >> "$LOG_FILE"
             
             # 下载字幕
-            yt-dlp --write-auto-sub --sub-langs en --skip-download \
+            "$YT_DLP_PATH" --write-auto-sub --sub-langs en --skip-download \
                 --output "$OUTPUT_DIR/subs_${TIMESTAMP}_%(id)s" \
                 "$VIDEO_URL" 2>/dev/null
             
