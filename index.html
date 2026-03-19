@@ -508,24 +508,39 @@
                 white-space: nowrap;
             }
             
-            /* S81595 Banner */
-            #featured-banner {
-                padding: 12px !important;
+            /* Featured Banners */
+            #featured-banner-container {
                 margin: 12px 0 !important;
                 width: 100%;
             }
-            
-            #featured-banner h3 {
-                font-size: 1rem !important;
+
+            .featured-banner {
+                padding: 12px 12px 50px 12px !important;
+                width: 100%;
             }
-            
-            #featured-banner p {
+
+            .featured-banner h2 {
+                font-size: 1.1rem !important;
+            }
+
+            .featured-banner p {
                 font-size: 0.8rem !important;
             }
-            
-            #featured-banner a {
+
+            .featured-banner a {
                 font-size: 0.8rem !important;
                 padding: 8px 12px !important;
+            }
+
+            /* Banner 底部切换按钮 */
+            #featured-banner-container > div:last-child {
+                bottom: 10px !important;
+                padding: 3px !important;
+            }
+
+            #featured-banner-container > div:last-child button {
+                padding: 6px 12px !important;
+                font-size: 0.75rem !important;
             }
             
             .filters-section {
@@ -669,24 +684,53 @@
                 <span>线上: <strong id='virtual-count' style='color: #ffffff;'>-</strong></span>
             </div>
 
-            <!-- S81595 重点会议 Banner -->
-            <div id='featured-banner' style='background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; padding: 20px 25px; border-radius: 16px; margin: 20px 0; box-shadow: 0 8px 30px rgba(238, 90, 36, 0.3);'>
-                <div style='display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px;'>
-                    <div style='flex: 1; min-width: 300px;'>
-                        <div style='display: flex; align-items: center; gap: 15px; margin-bottom: 10px;'>
-                            <span style='background: #ffeaa7; color: #d63031; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;'>⭐ 重点关注</span>
-                            <span style='font-family: monospace; font-size: 0.85rem; opacity: 0.9;'>GTC26-S81595</span>
+            <!-- 可切换的重点会议 Banner -->
+            <div id='featured-banner-container' style='position: relative; margin: 20px 0;'>
+                <!-- S81595 Keynote Banner -->
+                <div id='banner-0' class='featured-banner' style='background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; padding: 20px 25px 60px 25px; border-radius: 16px; box-shadow: 0 8px 30px rgba(238, 90, 36, 0.3); display: block;'>
+                    <div style='display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px;'>
+                        <div style='flex: 1; min-width: 300px;'>
+                            <div style='display: flex; align-items: center; gap: 15px; margin-bottom: 10px;'>
+                                <span style='background: #ffeaa7; color: #d63031; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;'>⭐ 重点关注</span>
+                                <span style='font-family: monospace; font-size: 0.85rem; opacity: 0.9;'>GTC26-S81595</span>
+                            </div>
+                            <h2 style='margin: 0 0 10px 0; font-size: 1.4rem;'>GTC 2026 主题演讲</h2>
+                            <p style='margin: 0 0 12px 0; opacity: 0.95; font-size: 0.95rem;'>在这场主题演讲中，英伟达创始人兼首席执行官黄仁勋展望了加速计算和人工智能的未来，以及它们将如何塑造各行各业下一代计算时代。</p>
+                            <div style='display: flex; align-items: center; gap: 10px; font-size: 0.9rem; opacity: 0.9;'>
+                                <span>👤 Jensen Huang | Founder and CEO | NVIDIA</span>
+                            </div>
                         </div>
-                        <h2 style='margin: 0 0 10px 0; font-size: 1.4rem;'>GTC 2026 主题演讲</h2>
-                        <p style='margin: 0 0 12px 0; opacity: 0.95; font-size: 0.95rem;'>在这场主题演讲中，英伟达创始人兼首席执行官黄仁勋展望了加速计算和人工智能的未来，以及它们将如何塑造各行各业下一代计算时代。</p>
-                        <div style='display: flex; align-items: center; gap: 10px; font-size: 0.9rem; opacity: 0.9;'>
-                            <span>👤 Jensen Huang | Founder and CEO | NVIDIA</span>
+                        <div style='display: flex; flex-direction: column; gap: 10px; min-width: 200px;'>
+                            <a href='session/gtc26-s81595.html' style='background: #ffeaa7; color: #d63031; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center;'>查看深度洞察 →</a>
+                            <a href='session/gtc2025_banner.html' style='background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center; border: 2px solid rgba(255,255,255,0.3);'>2025 Keynote 深度洞察 →</a>
                         </div>
                     </div>
-                    <div style='display: flex; flex-direction: column; gap: 10px; min-width: 200px;'>
-                        <a href='session/gtc26-s81595.html' style='background: #ffeaa7; color: #d63031; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center; transition: all 0.3s;' onmouseover="this.style.background='#ffd93d'" onmouseout="this.style.background='#ffeaa7'">2026 Keynote 深度洞察 →</a>
-                        <a href='session/gtc2025_banner.html' style='background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center; border: 2px solid rgba(255,255,255,0.3); transition: all 0.3s;' onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'"> 2025 Keynote 深度洞察 →</a>
+                </div>
+
+                <!-- S82109 卓驭智驾 Banner -->
+                <div id='banner-1' class='featured-banner' style='background: linear-gradient(135deg, #ff8a65 0%, #ff7043 100%); color: white; padding: 20px 25px 60px 25px; border-radius: 16px; box-shadow: 0 8px 30px rgba(255, 112, 67, 0.3); display: none;'>
+                    <div style='display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px;'>
+                        <div style='flex: 1; min-width: 300px;'>
+                            <div style='display: flex; align-items: center; gap: 15px; margin-bottom: 10px;'>
+                                <span style='background: #ffeaa7; color: #d63031; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;'>⭐ 重点关注</span>
+                                <span style='font-family: monospace; font-size: 0.85rem; opacity: 0.9;'>GTC26-S82109</span>
+                            </div>
+                            <h2 style='margin: 0 0 10px 0; font-size: 1.4rem;'>基于多模态端到端世界模型的智驾体验</h2>
+                            <p style='margin: 0 0 12px 0; opacity: 0.95; font-size: 0.95rem;'>卓驭作为国际一流的智能驾驶供应商及服务商，介绍多模态端到端世界模型的最新技术进展、相关量产成果以及未来规划。</p>
+                            <div style='display: flex; align-items: center; gap: 10px; font-size: 0.9rem; opacity: 0.9;'>
+                                <span>👤 Xiaozhi Chen | AI 首席技术官 | 深圳卓驭科技有限公司</span>
+                            </div>
+                        </div>
+                        <div style='display: flex; flex-direction: column; gap: 10px; min-width: 200px;'>
+                            <a href='session/gtc26-s82109.html' style='background: #ffeaa7; color: #d63031; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center;'>查看深度洞察 →</a>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Banner 底部切换按钮 -->
+                <div style='position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 0; z-index: 10; background: rgba(0,0,0,0.2); border-radius: 25px; padding: 4px;'>
+                    <button onclick='switchBanner(0)' id='banner-tab-0' style='padding: 8px 20px; border: none; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.3s; background: #ffeaa7; color: #d63031;'>S81595 Keynote</button>
+                    <button onclick='switchBanner(1)' id='banner-tab-1' style='padding: 8px 20px; border: none; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.3s; background: transparent; color: white;'>S82109 卓驭智驾</button>
                 </div>
             </div>
         </header>
@@ -3371,6 +3415,38 @@
         // Update immediately and every minute
         updatePDTTime();
         setInterval(updatePDTTime, 60000);
+
+        // Banner 切换功能
+        let currentBanner = 0;
+        const totalBanners = 2;
+
+        function switchBanner(index) {
+            // 隐藏所有 banner
+            for (let i = 0; i < totalBanners; i++) {
+                const banner = document.getElementById('banner-' + i);
+                const tab = document.getElementById('banner-tab-' + i);
+                if (banner) {
+                    banner.style.display = 'none';
+                }
+                if (tab) {
+                    tab.style.background = 'transparent';
+                    tab.style.color = 'white';
+                }
+            }
+
+            // 显示选中的 banner
+            const selectedBanner = document.getElementById('banner-' + index);
+            const selectedTab = document.getElementById('banner-tab-' + index);
+            if (selectedBanner) {
+                selectedBanner.style.display = 'block';
+            }
+            if (selectedTab) {
+                selectedTab.style.background = '#ffeaa7';
+                selectedTab.style.color = '#d63031';
+            }
+
+            currentBanner = index;
+        }
     </script>
 </body>
 </html>

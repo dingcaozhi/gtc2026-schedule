@@ -1,33 +1,595 @@
-<!-- GTC 2025 Keynote 洞察摘要 Banner -->
-<div id='gtc2025-insight-banner' style='background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 25px; border-radius: 16px; margin: 20px 0; box-shadow: 0 10px 40px rgba(0,0,0,0.3); border: 2px solid #e94560;'>
-    <div style='display: flex; align-items: center; gap: 12px; margin-bottom: 15px;'>
-        <span style='background: #e94560; color: white; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;'>📊 GTC 2025 Keynote 深度洞察</span>
-        <span style='color: #a0a0a0; font-size: 0.85rem;'>基于 Jensen Huang 主题演讲分析</span>
-    </div>
-    
-    <h3 style='margin: 0 0 15px 0; font-size: 1.3rem; color: #fff;'>Blackwell架构发布：AI工厂时代的开启</h3>
-    
-    <div style='display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-bottom: 20px;'>
-        <div style='background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; border-left: 3px solid #e94560;'>
-            <h4 style='margin: 0 0 8px 0; color: #e94560; font-size: 0.95rem;'>🎯 核心发布</h4>
-            <p style='margin: 0; font-size: 0.9rem; line-height: 1.5; color: #e0e0e0;'>Blackwell GPU架构、AI工厂概念、代理式AI(AI Agents)、机器人技术突破</p>
+<!-- <a href='https://www.youtube.com/watch?v=_waPvOwL9Z8' target='_blank' style='background: #e94560; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s;'>▶️ 观看完整Keynote</a> -->
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深度研究报告：NVIDIA GTC 2025 核心技术演进与下一代 AI 基础设施展望</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #e2e8f0;
+            --bg-color: #f0f4f8;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --white: #ffffff;
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+            --sidebar-width: 280px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .layout-wrapper {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .sidebar {
+            flex: 0 0 var(--sidebar-width);
+            background: var(--white);
+            padding: 30px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 40px;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+        }
+
+        .sidebar h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 12px;
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            display: block;
+            padding: 6px 10px;
+            border-radius: 6px;
+            transition: var(--transition);
+            line-height: 1.4;
+        }
+
+        .sidebar a:hover {
+            background-color: #ebf8ff;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .container {
+            position: relative;
+            flex: 1;
+            min-width: 0;
+            background: var(--white);
+            padding: 60px 70px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            margin: 60px 0 20px;
+            padding-left: 15px;
+            border-left: 5px solid var(--secondary-color);
+            scroll-margin-top: 40px;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            margin: 40px 0 15px;
+            font-weight: 600;
+        }
+
+        p {
+            text-indent: 2em;
+            margin-bottom: 20px;
+            text-align: justify;
+            font-size: 1.05rem;
+            color: #4a5568;
+        }
+
+        /* 引用格式标红以提升阅读可见度 */
+        .cite-tag {
+            font-size: 0.8em;
+            color: var(--secondary-color);
+            font-weight: 600;
+            text-decoration: none;
+            margin: 0 2px;
+            vertical-align: super;
+        }
+
+        .cite-tag:hover {
+            color: #e53e3e;
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ebf8ff 0%, #e6fffa 100%);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            border-left: 6px solid var(--secondary-color);
+            margin: 30px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .highlight-box strong {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 15px;
+            text-indent: 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 40px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        th, td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--accent-color);
+            font-size: 0.95rem;
+        }
+
+        td p {
+            text-indent: 0;
+            margin-bottom: 0;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        tr {
+            background-color: var(--white);
+            transition: var(--transition);
+        }
+
+        tr:hover {
+            background-color: #f7fafc;
+        }
+
+        .content-ul {
+            list-style-type: none;
+            padding: 0 0 0 20px;
+            margin: 20px 0;
+        }
+
+        .content-ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            color: #4a5568;
+            font-size: 1.05rem;
+        }
+
+        .content-ul li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: -5px;
+            top: -5px;
+        }
+
+        .works-cited {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 2px dashed var(--accent-color);
+        }
+
+        .works-cited h2 {
+            border-left: none;
+            padding-left: 0;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        .works-cited ol {
+            padding-left: 25px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            word-break: break-all;
+        }
+
+        .works-cited li {
+            margin-bottom: 12px;
+            padding-left: 5px;
+        }
+
+        @media (max-width: 1024px) {
+            .layout-wrapper {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                flex: none;
+                position: relative;
+                top: 0;
+                max-height: none;
+                margin-bottom: 20px;
+            }
+            .container {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="layout-wrapper">
+    <aside class="sidebar">
+        <h3>目录导航</h3>
+        <ul>
+            <li><a href="#intro">引言：计算范式的历史性拐点</a></li>
+            <li><a href="#sec-1">一、 算力基石的重塑：Blackwell 架构</a></li>
+            <li><a href="#sec-2">二、 分离式推理层：NVIDIA Dynamo</a></li>
+            <li><a href="#sec-3">三、 计算机图形学的范式重构</a></li>
+            <li><a href="#sec-4">四、 代理式 AI 与领域泛化</a></li>
+            <li><a href="#sec-5">五、 物理世界与 Cosmos/GR00T</a></li>
+            <li><a href="#sec-6">六、 科学研究的边界拓宽</a></li>
+            <li><a href="#sec-7">七、 结论与产业前瞻</a></li>
+            <li><a href="#works-cited">参考文献 (Works Cited)</a></li>
+        </ul>
+    </aside>
+
+    <main class="container">
+        <header>
+            <h1>深度研究报告：NVIDIA GTC 2025</h1>
+            <div class="subtitle">核心技术演进与下一代 AI 基础设施展望</div>
+        </header>
+
+        <div class="highlight-box" id="intro">
+            <strong>引言：计算范式的历史性拐点与“智能工厂”的全面崛起</strong>
+            <p>在评估当前全球信息技术产业的发展轨迹时，2025年3月18日召开的 NVIDIA GTC 2025 大会无疑标志着一个价值万亿美元的计算范式拐点<a class="cite-tag" href="#ref-1"> 1 </a>。长久以来，全球数字经济的基础设施主要由传统数据中心构成，其核心功能是信息的存储、检索与指令的线性执行。然而，随着摩尔定律的物理极限逼近以及生成式人工智能（Generative AI）的爆发式增长，这种基于数据搬运的计算模式已经无法满足现代工业的需求。根据本次大会发布的核心战略，传统数据中心的历史使命正在发生根本性转变，取而代之的是被重新定义的“AI 智能工厂”（The Intelligence Factory）<a class="cite-tag" href="#ref-2"> 2 </a>。</p>
+            
+            <p>在这一全新的计算与工业框架下，智能不再是软件运行的偶然副产品，而是如同电力或基础材料一样，成为被规模化、标准化制造的核心商品<a class="cite-tag" href="#ref-3"> 3 </a>。这种智能的度量单位和底层构建块被称为“Token”<a class="cite-tag" href="#ref-2"> 2 </a>。传统认知中，Token 仅仅是自然语言处理领域中的词元切片，但在 GTC 2025 的全新定义下，Token 已经泛化为跨学科、跨模态的通用计算接口：它可以是计算机图形学中用于预测视觉画面的像素群，可以是地球科学中用于模拟大气动力学的气象网格，也可以是生命科学中用于解析蛋白质折叠的氨基酸序列，更可以是物理空间中指导人形机器人运动的关节扭矩指令<a class="cite-tag" href="#ref-2"> 2 </a>。</p>
+            <p>伴随着这种底层逻辑的重构，人工智能技术的发展轨迹也完成了一个极其重要的历史闭环。最初由 NVIDIA GPU 上的 CUDA 技术所孕育和加速的深度学习算法，如今已经反哺并彻底颠覆了计算机图形学本身<a class="cite-tag" href="#ref-2"> 2 </a>。计算管线正在从纯粹的数学方程求解全面转向基于神经网络的实时推演与预测<a class="cite-tag" href="#ref-2"> 2 </a>。本报告将深入解构 GTC 2025 中提出的各项突破性技术，全面评估这一系列创新对未来产业基础设施的深远影响。</p>
         </div>
-        <div style='background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; border-left: 3px solid #0f3460;'>
-            <h4 style='margin: 0 0 8px 0; color: #4fbdba; font-size: 0.95rem;'>💡 关键洞察</h4>
-            <p style='margin: 0; font-size: 0.9rem; line-height: 1.5; color: #e0e0e0;'>从GPU供应商向AI基础设施提供商转型，软件attach价值持续提升</p>
+
+        <h2 id="sec-1">一、 算力基石的重塑：Blackwell 架构与异构计算的极限跨越</h2>
+        <p>构建 AI 智能工厂的前提，是拥有能够支撑呈指数级增长的推理与训练需求的底层算力硬件。在这方面，NVIDIA 推出的 Blackwell 架构不仅在晶体管集成度上达到了惊人的 2080 亿个，更在计算精度、内存层级和能效比上重新定义了半导体行业的标准<a class="cite-tag" href="#ref-9"> 9 </a>。</p>
+        
+
+        <h3>第五代 Tensor Core 与 FP4 精度的数学优势</h3>
+        <p>Blackwell 架构最具革命性的微架构创新之一，是引入了原生的 4 位浮点数（FP4）计算能力，并辅以第二代 Transformer 引擎和微张量缩放（Micro-tensor scaling）技术<a class="cite-tag" href="#ref-9"> 9 </a>。在大型语言模型（LLM）的推理过程中，系统的瓶颈往往不在于逻辑运算单元的计算速度，而在于内存带宽。通过将模型权重和激活值从 FP8 进一步量化为 FP4，Blackwell 架构在不牺牲模型高准确率的前提下，使相同内存容量能够容纳两倍规模的下一代大模型，同时将内存带宽的实际利用效率翻倍<a class="cite-tag" href="#ref-9"> 9 </a>。</p>
+        <p>这种密集的 FP4 算力直接服务于日益普及的“测试时扩展”和代理式人工智能的长程思考需求。在处理极其复杂的推理任务时，模型需要生成大量的内部思考 Token，消耗的算力可达传统推理的百倍以上<a class="cite-tag" href="#ref-3"> 3 </a>。FP4 精度的引入，使得 Blackwell 在处理此类高密度并发实例时，能够显著降低单个 Token 的生成成本。</p>
+
+        <h3>旗舰级消费与专业算力：GeForce RTX 5090 规格解析</h3>
+        <p>作为 Blackwell 架构在桌面和专业工作站领域的旗舰产品，GeForce RTX 5090 的发布标志着本地算力终端的一次巨大飞跃<a class="cite-tag" href="#ref-11"> 11 </a>。该 GPU 核心代号为 GB202，其内部架构针对神经渲染和 AI 辅助创作进行了深度改造<a class="cite-tag" href="#ref-8"> 8 </a>。在流式多处理器（SM）层面，Blackwell 架构彻底统一了 INT32 和 FP32 计算核心，将许多指令的整数运算吞吐量翻倍<a class="cite-tag" href="#ref-8"> 8 </a>。此外，为了支持后续将讨论的革命性图形渲染技术，RTX 5090 集成了第四代光线追踪核心（RT Cores），并引入了针对“超大几何体”的硬件级优化，大幅提升了复杂场景的几何细节处理能力<a class="cite-tag" href="#ref-8"> 8 </a>。</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>核心规格参数</th>
+                    <th>GeForce RTX 5090 (GB202)</th>
+                    <th>行业技术意义与影响</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CUDA 核心数量</td>
+                    <td>21,760 <a class="cite-tag" href="#ref-11"> 11 </a></td>
+                    <td>极高的并行处理能力，统一了 FP32/INT32 数据路径，优化了复杂着色器负载。</td>
+                </tr>
+                <tr>
+                    <td>张量核心 / 光追核心</td>
+                    <td>680 (第五代) / 170 (第四代) <a class="cite-tag" href="#ref-11"> 11 </a></td>
+                    <td>支持 FP4 加速和 Mega Geometry 技术，为神经渲染奠定硬件基础。</td>
+                </tr>
+                <tr>
+                    <td>内存容量与类型</td>
+                    <td>32 GB GDDR7 <a class="cite-tag" href="#ref-12"> 12 </a></td>
+                    <td>缓解高分辨率游戏与本地大模型（如 7B-32B 规模）推理的内存焦虑。</td>
+                </tr>
+                <tr>
+                    <td>内存带宽与速率</td>
+                    <td>1750 MHz (28 Gbps 等效) <a class="cite-tag" href="#ref-11"> 11 </a></td>
+                    <td>引入 PAM3 脉冲幅度调制信号技术，在超低电压下实现极高数据吞吐<a class="cite-tag" href="#ref-8"> 8 </a>。</td>
+                </tr>
+                <tr>
+                    <td>物理体积与能效</td>
+                    <td>较上代缩小 30%，能量耗散效率提升 30% <a class="cite-tag" href="#ref-2"> 2 </a></td>
+                    <td>优化了电源门控和纳秒级频率切换技术，为紧凑型工作站部署提供可能。</td>
+                </tr>
+                <tr>
+                    <td>热设计功耗 (TGP)</td>
+                    <td>最大 575 W <a class="cite-tag" href="#ref-11"> 11 </a></td>
+                    <td>尽管算力翻倍，但整体功耗控制在合理范围，体现了极高的性能瓦特比。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>面向企业集群的演进：Blackwell Ultra 的技术路线图</h3>
+        <p>除了标准版 Blackwell 架构，NVIDIA 还在 GTC 2025 期间详细勾勒了面向企业级 AI 工厂的 Blackwell Ultra（B300系列）路线图<a class="cite-tag" href="#ref-9"> 9 </a>。Blackwell Ultra 将集成高达 288 GB 的 12层堆叠 HBM3e 内存<a class="cite-tag" href="#ref-15"> 15 </a>。这 50% 的内存容量跃升直接决定了在部署超大型混合专家模型（MoE）时，节点间的张量并行和流水线并行需求将大幅减少，从而极大降低了分布式通信的延迟<a class="cite-tag" href="#ref-16"> 16 </a>。此外，Ultra 版本的张量核心经过重新设计，其注意力层加速能力提升了两倍，整体 FP4 AI 算力达到 15 PFLOPS，是上代 Hopper 架构的 7.5 倍<a class="cite-tag" href="#ref-9"> 9 </a>。</p>
+
+        <h2 id="sec-2">二、 分离式推理与操作系统层：NVIDIA Dynamo 的架构重构</h2>
+        <p>由于代理式 AI 和长序列推理任务的普及，数据中心面临着一种前所未有的流量特征：请求的大小、模态和计算复杂度呈现出极度的不可预测性和突发性<a class="cite-tag" href="#ref-17"> 17 </a>。如果继续沿用传统的推理服务软件架构，即便硬件再强，也会因为资源分配不均而导致巨大的算力浪费。正是为了解决这一痛点，NVIDIA 推出了被称为 AI 工厂“分布式操作系统”的 NVIDIA Dynamo<a class="cite-tag" href="#ref-17"> 17 </a>。</p>
+        
+
+        <h3>预填充与解码的解耦：打破共置瓶颈</h3>
+        <p>LLM 推理包含两个物理特征截然不同的阶段：预填充（Prefill）阶段负责处理用户的输入提示，是一个典型的计算密集型操作；解码（Decode）阶段则负责逐个生成后续的 Token，这是一个典型的内存带宽密集型操作<a class="cite-tag" href="#ref-19"> 19 </a>。在传统的同节点共置部署模式下，当一个新的长文本预填充请求到达时，由于其霸占了大量的计算核心，原本正在进行的解码任务会被迫停滞；反之，当系统充满了解码任务时，显存带宽却被榨干<a class="cite-tag" href="#ref-21"> 21 </a>。</p>
+        <p>NVIDIA Dynamo 通过“分离式预填充与解码”架构彻底颠覆了这一现状<a class="cite-tag" href="#ref-19"> 19 </a>。预填充 GPU 全力以赴处理高并发的输入上下文，而解码 GPU 则通过持续的批处理高效生成 Token<a class="cite-tag" href="#ref-24"> 24 </a>。这种动态资源调度使得 Dynamo 能够在相同的硬件规模下实现极高水平的“有效吞吐量”<a class="cite-tag" href="#ref-23"> 23 </a>。</p>
+
+        <h3>NIXL 与 KV Cache 的智能路由：跨越传输鸿沟</h3>
+        <p>分离式推理架构在工程实现上长期面临一个巨大挑战：当预填充节点完成计算后，生成的庞大键值缓存（KV Cache）必须以极低的延迟传输到解码节点，否则传输时间将抵消分离架构带来的计算收益<a class="cite-tag" href="#ref-24"> 24 </a>。</p>
+        <p>为了跨越这一传输鸿沟，NVIDIA 引入了 NIXL（NVIDIA Inference Transfer Library）<a class="cite-tag" href="#ref-27"> 27 </a>。无论是跨节点的 InfiniBand 网络、机架内的 NVLink 互联，还是外部存储系统，NIXL 都能实现无缝、非阻塞的异步数据传输<a class="cite-tag" href="#ref-19"> 19 </a>。不仅如此，Dynamo 重新定义了 KV Cache 在数据中心架构中的地位，将其视为一种“瞬态、衍生且可重新计算”的 AI 原生数据<a class="cite-tag" href="#ref-29"> 29 </a>。NVIDIA 联合存储领导者，实现了将 KV Cache 直接写入企业级文件或对象存储引擎，并且在需要时快速拉回显存<a class="cite-tag" href="#ref-30"> 30 </a>。这种对内存层级的极致利用，使得复杂推理模型的系统吞吐量实现了惊人的 30 倍跃升<a class="cite-tag" href="#ref-18"> 18 </a>。</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>推理服务架构对比</th>
+                    <th>传统共置推理架构</th>
+                    <th>NVIDIA Dynamo 分离式推理架构</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>计算阶段分配</td>
+                    <td>预填充与解码在同一 GPU 实例上交替执行 <a class="cite-tag" href="#ref-21"> 21 </a></td>
+                    <td>预填充池与解码池物理隔离，独立优化 <a class="cite-tag" href="#ref-19"> 19 </a></td>
+                </tr>
+                <tr>
+                    <td>资源瓶颈特征</td>
+                    <td>计算资源与内存带宽互相争抢，导致解码停滞 <a class="cite-tag" href="#ref-21"> 21 </a></td>
+                    <td>计算密集与内存密集任务解耦，资源利用率最大化 <a class="cite-tag" href="#ref-25"> 25 </a></td>
+                </tr>
+                <tr>
+                    <td>KV Cache 管理</td>
+                    <td>局限于单机显存，容易引发显存碎片化与溢出</td>
+                    <td>利用 NIXL 库实现跨节点、跨层级的动态调度 <a class="cite-tag" href="#ref-19"> 19 </a></td>
+                </tr>
+                <tr>
+                    <td>扩展性与流量适应</td>
+                    <td>面对极端非对称流量时性能严重衰减</td>
+                    <td>动态规划器可根据队列深度实时重平衡 GPU 分配 <a class="cite-tag" href="#ref-26"> 26 </a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="sec-3">三、 计算机图形学的范式重构：基于 AI 预测的神经渲染</h2>
+        <p>图形管线的底层逻辑已经发生了不可逆转的转变。在实时图形渲染中，传统的数学计算占比正在急剧萎缩，取而代之的是海量像素的 AI 预测。正如 NVIDIA CEO 所揭示的，系统每进行 1 个像素的数学渲染，就有另外 15 个像素是由人工智能推演而出的（即 1:15 比例）<a class="cite-tag" href="#ref-2"> 2 </a>。</p>
+
+        <h3>DLSS 4 与 Transformer 架构的跨界应用</h3>
+        <p>早期 DLSS 依赖光流加速器和卷积神经网络（CNNs）<a class="cite-tag" href="#ref-33"></a>，在处理遮挡区域时常产生“重影”和时间域上的闪烁<a class="cite-tag" href="#ref-35"></a>。DLSS 4 首次引入了 Transformer 模型架构<a class="cite-tag" href="#ref-35"></a>。凭借全局感受野，DLSS 4 能够在每一个传统渲染帧的基础之上，额外生成多达 3 个预测帧<a class="cite-tag" href="#ref-35"></a>。这意味着系统的有效帧率可以直接提升至原生渲染的 4 倍甚至 8 倍<a class="cite-tag" href="#ref-35"></a>，彻底解决了长久以来困扰实时光线追踪的伪影问题<a class="cite-tag" href="#ref-2"> 2 </a>。</p>
+
+        <h3>神经着色器：RTX 神经纹理压缩与辐射缓存</h3>
+        <p>Blackwell 架构的 SM 经过特殊设计，能够高效运行被称为“神经着色器”的小型神经网络，并孕育了 NTC 和 NRC 两项颠覆性技术<a class="cite-tag" href="#ref-8"> 8 </a>：</p>
+        <ul class="content-ul">
+            <li><strong>RTX 神经纹理压缩 (NTC)：</strong> 不压缩单个图像，而是将多个相关的材质纹理作为一个整体进行训练，生成专门用于解压的微型神经网络<a class="cite-tag" href="#ref-37"></a>。NTC 能够提供比传统块压缩高出 16 倍的纹素细节，并且实现极高的内存压缩比（如将超过 1 GB 的材质压缩至 300 MB 以下）<a class="cite-tag" href="#ref-39"></a>，还能有效消除摩尔纹等走样现象<a class="cite-tag" href="#ref-8"> 8 </a>。</li>
+            <li><strong>RTX 神经辐射缓存 (NRC)：</strong> 传统的全局光照方案在处理高光反射时容易产生漏光现象或消耗巨大内存<a class="cite-tag" href="#ref-41"></a>。NRC 技术使用紧凑的多层感知机（MLP）替换了传统数据结构<a class="cite-tag" href="#ref-41"></a>。它能动态学习复杂的光线传输属性<a class="cite-tag" href="#ref-41"></a>，通过 AI 预测瞬间提供几乎无限次光线反弹后的累积辐射度信息，获得媲美离线渲染的影视级光影效果<a class="cite-tag" href="#ref-45"></a>。</li>
+        </ul>
+        
+
+        <h2 id="sec-4">四、 代理式 AI 与领域泛化：Nemotron 的逻辑重塑</h2>
+        <p>随着边际收益的递减，未来的竞争焦点转移到模型的“深思熟虑”能力上。NVIDIA 推出了旨在为企业构建高级 AI 智能体提供基石的 Llama Nemotron 推理模型家族<a class="cite-tag" href="#ref-47"></a>。</p>
+
+        <h3>RPO 与后训练（Post-Training）的炼金术</h3>
+        <p>Nemotron 模型的卓越性能基于一套极其精密的后训练管线<a class="cite-tag" href="#ref-49"></a>。NVIDIA 在强化学习阶段采用了“奖励感知偏好优化”（RPO）框架<a class="cite-tag" href="#ref-51"></a>，迫使模型在给出最终答案前生成详细的“内部思考轨迹”<a class="cite-tag" href="#ref-54"></a>。开发者可以通过系统提示词，灵活地开启或关闭模型的“详细思考”功能<a class="cite-tag" href="#ref-50"></a>，从而实现计算资源的精细化调度<a class="cite-tag" href="#ref-50"></a>。</p>
+
+        <h3>神经架构搜索（NAS）与硬件协同优化</h3>
+        <p>针对大模型网络结构本身，开发团队运用了神经架构搜索（NAS）技术打破标准的 Transformer 结构<a class="cite-tag" href="#ref-51"></a>：</p>
+        <ul class="content-ul">
+            <li><strong>跳跃注意力机制：</strong> 计算成本高昂的注意力机制被完全跳过或用线性层取代，以此大幅降低 KV Cache 内存占用并加快前向传播速度<a class="cite-tag" href="#ref-51"></a>。</li>
+            <li><strong>可变前馈网络：</strong> 每一层的扩展和压缩比例根据重要性进行动态调整<a class="cite-tag" href="#ref-51"></a>。</li>
+        </ul>
+        <p>通过底层架构调整，Nemotron 吞吐效率提升了高达 5 倍，为企业级大规模智能体部署扫清了成本障碍<a class="cite-tag" href="#ref-47"></a>。</p>
+
+        <h2 id="sec-5">五、 走向物理世界：Cosmos 世界模型与 Project GR00T 的双轮驱动</h2>
+        <p>人工智能进军三维物理世界被视作下一个 50 万亿美元潜力的蓝海市场<a class="cite-tag" href="#ref-1"> 1 </a>。但长期受制于“真实世界数据稀缺”和“试错成本高昂”两大痛点<a class="cite-tag" href="#ref-7"> 7 </a>。Cosmos 平台与 Project GR00T 彻底打通了技术闭环。</p>
+
+        <h3>Cosmos：物理法则的合成数据引擎</h3>
+        <p>NVIDIA Cosmos 是一个专门构建的“世界基础模型”平台<a class="cite-tag" href="#ref-7"> 7 </a>，包含自回归和扩散两种互补的神经网络架构<a class="cite-tag" href="#ref-60"></a>，在 9000 万亿个 Token 的真实数据上进行了预训练<a class="cite-tag" href="#ref-7"> 7 </a>。扩散模型提供海量合成数据支持<a class="cite-tag" href="#ref-7"> 7 </a>，而自回归模型赋予了机器人预判动作后果的“先见之明”<a class="cite-tag" href="#ref-60"></a>。Cosmos 团队开发了革命性的状态空间 Tokenizer，处理速度上提升了 12 倍<a class="cite-tag" href="#ref-60"></a>，极大地降低了构建世界模型的算力门槛<a class="cite-tag" href="#ref-60"></a>，加速模型的迭代收敛<a class="cite-tag" href="#ref-62"></a>。</p>
+
+        <h3>Project GR00T：通用人形机器人的灵魂</h3>
+        <p>Project GR00T 是赋予人形机器人自主行动能力的灵魂<a class="cite-tag" href="#ref-65"></a>。人形机器人面临的控制维度远超传统工业机械臂<a class="cite-tag" href="#ref-67"></a>。GR00T 提供了一套端到端的开发蓝图<a class="cite-tag" href="#ref-67"></a>：</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Project GR00T 核心工作流</th>
+                    <th>架构定位与技术机制</th>
+                    <th>产业应用与解决的痛点</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GR00T-Gen</td>
+                    <td>自动生成带有丰富语义的 OpenUSD 仿真场景 <a class="cite-tag" href="#ref-67"></a></td>
+                    <td>通过大规模领域随机化提升 Sim-to-Real 的成功率 <a class="cite-tag" href="#ref-67"></a>。</td>
+                </tr>
+                <tr>
+                    <td>GR00T-Mimic</td>
+                    <td>将人类的遥操作动作转换为平滑的运动合成轨迹供强化学习框架摄取 <a class="cite-tag" href="#ref-67"></a></td>
+                    <td>极大降低让机器人如何学习复杂连贯动作的编程门槛 <a class="cite-tag" href="#ref-67"></a>。</td>
+                </tr>
+                <tr>
+                    <td>GR00T-Dexterity</td>
+                    <td>结合高频触觉反馈和视觉反馈模型 <a class="cite-tag" href="#ref-68"></a></td>
+                    <td>突破机器人处理柔软、易碎或未知形状物体的技术瓶颈 <a class="cite-tag" href="#ref-67"></a>。</td>
+                </tr>
+                <tr>
+                    <td>GR00T-Mobility</td>
+                    <td>面向动态环境中的自主导航和全身运动规划 <a class="cite-tag" href="#ref-68"></a></td>
+                    <td>提升机器人在复杂地形下的移动稳定性 <a class="cite-tag" href="#ref-67"></a>。</td>
+                </tr>
+                <tr>
+                    <td>GR00T-Control & Perception</td>
+                    <td>结合多模态传感信息的底层全身动力学控制引擎 <a class="cite-tag" href="#ref-68"></a></td>
+                    <td>确保高自由度机电系统的动态平衡与安全 <a class="cite-tag" href="#ref-67"></a>。</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>配合 Jetson Thor 计算节点，人形机器人真正实现了感知、决策与控制的闭环<a class="cite-tag" href="#ref-65"></a>。</p>
+
+        <h2 id="sec-6">六、 科学研究的边界拓宽：Earth-2 与 BioNeMo 的跨界突破</h2>
+        <p>“万物皆 Token”的理念同样在深刻重塑基础科学研究的范式。通过将复杂的自然规律转化为序列和矩阵，NVIDIA 在气象预测和分子生物学领域取得了里程碑式的进展。</p>
+
+        <h3>Earth-2 平台与 CorrDiff 气象大模型</h3>
+        <p>传统的高分辨率区域天气预报计算成本严重制约了预报的时效性<a class="cite-tag" href="#ref-70"></a>。Earth-2 平台整合的 CorrDiff 模型采用专用的生成式降尺度 AI<a class="cite-tag" href="#ref-71"></a>，瞬间将宏观预测“降尺度”为 2 公里级别的高保真微观气象网格<a class="cite-tag" href="#ref-70"></a>，还能推演出输入数据中不存在的强相关物理变量（例如用于指示降水强度和位置的雷达反射率）<a class="cite-tag" href="#ref-71"></a>。与传统流体力学模拟相比，实现了高达 10,000 倍的能源效率提升<a class="cite-tag" href="#ref-71"></a>，极大地提升了全球灾害预警的响应速度<a class="cite-tag" href="#ref-70"></a>。</p>
+        
+
+        <h3>BioNeMo 与 Evo 2：生命的语言模型</h3>
+        <p>BioNeMo 框架正在推动药物研发进入工业化快车道<a class="cite-tag" href="#ref-74"></a>。Evo 2 模型代表着生物基座模型在尺度和模态上的巨大跨越<a class="cite-tag" href="#ref-6"> 6 </a>。其语料库达到了惊人的 8.85 万亿个核苷酸<a class="cite-tag" href="#ref-6"> 6 </a>。通过将 DNA 碱基视为基础 Token，Evo 2 利用统一架构跨尺度处理包含 DNA、RNA 和蛋白质在内的生物分子序列<a class="cite-tag" href="#ref-6"> 6 </a>，能够理解长程基因组序列中的共进化关联<a class="cite-tag" href="#ref-6"> 6 </a>。配合平台微服务，科研人员能够将候选药物的筛选周期从数年大幅压缩至数月乃至数周<a class="cite-tag" href="#ref-75"></a>。</p>
+        
+
+        <h2 id="sec-7">七、 结论与产业前瞻</h2>
+        <p>NVIDIA 在 GTC 2025 大会上所展示的技术突破构成了一套环环相扣的下一代“智能制造”基础设施架构体系。生成式推演正在取代确定性的方程求解，成为人类模拟、理解并改造现实世界的最强工具。全面拥抱这一场从硅基芯片底层直至顶层科学应用的全栈技术变革，已不仅是提升效率的选择，更是关乎生死存亡的战略必然。</p>
+
+        <div class="works-cited" id="works-cited">
+            <h2>Works Cited</h2>
+            <ol>
+                <li id="ref-1">GTC 2025 – Announcements and Live Updates - NVIDIA Blog, accessed March 18, 2026, https://blogs.nvidia.com/blog/nvidia-keynote-at-gtc-2025-ai-news-live-updates/</li>
+                <li id="ref-2">GTC2025_Keynote_Transcript.md</li>
+                <li id="ref-3">AI Factories Are Redefining Data Centers, Enabling Next Era of AI | NVIDIA Blog, accessed March 18, 2026, https://blogs.nvidia.com/blog/ai-factory/</li>
+                <li id="ref-4">Top 10 Nvidia stories of 2025 - Network World, accessed March 18, 2026, https://www.networkworld.com/article/4111630/top-10-nvidia-stories-of-2025-from-data-center-to-ai-factory.html</li>
+                <li id="ref-5">Day 6: 21 Days of Building a Small Language Model: Tokenizer | by Prashant Lakhera, accessed March 18, 2026, https://devopslearning.medium.com/day-6-21-days-of-building-a-small-language-model-tokenizer-c7006b2ba2a1</li>
+                <li id="ref-6">Understanding the Language of Life's Biomolecules Across Evolution at a New Scale with Evo 2 | NVIDIA Technical Blog, accessed March 18, 2026, https://developer.nvidia.com/blog/understanding-the-language-of-lifes-biomolecules-across-evolution-at-a-new-scale-with-evo-2/</li>
+                <li id="ref-7">Advancing Physical AI with NVIDIA Cosmos World Foundation Model Platform, accessed March 18, 2026, https://developer.nvidia.com/blog/advancing-physical-ai-with-nvidia-cosmos-world-foundation-model-platform/</li>
+                <li id="ref-8">NVIDIA RTX BLACKWELL GPU ARCHITECTURE, accessed March 18, 2026, https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf</li>
+                <li id="ref-9">The Engine Behind AI Factories | NVIDIA Blackwell Architecture, accessed March 18, 2026, https://www.nvidia.com/en-us/data-center/technologies/blackwell-architecture/</li>
+                <li id="ref-10">AI Unleashed: Inside NVIDIA's Game-Changing GTC 2025 Breakthroughs and the Future of Intelligent Industries | by Mohamed Sohail Rajab | Medium, accessed March 18, 2026, https://medium.com/@mosorr/ai-unleashed-inside-nvidias-game-changing-gtc-2025-breakthroughs-and-the-future-of-intelligent-ffad9714666e</li>
+                <li id="ref-11">NVIDIA GeForce RTX 5090 Specs | TechPowerUp GPU Database, accessed March 18, 2026, https://www.techpowerup.com/gpu-specs/geforce-rtx-5090.c4216</li>
+                <li id="ref-12">GeForce RTX 5090 Graphics Cards - NVIDIA, accessed March 18, 2026, https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/</li>
+                <li id="ref-13">Inside NVIDIA Blackwell Ultra: The Chip Powering the AI Factory Era, accessed March 18, 2026, https://developer.nvidia.com/blog/inside-nvidia-blackwell-ultra-the-chip-powering-the-ai-factory-era/</li>
+                <li id="ref-14">Nvidia confirms Blackwell Ultra and Vera Rubin GPUs are on track for 2025 and 2026 — post-Rubin GPUs in the works | Tom's Hardware, accessed March 18, 2026, https://www.tomshardware.com/pc-components/gpus/nvidia-confirms-blackwell-ultra-and-vera-rubin-gpus-are-on-track-for-2025-and-2026-post-rubin-gpus-in-the-works</li>
+                <li id="ref-15">NVIDIA RTX 6000 Blackwell & Blackwell Ultra: Powering next-gen AI on HPE servers, accessed March 18, 2026, https://community.hpe.com/t5/ai-unlocked/nvidia-rtx-6000-blackwell-amp-blackwell-ultra-powering-next-gen/ba-p/7260086</li>
+                <li id="ref-16">NVIDIA GB300 "Blackwell Ultra" Will Feature 288 GB HBM3E Memory, 1400 W TDP, accessed March 18, 2026, https://www.techpowerup.com/330154/nvidia-gb300-blackwell-ultra-will-feature-288-gb-hbm3e-memory-1400-w-tdp</li>
+                <li id="ref-17">NVIDIA Enters Production with Dynamo, the Broadly Adopted Inference Operating System for AI Factories - AIwire - HPCwire, accessed March 18, 2026, https://www.hpcwire.com/aiwire/2026/03/17/nvidia-enters-production-with-dynamo-the-broadly-adopted-inference-operating-system-for-ai-factories/</li>
+                <li id="ref-18">NVIDIA Dynamo Open-Source Library Accelerates and Scales AI Reasoning Models, accessed March 18, 2026, https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Dynamo-Open-Source-Library-Accelerates-and-Scales-AI-Reasoning-Models/default.aspx</li>
+                <li id="ref-19">NVIDIA Dynamo, A Low-Latency Distributed Inference Framework for Scaling Reasoning AI Models | NVIDIA Technical Blog, accessed March 18, 2026, https://developer.nvidia.com/blog/introducing-nvidia-dynamo-a-low-latency-distributed-inference-framework-for-scaling-reasoning-ai-models/</li>
+                <li id="ref-20">Nvidia targets inference as AI's next battleground with Groq 3 LPX | Network World, accessed March 18, 2026, https://www.networkworld.com/article/4146684/nvidia-targets-inference-as-ais-next-battleground-with-groq-3-lpx.html</li>
+                <li id="ref-21">Beyond the Buzz: A Pragmatic Take on Inference Disaggregation - arXiv.org, accessed March 18, 2026, https://arxiv.org/html/2506.05508v1</li>
+                <li id="ref-22">Disaggregated Prefill and Decoding Inference System for Large Language Model Serving on Multi-Vendor GPUs - arXiv.org, accessed March 18, 2026, https://arxiv.org/html/2509.17542v1</li>
+                <li id="ref-23">NVIDIA Dynamo Planner Brings SLO-Driven Automation to Multi-Node LLM Inference, accessed March 18, 2026, https://www.infoq.com/news/2026/01/nvidia-dynamo-ai-kubernetes/</li>
+                <li id="ref-24">NVIDIA Dynamo Accelerates llm-d Community Initiatives for Advancing Large-Scale Distributed Inference, accessed March 18, 2026, https://developer.nvidia.com/blog/nvidia-dynamo-accelerates-llm-d-community-initiatives-for-advancing-large-scale-distributed-inference/</li>
+                <li id="ref-25">HexGen-2: Disaggregated Generative Inference of LLMs in Heterogeneous Environment, accessed March 18, 2026, https://openreview.net/forum?id=Cs6MrbFuMq</li>
+                <li id="ref-26">NVIDIA Dynamo Adds GPU Autoscaling, Kubernetes Automation, and Networking Optimizations, accessed March 18, 2026, https://developer.nvidia.com/blog/nvidia-dynamo-adds-gpu-autoscaling-kubernetes-automation-and-networking-optimizations/</li>
+                <li id="ref-27">From Attention to Disaggregation: Tracing the Evolution of LLM Inference - arXiv, accessed March 18, 2026, https://arxiv.org/html/2511.07422v1</li>
+                <li id="ref-28">Enhancing Distributed Inference Performance with the NVIDIA Inference Transfer Library, accessed March 18, 2026, https://developer.nvidia.com/blog/enhancing-distributed-inference-performance-with-the-nvidia-inference-transfer-library/</li>
+                <li id="ref-29">Introducing NVIDIA BlueField-4-Powered CMX Context Memory Storage Platform for the Next Frontier of AI, accessed March 18, 2026, https://developer.nvidia.com/blog/introducing-nvidia-bluefield-4-powered-inference-context-memory-storage-platform-for-the-next-frontier-of-ai/</li>
+                <li id="ref-30">NVIDIA and Storage Industry Leaders Unveil New Class of Enterprise Infrastructure for the Age of AI, accessed March 18, 2026, https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-and-Storage-Industry-Leaders-Unveil-New-Class-of-Enterprise-Infrastructure-for-the-Age-of-AI/default.aspx</li>
+                <li id="ref-31">Dell and NVIDIA Expand the Horizons of AI Inference, accessed March 18, 2026, https://www.dell.com/en-us/blog/dell-and-nvidia-expand-the-horizons-of-ai-inference/</li>
+                <li id="ref-32">Introducing NVIDIA Dynamo, A Low-Latency Distributed Inference Framework for Scaling Reasoning AI Models - Technical Blog, accessed March 18, 2026, https://forums.developer.nvidia.com/t/introducing-nvidia-dynamo-a-low-latency-distributed-inference-framework-for-scaling-reasoning-ai-models/327499</li>
+                <li id="ref-33">NVIDIA Introduces DLSS 3 With Breakthrough AI-Powered Frame Generation for up to 4x Performance, accessed March 18, 2026, https://nvidianews.nvidia.com/news/nvidia-introduces-dlss-3-with-breakthrough-ai-powered-frame-generation-for-up-to-4x-performance</li>
+                <li id="ref-34">NVIDIA DLSS 4.5 Delivers Major Upgrade With 2nd Gen Transformer Model For Super Resolution & 6X Dynamic Multi Frame Generation | GeForce News, accessed March 18, 2026, https://www.nvidia.com/en-us/geforce/news/dlss-4-5-dynamic-multi-frame-gen-6x-2nd-gen-transformer-super-res/</li>
+                <li id="ref-35">DLSS 4: Transforming Real-Time Graphics with AI, accessed March 18, 2026, https://research.nvidia.com/labs/adlr/DLSS4</li>
+                <li id="ref-36">NVIDIA DLSS 4 Introduces Multi Frame Generation & Enhancements For All DLSS Technologies | GeForce News, accessed March 18, 2026, https://www.nvidia.com/en-us/geforce/news/dlss4-multi-frame-generation-ai-innovations/</li>
+                <li id="ref-37">Real-Time Neural Appearance Models | Research at NVIDIA, accessed March 18, 2026, https://research.nvidia.com/labs/rtr/neural_appearance_models/assets/nvidia_neural_materials_author_paper.pdf</li>
+                <li id="ref-38">AMD to present Neural Texture Block Compression — rivals Nvidia's texture compression research | Tom's Hardware, accessed March 18, 2026, https://www.tomshardware.com/pc-components/gpus/amd-to-present-neural-texture-block-compression-in-london-rivals-nvidias-texture-compression-research</li>
+                <li id="ref-39">NVIDIA Neural Texture Compression offers 4 times higher resolution than standard compression with 30% less memory - VideoCardz.com, accessed March 18, 2026, https://videocardz.com/newz/nvidia-neural-texture-compression-offers-4-times-higher-resolution-than-standard-compression-with-30-less-memory</li>
+                <li id="ref-40">NVIDIA's new tech reduces VRAM usage by up to 96% in beta demo — RTX Neural Texture Compression - Reddit, accessed March 18, 2026, https://www.reddit.com/r/nvidia/comments/1ilnw2t/nvidias_new_tech_reduces_vram_usage_by_up_to_96/</li>
+                <li id="ref-41">TransGI: Real-Time Dynamic Global Illumination With Object-Centric Neural Transfer Model, accessed March 18, 2026, https://arxiv.org/html/2506.09909v1</li>
+                <li id="ref-42">Radiance Caching with On-Surface Caches for Real-Time Global Illumination - Graz University of Technology, accessed March 18, 2026, https://tugraz.elsevierpure.com/files/92345598/3675382.pdf</li>
+                <li id="ref-43">Nvidia launches RTXGI SDK 2.0 with Neural Radiance Cache (NRC) and Spatial Hash Radiance Cache (SHaRC) - Reddit, accessed March 18, 2026, https://www.reddit.com/r/hardware/comments/1bj8asw/nvidia_launches_rtxgi_sdk_20_with_neural_radiance/</li>
+                <li id="ref-44">NVIDIA RTX Advances with Neural Rendering and Digital Human Technologies at GDC 2025, accessed March 18, 2026, https://developer.nvidia.com/blog/nvidia-rtx-advances-with-neural-rendering-and-digital-human-technologies-at-gdc-2025/</li>
+                <li id="ref-45">NVIDIA RTX Kit - NVIDIA Developer, accessed March 18, 2026, https://developer.nvidia.com/rtx-kit</li>
+                <li id="ref-46">NVIDIA RTX Neural Rendering Introduces Next Era of AI-Powered Graphics Innovation, accessed March 18, 2026, https://developer.nvidia.com/blog/nvidia-rtx-neural-rendering-introduces-next-era-of-ai-powered-graphics-innovation/</li>
+                <li id="ref-47">NVIDIA Launches Family of Open Reasoning AI Models for Developers and Enterprises to Build Agentic AI Platforms, accessed March 18, 2026, https://nvidianews.nvidia.com/news/nvidia-launches-family-of-open-reasoning-ai-models-for-developers-and-enterprises-to-build-agentic-ai-platforms</li>
+                <li id="ref-48">NVIDIA Announces Nemotron Model Families to Advance Agentic AI, accessed March 18, 2026, https://blogs.nvidia.com/blog/nemotron-model-families/</li>
+                <li id="ref-49">Build More Accurate and Efficient AI Agents with the New NVIDIA Llama Nemotron Super v1.5, accessed March 18, 2026, https://developer.nvidia.com/blog/build-more-accurate-and-efficient-ai-agents-with-the-new-nvidia-llama-nemotron-super-v1-5/</li>
+                <li id="ref-50">Build Enterprise AI Agents with Advanced Open NVIDIA Llama Nemotron Reasoning Models | NVIDIA Technical Blog, accessed March 18, 2026, https://developer.nvidia.com/blog/build-enterprise-ai-agents-with-advanced-open-nvidia-llama-nemotron-reasoning-models/</li>
+                <li id="ref-51">llama-3.3-nemotron-super-49b-v1 Model by NVIDIA, accessed March 18, 2026, https://build.nvidia.com/nvidia/llama-3_3-nemotron-super-49b-v1/modelcard</li>
+                <li id="ref-52">llama-3.1-nemotron-nano-4b-v1.1 Model by NVIDIA, accessed March 18, 2026, https://build.nvidia.com/nvidia/llama-3_1-nemotron-nano-4b-v1_1/modelcard</li>
+                <li id="ref-53">nvidia/Llama-3.1-Nemotron-Nano-8B-v1 - Hugging Face, accessed March 18, 2026, https://huggingface.co/nvidia/Llama-3.1-Nemotron-Nano-8B-v1</li>
+                <li id="ref-54">Llama-Nemotron: Efficient Reasoning Models - arXiv.org, accessed March 18, 2026, https://arxiv.org/html/2505.00949v1</li>
+                <li id="ref-55">Llama-Nemotron: Efficient Reasoning Models - 我爱自然语言处理, accessed March 18, 2026, https://www.52nlp.cn/wp-content/uploads/2025/05/NVIDIA-Llama-Nemotron%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A%E8%8B%B1%E4%B8%AD%E5%AF%B9%E7%85%A7%E7%89%88.pdf</li>
+                <li id="ref-56">nvidia / llama-3.1-nemotron-ultra-253b-v1, accessed March 18, 2026, https://docs.api.nvidia.com/nim/reference/nvidia-llama-3_1-nemotron-ultra-253b-v1</li>
+                <li id="ref-57">NVIDIA Launches Family of Open Reasoning AI Models for Developers and Enterprises to Build Agentic AI Platforms - NVIDIA Investor Relations, accessed March 18, 2026, https://investor.nvidia.com/news/press-release-details/2025/NVIDIA-Launches-Family-of-Open-Reasoning-AI-Models-for-Developers-and-Enterprises-to-Build-Agentic-AI-Platforms/default.aspx</li>
+                <li id="ref-58">NVIDIA pushes Physical AI into real-world robotics deployments ..., accessed March 18, 2026, https://www.eenewseurope.com/en/nvidia-pushes-physical-ai-into-real-world-robotics-deployments/</li>
+                <li id="ref-59">Nvidia Intros Data Factory, Robotics Models in Physical AI Push, accessed March 18, 2026, https://aibusiness.com/robotics/nvidia-intros-data-factory-robotics-models-for-physical-ai</li>
+                <li id="ref-60">Cosmos World Foundation Models Openly Available to Physical AI ..., accessed March 18, 2026, https://blogs.nvidia.com/blog/cosmos-world-foundation-models/</li>
+                <li id="ref-61">NVIDIA adds Cosmos Policy to its world foundation models - The Robot Report, accessed March 18, 2026, https://www.therobotreport.com/nvidia-adds-cosmos-policy-world-foundation-models/</li>
+                <li id="ref-62">Nvidia Maps Its Physical AI Strategy Across Engineering, Robotics and Space, accessed March 18, 2026, https://www.hpcwire.com/2026/03/16/nvidia-maps-its-physical-ai-strategy-across-engineering-robotics-and-space/</li>
+                <li id="ref-63">Nvidia expands physical AI with communication and data processing infrastructure blueprints, accessed March 18, 2026, https://siliconangle.com/2026/03/16/nvidia-expands-physical-ai-communication-data-processing-infrastructure-blueprints/</li>
+                <li id="ref-64">Nebius teams with NVIDIA to build cloud for robotics and physical AI, accessed March 18, 2026, https://nebius.com/newsroom/nebius-teams-with-nvidia-to-build-cloud-for-robotics-and-physical-ai</li>
+                <li id="ref-65">Unpacking NVIDIA's GTC 2024: 10 Seismic Shifts You Need to Know - Medium, accessed March 18, 2026, https://medium.com/@tenyks_blogger/unpacking-nvidias-gtc-2024-10-seismic-shifts-you-need-to-know-060986974cc8</li>
+                <li id="ref-66">NVIDIA'S PROJECT GR00T AND THE ADVANCEMENT OF AI-POWERED HUMANOID ROBOTS - Lukmaan IAS Current Affairs, accessed March 18, 2026, https://blog.lukmaanias.com/2024/03/21/nvidias-project-gr00t-and-the-advancement-of-ai-powered-humanoid-robots/</li>
+                <li id="ref-67">Advancing Humanoid Robot Sight and Skill Development with NVIDIA Project GR00T, accessed March 18, 2026, https://developer.nvidia.com/blog/advancing-humanoid-robot-sight-and-skill-development-with-nvidia-project-gr00t/</li>
+                <li id="ref-68">NVIDIA Advances Robot Learning and Humanoid Development With New AI and Simulation Tools | RoboticsTomorrow, accessed March 18, 2026, https://www.roboticstomorrow.com/story/2024/11/nvidia-advances-robot-learning-and-humanoid-development-with-new-ai-and-simulation-tools/23519/</li>
+                <li id="ref-69">Climate Tech Companies Adopt NVIDIA Earth-2 for High-Resolution, Energy-Efficient, More Accurate Weather Predictions and Disaster Preparedness, accessed March 18, 2026, https://nvidianews.nvidia.com/news/nvidia-earth-2-climate-tech-weather-prediction-disaster-preparedness</li>
+                <li id="ref-70">Gen AI Super-Resolution Accelerates Weather Prediction with Scalable, Low-Compute Models | NVIDIA Technical Blog, accessed March 18, 2026, https://developer.nvidia.com/blog/gen-ai-super-resolution-accelerates-weather-prediction-with-scalable-low-compute-models/</li>
+                <li id="ref-71">NVIDIA Earth-2 Features 1st Gen AI to Power Weather Super-Resolution for Continental US - HPCwire, accessed March 18, 2026, https://www.hpcwire.com/off-the-wire/nvidia-earth-2-features-1st-gen-ai-to-power-weather-super-resolution-for-continental-us/</li>
+                <li id="ref-72">Earth-2 CorrDiff US - NGC Catalog - NVIDIA, accessed March 18, 2026, https://catalog.ngc.nvidia.com/orgs/nim/teams/nvidia/models/earth2-corrdiff-us-gefs-hrrr</li>
+                <li id="ref-73">NVIDIA Earth-2 Features First Gen AI to Power Weather Super-Resolution for Continental US, accessed March 18, 2026, https://blogs.nvidia.com/blog/earth-2-ai-high-resolution-forecasts/</li>
+                <li id="ref-74">NVIDIA BioNeMo Platform Adopted by Life Sciences Leaders to Accelerate AI-Driven Drug Discovery, accessed March 18, 2026, https://nvidianews.nvidia.com/news/nvidia-bionemo-platform-adopted-by-life-sciences-leaders-to-accelerate-ai-driven-drug-discovery</li>
+                <li id="ref-75">NVIDIA Opens BioNeMo to Scale Digital Biology for Global Biopharma and Scientific Industry, accessed March 18, 2026, https://nvidianews.nvidia.com/news/nvidia-opens-bionemo-to-scale-digital-biology-for-global-biopharma-and-scientific-industry</li>
+            </ol>
         </div>
-        <div style='background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; border-left: 3px solid #e94560;'>
-            <h4 style='margin: 0 0 8px 0; color: #e94560; font-size: 0.95rem;'>⚠️ 竞争警示</h4>
-            <p style='margin: 0; font-size: 0.9rem; line-height: 1.5; color: #e0e0e0;'>Inference栈重构、CPU-GPU-DPU边界模糊、内存层次重构加速</p>
-        </div>
-    </div>
-    
-    <div style='display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;'>
-        <div style='display: flex; gap: 15px; font-size: 0.85rem; color: #a0a0a0;'>
-            <span>📅 2025年3月</span>
-            <span>⏱️ 2小时11分钟</span>
-            <span>👁️ 3992万观看</span>
-        </div>
-        <a href='https://www.youtube.com/watch?v=_waPvOwL9Z8' target='_blank' style='background: #e94560; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s;'>▶️ 观看完整Keynote</a>
-    </div>
+    </main>
 </div>
+
+</body>
+</html>
