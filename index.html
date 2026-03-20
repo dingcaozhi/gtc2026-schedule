@@ -467,13 +467,6 @@
                 border-radius: 25px;
             }
             
-            #pdt-time {
-                font-size: 0.8rem !important;
-                padding: 6px 12px !important;
-                margin-top: 8px !important;
-                display: inline-block;
-                max-width: 100%;
-            }
             
             .stats-bar {
                 gap: 8px;
@@ -497,51 +490,19 @@
             }
             
             /* 精简统计栏 */
-            div[style*="display: flex; justify-content: center; gap: 30px"] {
-                flex-wrap: wrap !important;
-                gap: 8px !important;
-                font-size: 0.75rem !important;
+            .stats-inline {
+                flex-wrap: wrap;
+                gap: 12px;
+                font-size: 0.75rem;
                 padding: 0 5px;
             }
-            
-            div[style*="display: flex; justify-content: center; gap: 30px"] span {
+
+            .stats-inline span {
                 white-space: nowrap;
             }
-            
+
             /* Featured Banners */
-            #featured-banner-container {
-                margin: 12px 0 !important;
-                width: 100%;
-            }
 
-            .featured-banner {
-                padding: 12px 12px 50px 12px !important;
-                width: 100%;
-            }
-
-            .featured-banner h2 {
-                font-size: 1.1rem !important;
-            }
-
-            .featured-banner p {
-                font-size: 0.8rem !important;
-            }
-
-            .featured-banner a {
-                font-size: 0.8rem !important;
-                padding: 8px 12px !important;
-            }
-
-            /* Banner 底部切换按钮 */
-            #featured-banner-container > div:last-child {
-                bottom: 10px !important;
-                padding: 3px !important;
-            }
-
-            #featured-banner-container > div:last-child button {
-                padding: 6px 12px !important;
-                font-size: 0.75rem !important;
-            }
             
             .filters-section {
                 padding: 12px;
@@ -663,6 +624,297 @@
                 padding: 10px;
             }
         }
+
+        /* ========================================
+           PDT Time Badge
+        ======================================== */
+        .pdt-time-badge {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        /* ========================================
+           Stats Bar (inline-style override)
+        ======================================== */
+        .stats-inline {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            color: #ffffff;
+            flex-wrap: wrap;
+        }
+
+        .stats-inline strong {
+            color: #ffffff;
+        }
+
+        /* ========================================
+           Featured Banner Container
+        ======================================== */
+        #featured-banner-container {
+            position: relative;
+            margin: 20px 0;
+            min-height: 280px;
+        }
+
+        /* Individual banner wrapper */
+        .featured-banner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            border-radius: 20px;
+            padding: 28px 30px 70px 30px;
+            color: white;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .featured-banner.active {
+            opacity: 1;
+            visibility: visible;
+            position: relative;
+        }
+
+        /* Banner variant: S81595 */
+        .banner-keynote {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 80%, #e55039 100%);
+            box-shadow: 0 10px 40px rgba(238, 90, 36, 0.4);
+        }
+
+        /* Banner variant: S82109 */
+        .banner-autodrive {
+            background: linear-gradient(135deg, #ff8a65 0%, #ff7043 80%, #f4511e 100%);
+            box-shadow: 0 10px 40px rgba(255, 112, 67, 0.4);
+        }
+
+        /* Banner inner layout */
+        .banner-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .banner-content {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .banner-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .banner-tag-featured {
+            background: #ffeaa7;
+            color: #d63031;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .banner-session-id {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+
+        .banner-title {
+            margin: 0 0 12px 0;
+            font-size: 1.45rem;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .banner-desc {
+            margin: 0 0 14px 0;
+            opacity: 0.95;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .banner-speaker {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            opacity: 0.92;
+        }
+
+        /* Banner CTA buttons */
+        .banner-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 200px;
+            align-self: flex-start;
+        }
+
+        .banner-btn {
+            padding: 13px 22px;
+            border-radius: 28px;
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+            display: block;
+        }
+
+        .banner-btn-primary {
+            background: #ffeaa7;
+            color: #d63031;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .banner-btn-primary:hover {
+            background: #fff8d0;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        }
+
+        .banner-btn-secondary {
+            background: rgba(255,255,255,0.18);
+            color: white;
+            border: 2px solid rgba(255,255,255,0.35);
+            backdrop-filter: blur(6px);
+        }
+
+        .banner-btn-secondary:hover {
+            background: rgba(255,255,255,0.28);
+            border-color: rgba(255,255,255,0.55);
+            transform: translateY(-2px);
+        }
+
+        /* ========================================
+           Banner Tab Switcher
+        ======================================== */
+        .banner-tabs {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.22);
+            border-radius: 28px;
+            padding: 4px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .banner-tab-btn {
+            padding: 8px 22px;
+            border: none;
+            border-radius: 22px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: transparent;
+            color: rgba(255,255,255,0.85);
+            white-space: nowrap;
+            outline: none;
+        }
+
+        .banner-tab-btn:hover {
+            color: white;
+            background: rgba(255,255,255,0.12);
+        }
+
+        .banner-tab-btn.active {
+            background: #ffeaa7;
+            color: #d63031;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Auto-play progress bar */
+        .banner-progress {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 0 0 20px 20px;
+            width: 0%;
+            transition: width linear;
+        }
+
+        /* ========================================
+           Responsive overrides for banner
+        ======================================== */
+        @media (max-width: 768px) {
+            .featured-banner {
+                padding: 15px 15px 60px 15px;
+            }
+
+            .banner-title {
+                font-size: 1.15rem;
+            }
+
+            .banner-desc {
+                font-size: 0.82rem;
+            }
+
+            .banner-actions {
+                min-width: 100%;
+            }
+
+            .banner-btn {
+                padding: 10px 16px;
+                font-size: 0.82rem;
+            }
+
+            .banner-tab-btn {
+                padding: 6px 14px;
+                font-size: 0.78rem;
+            }
+
+            .pdt-time-badge {
+                font-size: 0.82rem;
+                padding: 7px 14px;
+                margin-top: 8px;
+            }
+
+            .stats-inline {
+                gap: 12px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner-inner {
+                flex-direction: column;
+            }
+
+            .banner-content {
+                min-width: 100%;
+            }
+
+            .banner-tab-btn {
+                padding: 5px 10px;
+                font-size: 0.72rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -670,7 +922,7 @@
         <header>
             <h1>🚀 GTC 2026 会议日程</h1>
             <p>NVIDIA GPU 技术大会 - March 15-19, 2026 (PDT)</p>
-            <div id='pdt-time' style='background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 10px 20px; border-radius: 20px; font-size: 1.1rem; font-weight: 600; margin-top: 10px; display: inline-block;'></div>
+            <div id='pdt-time' class='pdt-time-badge'></div>
 
             <!-- 头部按钮 -->
             <!-- <div class='header-buttons'>
@@ -678,59 +930,62 @@
             </div> -->
 
             <!-- 精简统计栏 -->
-            <div style='display: flex; justify-content: center; gap: 30px; margin: 15px 0; font-size: 0.9rem; color: #ffffff;'>
-                <span>总会议数: <strong id='total-count' style='color: #ffffff;'>143</strong></span>
-                <span>线下: <strong id='in-person-count' style='color: #ffffff;'>-</strong></span>
-                <span>线上: <strong id='virtual-count' style='color: #ffffff;'>-</strong></span>
+            <div class='stats-inline'>
+                <span>总会议数: <strong id='total-count'>143</strong></span>
+                <span>线下: <strong id='in-person-count'>-</strong></span>
+                <span>线上: <strong id='virtual-count'>-</strong></span>
             </div>
 
             <!-- 可切换的重点会议 Banner -->
-            <div id='featured-banner-container' style='position: relative; margin: 20px 0;'>
+            <div id='featured-banner-container'>
+
                 <!-- S81595 Keynote Banner -->
-                <div id='banner-0' class='featured-banner' style='background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%); color: white; padding: 20px 25px 60px 25px; border-radius: 16px; box-shadow: 0 8px 30px rgba(238, 90, 36, 0.3); display: block;'>
-                    <div style='display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px;'>
-                        <div style='flex: 1; min-width: 300px;'>
-                            <div style='display: flex; align-items: center; gap: 15px; margin-bottom: 10px;'>
-                                <span style='background: #ffeaa7; color: #d63031; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;'>⭐ 重点关注</span>
-                                <span style='font-family: monospace; font-size: 0.85rem; opacity: 0.9;'>GTC26-S81595</span>
+                <div id='banner-0' class='featured-banner banner-keynote active'>
+                    <div class='banner-inner'>
+                        <div class='banner-content'>
+                            <div class='banner-meta'>
+                                <span class='banner-tag-featured'>⭐ 重点关注</span>
+                                <span class='banner-session-id'>GTC26-S81595</span>
                             </div>
-                            <h2 style='margin: 0 0 10px 0; font-size: 1.4rem;'>GTC 2026 主题演讲</h2>
-                            <p style='margin: 0 0 12px 0; opacity: 0.95; font-size: 0.95rem;'>在这场主题演讲中，英伟达创始人兼首席执行官黄仁勋展望了加速计算和人工智能的未来，以及它们将如何塑造各行各业下一代计算时代。</p>
-                            <div style='display: flex; align-items: center; gap: 10px; font-size: 0.9rem; opacity: 0.9;'>
+                            <h2 class='banner-title'>GTC 2026 主题演讲</h2>
+                            <p class='banner-desc'>在这场主题演讲中，英伟达创始人兼首席执行官黄仁勋展望了加速计算和人工智能的未来，以及它们将如何塑造各行各业下一代计算时代。</p>
+                            <div class='banner-speaker'>
                                 <span>👤 Jensen Huang | Founder and CEO | NVIDIA</span>
                             </div>
                         </div>
-                        <div style='display: flex; flex-direction: column; gap: 10px; min-width: 200px;'>
-                            <a href='session/gtc26-s81595.html' style='background: #ffeaa7; color: #d63031; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center;'>查看深度洞察 →</a>
-                            <a href='session/gtc2025_banner.html' style='background: rgba(255,255,255,0.2); color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center; border: 2px solid rgba(255,255,255,0.3);'>2025 Keynote 深度洞察 →</a>
+                        <div class='banner-actions'>
+                            <a href='session/gtc26-s81595.html' class='banner-btn banner-btn-primary'>查看深度洞察 →</a>
+                            <a href='session/gtc2025_banner.html' class='banner-btn banner-btn-secondary'>2025 Keynote 深度洞察 →</a>
                         </div>
                     </div>
+                    <div class='banner-progress' id='banner-progress-0'></div>
                 </div>
 
                 <!-- S82109 卓驭智驾 Banner -->
-                <div id='banner-1' class='featured-banner' style='background: linear-gradient(135deg, #ff8a65 0%, #ff7043 100%); color: white; padding: 20px 25px 60px 25px; border-radius: 16px; box-shadow: 0 8px 30px rgba(255, 112, 67, 0.3); display: none;'>
-                    <div style='display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 15px;'>
-                        <div style='flex: 1; min-width: 300px;'>
-                            <div style='display: flex; align-items: center; gap: 15px; margin-bottom: 10px;'>
-                                <span style='background: #ffeaa7; color: #d63031; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;'>⭐ 重点关注</span>
-                                <span style='font-family: monospace; font-size: 0.85rem; opacity: 0.9;'>GTC26-S82109</span>
+                <div id='banner-1' class='featured-banner banner-autodrive'>
+                    <div class='banner-inner'>
+                        <div class='banner-content'>
+                            <div class='banner-meta'>
+                                <span class='banner-tag-featured'>⭐ 重点关注</span>
+                                <span class='banner-session-id'>GTC26-S82109</span>
                             </div>
-                            <h2 style='margin: 0 0 10px 0; font-size: 1.4rem;'>基于多模态端到端世界模型的智驾体验</h2>
-                            <p style='margin: 0 0 12px 0; opacity: 0.95; font-size: 0.95rem;'>卓驭作为国际一流的智能驾驶供应商及服务商，介绍多模态端到端世界模型的最新技术进展、相关量产成果以及未来规划。</p>
-                            <div style='display: flex; align-items: center; gap: 10px; font-size: 0.9rem; opacity: 0.9;'>
+                            <h2 class='banner-title'>基于多模态端到端世界模型的智驾体验</h2>
+                            <p class='banner-desc'>卓驭作为国际一流的智能驾驶供应商及服务商，介绍多模态端到端世界模型的最新技术进展、相关量产成果以及未来规划。</p>
+                            <div class='banner-speaker'>
                                 <span>👤 Xiaozhi Chen | AI 首席技术官 | 深圳卓驭科技有限公司</span>
                             </div>
                         </div>
-                        <div style='display: flex; flex-direction: column; gap: 10px; min-width: 200px;'>
-                            <a href='session/gtc26-s82109.html' style='background: #ffeaa7; color: #d63031; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; text-align: center;'>查看深度洞察 →</a>
+                        <div class='banner-actions'>
+                            <a href='session/gtc26-s82109.html' class='banner-btn banner-btn-primary'>查看深度洞察 →</a>
                         </div>
                     </div>
+                    <div class='banner-progress' id='banner-progress-1'></div>
                 </div>
 
                 <!-- Banner 底部切换按钮 -->
-                <div style='position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 0; z-index: 10; background: rgba(0,0,0,0.2); border-radius: 25px; padding: 4px;'>
-                    <button onclick='switchBanner(0)' id='banner-tab-0' style='padding: 8px 20px; border: none; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.3s; background: #ffeaa7; color: #d63031;'>S81595 Keynote</button>
-                    <button onclick='switchBanner(1)' id='banner-tab-1' style='padding: 8px 20px; border: none; border-radius: 20px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.3s; background: transparent; color: white;'>S82109 卓驭智驾</button>
+                <div class='banner-tabs'>
+                    <button class='banner-tab-btn active' id='banner-tab-0' onclick='switchBanner(0)'>S81595 Keynote</button>
+                    <button class='banner-tab-btn' id='banner-tab-1' onclick='switchBanner(1)'>S82109 卓驭智驾</button>
                 </div>
             </div>
         </header>
@@ -3416,37 +3671,45 @@
         updatePDTTime();
         setInterval(updatePDTTime, 60000);
 
-        // Banner 切换功能
+        // Banner 切换功能（含自动切换）
         let currentBanner = 0;
         const totalBanners = 2;
+        const AUTO_SWITCH_INTERVAL = 6000; // 6秒自动切换
+        let autoSwitchTimer = null;
+        let progressTimers = {};
 
-        function switchBanner(index) {
-            // 隐藏所有 banner
+        function switchBanner(index, fromAuto) {
+            if (index === currentBanner && !fromAuto) return;
+
+            // 移除所有 active 类
             for (let i = 0; i < totalBanners; i++) {
                 const banner = document.getElementById('banner-' + i);
                 const tab = document.getElementById('banner-tab-' + i);
-                if (banner) {
-                    banner.style.display = 'none';
-                }
-                if (tab) {
-                    tab.style.background = 'transparent';
-                    tab.style.color = 'white';
-                }
+                if (banner) banner.classList.remove('active');
+                if (tab) tab.classList.remove('active');
             }
 
-            // 显示选中的 banner
+            // 添加 active 到选中的 banner
             const selectedBanner = document.getElementById('banner-' + index);
             const selectedTab = document.getElementById('banner-tab-' + index);
-            if (selectedBanner) {
-                selectedBanner.style.display = 'block';
-            }
-            if (selectedTab) {
-                selectedTab.style.background = '#ffeaa7';
-                selectedTab.style.color = '#d63031';
-            }
+            if (selectedBanner) selectedBanner.classList.add('active');
+            if (selectedTab) selectedTab.classList.add('active');
 
             currentBanner = index;
+            if (!fromAuto) resetAutoSwitch();
         }
+
+        function resetAutoSwitch() {
+            if (autoSwitchTimer) clearInterval(autoSwitchTimer);
+            autoSwitchTimer = setInterval(() => {
+                const next = (currentBanner + 1) % totalBanners;
+                switchBanner(next, true);
+            }, AUTO_SWITCH_INTERVAL);
+        }
+
+        // 初始化：启动自动切换 + 进度条
+        switchBanner(0);
+        resetAutoSwitch();
     </script>
 </body>
 </html>
